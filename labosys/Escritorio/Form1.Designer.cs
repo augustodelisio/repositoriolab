@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btn_abmpaciente = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btn_abmpaciente
+            // 
+            this.btn_abmpaciente.Location = new System.Drawing.Point(346, 268);
+            this.btn_abmpaciente.Name = "btn_abmpaciente";
+            this.btn_abmpaciente.Size = new System.Drawing.Size(107, 32);
+            this.btn_abmpaciente.TabIndex = 0;
+            this.btn_abmpaciente.Text = "ABM Paciente";
+            this.btn_abmpaciente.UseVisualStyleBackColor = true;
+            this.btn_abmpaciente.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.btn_abmpaciente);
+            this.Name = "Form1";
+            this.Text = "Principal";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_abmpaciente;
     }
 }
 
