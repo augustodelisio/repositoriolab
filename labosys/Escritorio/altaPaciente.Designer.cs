@@ -40,7 +40,7 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(125, 70);
+            this.lbl_nombre.Location = new System.Drawing.Point(125, 66);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lbl_apellido
             // 
             this.lbl_apellido.AutoSize = true;
-            this.lbl_apellido.Location = new System.Drawing.Point(125, 121);
+            this.lbl_apellido.Location = new System.Drawing.Point(125, 124);
             this.lbl_apellido.Name = "lbl_apellido";
             this.lbl_apellido.Size = new System.Drawing.Size(44, 13);
             this.lbl_apellido.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lbl_dni
             // 
             this.lbl_dni.AutoSize = true;
-            this.lbl_dni.Location = new System.Drawing.Point(128, 180);
+            this.lbl_dni.Location = new System.Drawing.Point(125, 183);
             this.lbl_dni.Name = "lbl_dni";
             this.lbl_dni.Size = new System.Drawing.Size(23, 13);
             this.lbl_dni.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // btn_agregarpaciente
             // 
-            this.btn_agregarpaciente.Location = new System.Drawing.Point(182, 273);
+            this.btn_agregarpaciente.Location = new System.Drawing.Point(220, 265);
             this.btn_agregarpaciente.Name = "btn_agregarpaciente";
             this.btn_agregarpaciente.Size = new System.Drawing.Size(75, 23);
             this.btn_agregarpaciente.TabIndex = 6;

@@ -38,7 +38,7 @@
             // 
             // btn_volver
             // 
-            this.btn_volver.Location = new System.Drawing.Point(339, 438);
+            this.btn_volver.Location = new System.Drawing.Point(37, 424);
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(96, 34);
             this.btn_volver.TabIndex = 4;
@@ -49,14 +49,14 @@
             // dgv_pacientes
             // 
             this.dgv_pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_pacientes.Location = new System.Drawing.Point(37, 66);
+            this.dgv_pacientes.Location = new System.Drawing.Point(37, 68);
             this.dgv_pacientes.Name = "dgv_pacientes";
-            this.dgv_pacientes.Size = new System.Drawing.Size(711, 150);
+            this.dgv_pacientes.Size = new System.Drawing.Size(557, 306);
             this.dgv_pacientes.TabIndex = 5;
             // 
             // btn_altapaciente
             // 
-            this.btn_altapaciente.Location = new System.Drawing.Point(339, 301);
+            this.btn_altapaciente.Location = new System.Drawing.Point(642, 101);
             this.btn_altapaciente.Name = "btn_altapaciente";
             this.btn_altapaciente.Size = new System.Drawing.Size(96, 34);
             this.btn_altapaciente.TabIndex = 6;
@@ -66,7 +66,7 @@
             // 
             // btn_bajapaciente
             // 
-            this.btn_bajapaciente.Location = new System.Drawing.Point(339, 356);
+            this.btn_bajapaciente.Location = new System.Drawing.Point(642, 258);
             this.btn_bajapaciente.Name = "btn_bajapaciente";
             this.btn_bajapaciente.Size = new System.Drawing.Size(96, 34);
             this.btn_bajapaciente.TabIndex = 7;
@@ -75,7 +75,7 @@
             // 
             // btn_modificarpaciente
             // 
-            this.btn_modificarpaciente.Location = new System.Drawing.Point(339, 396);
+            this.btn_modificarpaciente.Location = new System.Drawing.Point(642, 178);
             this.btn_modificarpaciente.Name = "btn_modificarpaciente";
             this.btn_modificarpaciente.Size = new System.Drawing.Size(96, 36);
             this.btn_modificarpaciente.TabIndex = 8;
