@@ -10,8 +10,7 @@ namespace Entidades
     {
         private string nombre;
         private string codigo;
-        private float ug, uh;
-
+        private float ug, uh, cantNBU;
 
         public string Nombre
         {

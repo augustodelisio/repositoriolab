@@ -17,14 +17,33 @@ namespace Escritorio
             InitializeComponent();
         }
 
-        private void btn_agregarpaciente_Click(object sender, EventArgs e)
+      
+
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
-            string apellido = this.txt_apellido.Text;
-            string nombre = this.txt_nombre.Text;
-            string dni = this.txt_dni.Text;
-            Entidades.Paciente paciente = new Entidades.Paciente(apellido,nombre,dni);          
-            Negocio.ABMPaciente.agregarPaciente(paciente);
-            this.Close();
+            try
+            {
+                string apellido = this.txt_apellido.Text;
+                string nombre = this.txt_nombre.Text;
+                string dni = this.txt_dni.Text;
+                Entidades.Paciente paciente = new Entidades.Paciente(apellido, nombre, dni);
+                bool exito = Negocio.ABMPaciente.agregarPaciente(paciente);
+                if (exito)
+                {
+                    MessageBox.Show("El paciente se agrego exitosamente", "Exito!", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("El paciente no se pudo dar de alta", "Fracaso", MessageBoxButtons.OK);
+                }
+                this.Close();
+            }
+            catch( Exception k)
+            {
+                MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
+            }
         }
+
+        
     }
 }

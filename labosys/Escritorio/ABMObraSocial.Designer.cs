@@ -36,6 +36,7 @@
             // 
             // dgv_obrasSociales
             // 
+            this.dgv_obrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_obrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_obrasSociales.Location = new System.Drawing.Point(31, 23);
             this.dgv_obrasSociales.Name = "dgv_obrasSociales";
@@ -66,11 +67,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(859, 573);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_altaobrasocial);
             this.Controls.Add(this.dgv_obrasSociales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ABMObraSocial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMObraSocial";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_obrasSociales)).EndInit();
             this.ResumeLayout(false);

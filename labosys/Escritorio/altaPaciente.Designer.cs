@@ -34,13 +34,15 @@
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_dni = new System.Windows.Forms.TextBox();
-            this.btn_agregarpaciente = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(125, 66);
+            this.lbl_nombre.Location = new System.Drawing.Point(45, 39);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(220, 63);
+            this.txt_nombre.Location = new System.Drawing.Point(140, 36);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 1;
@@ -56,7 +58,7 @@
             // lbl_apellido
             // 
             this.lbl_apellido.AutoSize = true;
-            this.lbl_apellido.Location = new System.Drawing.Point(125, 124);
+            this.lbl_apellido.Location = new System.Drawing.Point(45, 97);
             this.lbl_apellido.Name = "lbl_apellido";
             this.lbl_apellido.Size = new System.Drawing.Size(44, 13);
             this.lbl_apellido.TabIndex = 2;
@@ -64,7 +66,7 @@
             // 
             // txt_apellido
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(220, 121);
+            this.txt_apellido.Location = new System.Drawing.Point(140, 94);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(100, 20);
             this.txt_apellido.TabIndex = 3;
@@ -72,7 +74,7 @@
             // lbl_dni
             // 
             this.lbl_dni.AutoSize = true;
-            this.lbl_dni.Location = new System.Drawing.Point(125, 183);
+            this.lbl_dni.Location = new System.Drawing.Point(45, 156);
             this.lbl_dni.Name = "lbl_dni";
             this.lbl_dni.Size = new System.Drawing.Size(23, 13);
             this.lbl_dni.TabIndex = 4;
@@ -80,37 +82,54 @@
             // 
             // txt_dni
             // 
-            this.txt_dni.Location = new System.Drawing.Point(220, 180);
+            this.txt_dni.Location = new System.Drawing.Point(140, 153);
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(100, 20);
             this.txt_dni.TabIndex = 5;
             // 
-            // btn_agregarpaciente
+            // groupBox1
             // 
-            this.btn_agregarpaciente.Location = new System.Drawing.Point(220, 265);
-            this.btn_agregarpaciente.Name = "btn_agregarpaciente";
-            this.btn_agregarpaciente.Size = new System.Drawing.Size(75, 23);
-            this.btn_agregarpaciente.TabIndex = 6;
-            this.btn_agregarpaciente.Text = "Agregar";
-            this.btn_agregarpaciente.UseVisualStyleBackColor = true;
-            this.btn_agregarpaciente.Click += new System.EventHandler(this.btn_agregarpaciente_Click);
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.txt_dni);
+            this.groupBox1.Controls.Add(this.lbl_dni);
+            this.groupBox1.Controls.Add(this.txt_apellido);
+            this.groupBox1.Controls.Add(this.lbl_apellido);
+            this.groupBox1.Controls.Add(this.txt_nombre);
+            this.groupBox1.Controls.Add(this.lbl_nombre);
+            this.groupBox1.Location = new System.Drawing.Point(80, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(323, 224);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nuevo Paciente";
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Location = new System.Drawing.Point(220, 284);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregar.TabIndex = 8;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // altaPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 350);
-            this.Controls.Add(this.btn_agregarpaciente);
-            this.Controls.Add(this.txt_dni);
-            this.Controls.Add(this.lbl_dni);
-            this.Controls.Add(this.txt_apellido);
-            this.Controls.Add(this.lbl_apellido);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.lbl_nombre);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(509, 350);
+            this.Controls.Add(this.btn_agregar);
+            this.Controls.Add(this.groupBox1);
+            this.MinimizeBox = false;
             this.Name = "altaPaciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "altaPaciente";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -122,6 +141,7 @@
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.TextBox txt_dni;
-        private System.Windows.Forms.Button btn_agregarpaciente;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_agregar;
     }
 }

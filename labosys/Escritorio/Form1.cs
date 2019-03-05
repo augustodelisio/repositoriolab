@@ -26,5 +26,20 @@ namespace Escritorio
         {
             new ABMObraSocial().ShowDialog();
         }
+
+        private void gestionDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ABMPaciente().ShowDialog();
+        }
+
+        private void listadoDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gestionObrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ABMObraSocial().ShowDialog();
+        }
     }
 }

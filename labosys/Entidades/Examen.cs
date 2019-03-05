@@ -13,6 +13,7 @@ namespace Entidades
         private string fecha;
         private Paciente paciente;
 
+
         public string Fecha
         {
             get { return this.fecha; }

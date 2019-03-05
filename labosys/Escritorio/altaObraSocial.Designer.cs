@@ -37,12 +37,14 @@
             this.btn_agregarobrasocial = new System.Windows.Forms.Button();
             this.rbt_nbu = new System.Windows.Forms.RadioButton();
             this.rbt_inos = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(139, 66);
+            this.lbl_nombre.Location = new System.Drawing.Point(79, 34);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(220, 63);
+            this.txt_nombre.Location = new System.Drawing.Point(160, 31);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(117, 20);
             this.txt_nombre.TabIndex = 1;
@@ -58,7 +60,7 @@
             // lbl_porcentaje
             // 
             this.lbl_porcentaje.AutoSize = true;
-            this.lbl_porcentaje.Location = new System.Drawing.Point(125, 124);
+            this.lbl_porcentaje.Location = new System.Drawing.Point(65, 92);
             this.lbl_porcentaje.Name = "lbl_porcentaje";
             this.lbl_porcentaje.Size = new System.Drawing.Size(58, 13);
             this.lbl_porcentaje.TabIndex = 2;
@@ -66,7 +68,7 @@
             // 
             // txt_porcentaje
             // 
-            this.txt_porcentaje.Location = new System.Drawing.Point(220, 121);
+            this.txt_porcentaje.Location = new System.Drawing.Point(160, 89);
             this.txt_porcentaje.Name = "txt_porcentaje";
             this.txt_porcentaje.Size = new System.Drawing.Size(117, 20);
             this.txt_porcentaje.TabIndex = 3;
@@ -74,7 +76,7 @@
             // lbl_arancel
             // 
             this.lbl_arancel.AutoSize = true;
-            this.lbl_arancel.Location = new System.Drawing.Point(140, 215);
+            this.lbl_arancel.Location = new System.Drawing.Point(80, 183);
             this.lbl_arancel.Name = "lbl_arancel";
             this.lbl_arancel.Size = new System.Drawing.Size(43, 13);
             this.lbl_arancel.TabIndex = 4;
@@ -82,14 +84,14 @@
             // 
             // txt_arancel
             // 
-            this.txt_arancel.Location = new System.Drawing.Point(220, 212);
+            this.txt_arancel.Location = new System.Drawing.Point(160, 180);
             this.txt_arancel.Name = "txt_arancel";
             this.txt_arancel.Size = new System.Drawing.Size(117, 20);
             this.txt_arancel.TabIndex = 5;
             // 
             // btn_agregarobrasocial
             // 
-            this.btn_agregarobrasocial.Location = new System.Drawing.Point(220, 265);
+            this.btn_agregarobrasocial.Location = new System.Drawing.Point(220, 284);
             this.btn_agregarobrasocial.Name = "btn_agregarobrasocial";
             this.btn_agregarobrasocial.Size = new System.Drawing.Size(75, 23);
             this.btn_agregarobrasocial.TabIndex = 6;
@@ -101,7 +103,7 @@
             // 
             this.rbt_nbu.AutoSize = true;
             this.rbt_nbu.Checked = true;
-            this.rbt_nbu.Location = new System.Drawing.Point(220, 166);
+            this.rbt_nbu.Location = new System.Drawing.Point(160, 134);
             this.rbt_nbu.Name = "rbt_nbu";
             this.rbt_nbu.Size = new System.Drawing.Size(48, 17);
             this.rbt_nbu.TabIndex = 7;
@@ -113,7 +115,7 @@
             // rbt_inos
             // 
             this.rbt_inos.AutoSize = true;
-            this.rbt_inos.Location = new System.Drawing.Point(286, 166);
+            this.rbt_inos.Location = new System.Drawing.Point(226, 134);
             this.rbt_inos.Name = "rbt_inos";
             this.rbt_inos.Size = new System.Drawing.Size(51, 17);
             this.rbt_inos.TabIndex = 8;
@@ -122,24 +124,35 @@
             this.rbt_inos.UseVisualStyleBackColor = true;
             this.rbt_inos.CheckedChanged += new System.EventHandler(this.rbt_inos_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbt_inos);
+            this.groupBox1.Controls.Add(this.rbt_nbu);
+            this.groupBox1.Controls.Add(this.txt_arancel);
+            this.groupBox1.Controls.Add(this.lbl_arancel);
+            this.groupBox1.Controls.Add(this.txt_porcentaje);
+            this.groupBox1.Controls.Add(this.lbl_porcentaje);
+            this.groupBox1.Controls.Add(this.txt_nombre);
+            this.groupBox1.Controls.Add(this.lbl_nombre);
+            this.groupBox1.Location = new System.Drawing.Point(60, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(401, 221);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nueva Obra Social";
+            // 
             // altaObraSocial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 350);
-            this.Controls.Add(this.rbt_inos);
-            this.Controls.Add(this.rbt_nbu);
+            this.ClientSize = new System.Drawing.Size(520, 349);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_agregarobrasocial);
-            this.Controls.Add(this.txt_arancel);
-            this.Controls.Add(this.lbl_arancel);
-            this.Controls.Add(this.txt_porcentaje);
-            this.Controls.Add(this.lbl_porcentaje);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.lbl_nombre);
             this.Name = "altaObraSocial";
-            this.Text = "altaPaciente";
+            this.Text = "Alta Obra Social";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Button btn_agregarobrasocial;
         private System.Windows.Forms.RadioButton rbt_nbu;
         private System.Windows.Forms.RadioButton rbt_inos;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

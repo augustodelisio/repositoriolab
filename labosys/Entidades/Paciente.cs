@@ -12,6 +12,8 @@ namespace Entidades
         private string apellido;
         private string dni;
         List<string> afiliados;
+        private bool habilitado;
+        int id;
 
         public Paciente(string apellido, string nombre, string dni)
         {
@@ -37,6 +39,16 @@ namespace Entidades
             get { return this.dni; }
             set { this.dni = value; }
         }
-
+        
+        public bool Habilitado
+        {
+            get {return this.habilitado; }
+            set {this.habilitado=value; }
+        }
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
     }
 }
