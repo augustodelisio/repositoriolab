@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMObraSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMObraSocial.Designer.cs">
+      <DependentUpon>ABMObraSocial.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMPaciente.Designer.cs">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="altaObraSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="altaObraSocial.Designer.cs">
+      <DependentUpon>altaObraSocial.cs</DependentUpon>
     </Compile>
     <Compile Include="altaPaciente.cs">
       <SubType>Form</SubType>
@@ -66,8 +78,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ABMObraSocial.resx">
+      <DependentUpon>ABMObraSocial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMPaciente.resx">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="altaObraSocial.resx">
+      <DependentUpon>altaObraSocial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="altaPaciente.resx">
       <DependentUpon>altaPaciente.cs</DependentUpon>

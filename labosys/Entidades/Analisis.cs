@@ -10,6 +10,7 @@ namespace Entidades
     {
         private string nombre;
         private string codigo;
+        private float ug, uh;
 
 
         public string Nombre
@@ -22,6 +23,18 @@ namespace Entidades
         {
             get { return this.codigo; }
             set { this.codigo = value; }
+        }
+
+        public float Ug
+        {
+            get { return this.ug; }
+            set { this.ug = value; }
+        }
+
+        public float Uh
+        {
+            get { return this.uh; }
+            set { this.uh = value; }
         }
     }
 }

@@ -10,8 +10,16 @@ namespace Entidades
     {
         private string nombre;
         private string porcentaje;
-        private float nbu;
+        private bool tipo;
+        private string arancel;
 
+        public Obra_Social(string nombre, string porcentaje, bool tipo, string arancel)
+        {
+            this.Nombre = nombre;
+            this.Porcentaje = porcentaje;
+            this.Tipo = tipo; //0=NBU ----- 1=INOS
+            this.Arancel = arancel;
+        }
 
         public string Nombre
         {
@@ -25,10 +33,16 @@ namespace Entidades
             set { this.porcentaje = value; }
         }
 
-        public float Nbu
+        public bool Tipo
         {
-            get { return this.nbu; }
-            set { this.nbu = value; }
+            get { return this.tipo; }
+            set { this.tipo = value; }
+        }
+
+        public string Arancel
+        {
+            get { return this.arancel; }
+            set { this.arancel = value; }
         }
 
     }

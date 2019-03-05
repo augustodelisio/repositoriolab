@@ -21,5 +21,10 @@ namespace Escritorio
         {
             new ABMPaciente().ShowDialog();
         }
+
+        private void btn_abmobrasocial_Click(object sender, EventArgs e)
+        {
+            new ABMObraSocial().ShowDialog();
+        }
     }
 }

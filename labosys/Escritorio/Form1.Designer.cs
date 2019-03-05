@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_abmpaciente = new System.Windows.Forms.Button();
+            this.btn_abmobrasocial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_abmpaciente
@@ -41,11 +42,22 @@
             this.btn_abmpaciente.UseVisualStyleBackColor = true;
             this.btn_abmpaciente.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_abmobrasocial
+            // 
+            this.btn_abmobrasocial.Location = new System.Drawing.Point(545, 268);
+            this.btn_abmobrasocial.Name = "btn_abmobrasocial";
+            this.btn_abmobrasocial.Size = new System.Drawing.Size(107, 32);
+            this.btn_abmobrasocial.TabIndex = 1;
+            this.btn_abmobrasocial.Text = "ABM Obra Social";
+            this.btn_abmobrasocial.UseVisualStyleBackColor = true;
+            this.btn_abmobrasocial.Click += new System.EventHandler(this.btn_abmobrasocial_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_abmobrasocial);
             this.Controls.Add(this.btn_abmpaciente);
             this.Name = "Form1";
             this.Text = "Principal";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_abmpaciente;
+        private System.Windows.Forms.Button btn_abmobrasocial;
     }
 }
 
