@@ -21,18 +21,11 @@ namespace Escritorio
         private void rbt_nbu_CheckedChanged(object sender, EventArgs e)//RADIOBUTTON NBU
         {
             tipo = false;
-            //txt_arancel.ReadOnly = false;
-            txt_arancel.Enabled = true;
-            //lbl_arancel.Visible = true;
         }
 
         private void rbt_inos_CheckedChanged(object sender, EventArgs e)//RADIOBUTTON INOS
         {
             tipo = true;
-            txt_arancel.Enabled = false;
-            //txt_arancel.ReadOnly = true;
-            //lbl_arancel.Visible = false;
-            txt_arancel.Text = "";
         }
 
         private void btn_agregarobrasocial_Click(object sender, EventArgs e)

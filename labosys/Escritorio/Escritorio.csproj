@@ -76,6 +76,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="modificarOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarOS.Designer.cs">
+      <DependentUpon>modificarOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="modificarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarOS.resx">
+      <DependentUpon>modificarOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPaciente.resx">
       <DependentUpon>modificarPaciente.cs</DependentUpon>

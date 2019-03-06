@@ -10,8 +10,9 @@ namespace Entidades
     {
         private string nombre;
         private string porcentaje;
-        private bool tipo;
+        private bool tipo, habilitado;
         private string arancel;
+        private int id;
 
         public Obra_Social(string nombre, string porcentaje, bool tipo, string arancel)
         {
@@ -45,5 +46,16 @@ namespace Entidades
             set { this.arancel = value; }
         }
 
+        public bool Habilitado
+        {
+            get { return this.habilitado; }
+            set { this.habilitado = value; }
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
     }
 }

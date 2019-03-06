@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="OSColeccion.cs" />
+    <Compile Include="ObraSocialDB.cs" />
     <Compile Include="PacienteDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

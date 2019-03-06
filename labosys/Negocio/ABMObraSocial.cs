@@ -10,12 +10,28 @@ namespace Negocio
     {
         static public void agregarOS(Entidades.Obra_Social os)
         {
-            BD.OSColeccion.getInstance().agregarOS(os);
+            BD.ObraSocialDB.getInstance().agregarOS(os);
         }
 
         static public List<Entidades.Obra_Social> getAllObrasSociales()
         {
-            return BD.OSColeccion.getInstance().getAllObrasSociales();
+            return BD.ObraSocialDB.getInstance().getAllObrasSociales();
         }
+
+        static public bool deshabilitarOS(Entidades.Obra_Social os)
+        {
+            return BD.ObraSocialDB.getInstance().deshabilitarOS(os);
+        }
+
+        static public bool habilitarOS(Entidades.Obra_Social os)
+        {
+            return BD.ObraSocialDB.getInstance().habilitarOS(os);
+        }
+
+        static public bool modificarOS(Entidades.Obra_Social os)
+        {
+            return BD.ObraSocialDB.getInstance().modificarOS(os);
+        }
+
     }
 }
