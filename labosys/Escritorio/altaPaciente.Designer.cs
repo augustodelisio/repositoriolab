@@ -97,7 +97,7 @@
             this.groupBox1.Controls.Add(this.lbl_apellido);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
-            this.groupBox1.Location = new System.Drawing.Point(80, 27);
+            this.groupBox1.Location = new System.Drawing.Point(68, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(323, 224);
             this.groupBox1.TabIndex = 7;
@@ -106,7 +106,7 @@
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(220, 284);
+            this.btn_agregar.Location = new System.Drawing.Point(208, 287);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 8;
@@ -120,13 +120,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(509, 350);
+            this.ClientSize = new System.Drawing.Size(484, 350);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "altaPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "altaPaciente";
+            this.Text = "Nuevo Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

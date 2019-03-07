@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gbx_modificar = new System.Windows.Forms.GroupBox();
+            this.rbt_Inos = new System.Windows.Forms.RadioButton();
+            this.rbt_NBU = new System.Windows.Forms.RadioButton();
             this.txt_arancel = new System.Windows.Forms.TextBox();
             this.lbl_arancel = new System.Windows.Forms.Label();
             this.txt_porcentaje = new System.Windows.Forms.TextBox();
             this.lbl_porcentaje = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
-            this.rbt_NBU = new System.Windows.Forms.RadioButton();
-            this.rbt_Inos = new System.Windows.Forms.RadioButton();
             this.btn_ModificarOS = new System.Windows.Forms.Button();
             this.gbx_modificar.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,28 @@
             this.gbx_modificar.TabIndex = 10;
             this.gbx_modificar.TabStop = false;
             this.gbx_modificar.Text = "Obra Social existente";
+            // 
+            // rbt_Inos
+            // 
+            this.rbt_Inos.AutoSize = true;
+            this.rbt_Inos.Location = new System.Drawing.Point(194, 133);
+            this.rbt_Inos.Name = "rbt_Inos";
+            this.rbt_Inos.Size = new System.Drawing.Size(51, 17);
+            this.rbt_Inos.TabIndex = 7;
+            this.rbt_Inos.TabStop = true;
+            this.rbt_Inos.Text = "INOS";
+            this.rbt_Inos.UseVisualStyleBackColor = true;
+            // 
+            // rbt_NBU
+            // 
+            this.rbt_NBU.AutoSize = true;
+            this.rbt_NBU.Location = new System.Drawing.Point(140, 133);
+            this.rbt_NBU.Name = "rbt_NBU";
+            this.rbt_NBU.Size = new System.Drawing.Size(48, 17);
+            this.rbt_NBU.TabIndex = 6;
+            this.rbt_NBU.TabStop = true;
+            this.rbt_NBU.Text = "NBU";
+            this.rbt_NBU.UseVisualStyleBackColor = true;
             // 
             // txt_arancel
             // 
@@ -107,28 +129,6 @@
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
             // 
-            // rbt_NBU
-            // 
-            this.rbt_NBU.AutoSize = true;
-            this.rbt_NBU.Location = new System.Drawing.Point(140, 133);
-            this.rbt_NBU.Name = "rbt_NBU";
-            this.rbt_NBU.Size = new System.Drawing.Size(48, 17);
-            this.rbt_NBU.TabIndex = 6;
-            this.rbt_NBU.TabStop = true;
-            this.rbt_NBU.Text = "NBU";
-            this.rbt_NBU.UseVisualStyleBackColor = true;
-            // 
-            // rbt_Inos
-            // 
-            this.rbt_Inos.AutoSize = true;
-            this.rbt_Inos.Location = new System.Drawing.Point(194, 133);
-            this.rbt_Inos.Name = "rbt_Inos";
-            this.rbt_Inos.Size = new System.Drawing.Size(51, 17);
-            this.rbt_Inos.TabIndex = 7;
-            this.rbt_Inos.TabStop = true;
-            this.rbt_Inos.Text = "INOS";
-            this.rbt_Inos.UseVisualStyleBackColor = true;
-            // 
             // btn_ModificarOS
             // 
             this.btn_ModificarOS.Location = new System.Drawing.Point(223, 292);
@@ -147,8 +147,10 @@
             this.ClientSize = new System.Drawing.Size(503, 376);
             this.Controls.Add(this.btn_ModificarOS);
             this.Controls.Add(this.gbx_modificar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "modificarOS";
-            this.Text = "modificarOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Actualizar Obra Social";
             this.gbx_modificar.ResumeLayout(false);
             this.gbx_modificar.PerformLayout();
             this.ResumeLayout(false);

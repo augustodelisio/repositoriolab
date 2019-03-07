@@ -143,10 +143,10 @@
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_altaobrasocial);
             this.Controls.Add(this.dgv_obrasSociales);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ABMObraSocial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABMObraSocial";
+            this.Text = "Gestion Obra Social";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_obrasSociales)).EndInit();
             this.gbx_filtrarOS.ResumeLayout(false);
             this.gbx_filtrarOS.PerformLayout();

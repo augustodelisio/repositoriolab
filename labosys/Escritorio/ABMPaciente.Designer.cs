@@ -143,10 +143,11 @@
             this.Controls.Add(this.btn_altapaciente);
             this.Controls.Add(this.dgv_pacientes);
             this.Controls.Add(this.btn_volver);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ABMPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABMPaciente";
+            this.Text = "Gestion Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pacientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -124,10 +124,11 @@
             this.ClientSize = new System.Drawing.Size(504, 378);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_modificarpaciente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "modificarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "modificarPaciente";
+            this.Text = "Actualizar Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -10,7 +10,8 @@ namespace Entidades
     {
         private string nombre;
         private string codigo;
-        private float ug, uh, cantNBU;
+        private string cantUG, cantUH, cantNBU;
+        private int id;
 
         public string Nombre
         {
@@ -24,16 +25,28 @@ namespace Entidades
             set { this.codigo = value; }
         }
 
-        public float Ug
+        public string CantUG
         {
-            get { return this.ug; }
-            set { this.ug = value; }
+            get { return this.cantUG; }
+            set { this.cantUG = value; }
         }
 
-        public float Uh
+        public string CantUH
         {
-            get { return this.uh; }
-            set { this.uh = value; }
+            get { return this.cantUH; }
+            set { this.cantUH = value; }
+        }
+
+        public string CantNBU
+        {
+            get { return this.cantNBU; }
+            set { this.cantNBU = value; }
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
         }
     }
 }

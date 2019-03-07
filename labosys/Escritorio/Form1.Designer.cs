@@ -36,6 +36,8 @@
             this.obrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.analisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
-            this.obrasSocialesToolStripMenuItem});
+            this.obrasSocialesToolStripMenuItem,
+            this.analisisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -99,6 +102,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "SP DESARROLLO DE SISTEMAS";
             // 
+            // analisisToolStripMenuItem
+            // 
+            this.analisisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionAnalisisToolStripMenuItem});
+            this.analisisToolStripMenuItem.Name = "analisisToolStripMenuItem";
+            this.analisisToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.analisisToolStripMenuItem.Text = "Analisis";
+            // 
+            // gestionAnalisisToolStripMenuItem
+            // 
+            this.gestionAnalisisToolStripMenuItem.Name = "gestionAnalisisToolStripMenuItem";
+            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
+            this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +149,8 @@
         private System.Windows.Forms.ToolStripMenuItem obrasSocialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionObrasSocialesToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem analisisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionAnalisisToolStripMenuItem;
     }
 }
 

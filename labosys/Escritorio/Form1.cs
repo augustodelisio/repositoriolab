@@ -41,5 +41,10 @@ namespace Escritorio
         {
             new ABMObraSocial().ShowDialog();
         }
+
+        private void gestionAnalisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ABMAnalisis().ShowDialog();
+        }
     }
 }

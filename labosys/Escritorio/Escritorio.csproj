@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMAnalisis.Designer.cs">
+      <DependentUpon>ABMAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMObraSocial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="ABMPaciente.Designer.cs">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="altaAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="altaAnalisis.Designer.cs">
+      <DependentUpon>altaAnalisis.cs</DependentUpon>
     </Compile>
     <Compile Include="altaObraSocial.cs">
       <SubType>Form</SubType>
@@ -76,6 +88,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="modificarAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarAnalisis.Designer.cs">
+      <DependentUpon>modificarAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="modificarOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +108,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ABMAnalisis.resx">
+      <DependentUpon>ABMAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMObraSocial.resx">
       <DependentUpon>ABMObraSocial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMPaciente.resx">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="altaAnalisis.resx">
+      <DependentUpon>altaAnalisis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="altaObraSocial.resx">
       <DependentUpon>altaObraSocial.cs</DependentUpon>
@@ -104,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificarAnalisis.resx">
+      <DependentUpon>modificarAnalisis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarOS.resx">
       <DependentUpon>modificarOS.cs</DependentUpon>
