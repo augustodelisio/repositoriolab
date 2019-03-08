@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AnalisisDB.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="ExamenDB.cs" />
     <Compile Include="ObraSocialDB.cs" />
     <Compile Include="PacienteDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

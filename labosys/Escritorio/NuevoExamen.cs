@@ -16,30 +16,56 @@ namespace Escritorio
         {
             InitializeComponent();
             DateTime FECHA = DateTime.Today;
-            this.mtb_fecha.Text =FECHA.ToString();
-            this.cmb_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
+            this.mtb_fecha.Text = FECHA.ToString();
+            List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
+            this.cmb_pacientes.DataSource = pacientes;
             this.cmb_pacientes.DisplayMember = "dni";
             this.cmb_pacientes.ValueMember = "id";
-            this.cmb_pacientes.SelectedIndex = -1;
-            this.lbl_muestraNom.Text = "";
+
         }
 
         private void cmb_pacientes_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cmb_pacientes.SelectedItem != null)
             {
-                this.lbl_muestraNom.Visible = true;
                 Entidades.Paciente pa = (Entidades.Paciente)this.cmb_pacientes.SelectedItem;
-                this.lbl_muestraNom.Text = pa.Apellido + ", " + pa.Nombre;
+                string nombre = pa.Apellido + ", " + pa.Nombre;
+                this.lbl_nombre.Text = nombre;
+                if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                {
+                    this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
+                    this.cmb_os.DisplayMember = "nombreOS";
+                    this.cmb_os.ValueMember = "idOS";
+                }
+                else
+                {
+                    this.cmb_os.DataSource = null;
+                }
+
             }
+            else { this.lbl_nombre.Text = ""; }
         }
 
-        private void cmb_pacientes_TextChanged(object sender, EventArgs e)
+        private void btn_agregarAnalisis_Click(object sender, EventArgs e)
         {
-            if (cmb_pacientes.SelectedItem != null)
+            try
             {
-                string dni = this.cmb_pacientes.Text;
-                this.cmb_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientesbyDNI(dni);
+                Entidades.Examen ex = new Entidades.Examen();
+                ex.Fecha = DateTime.Parse(this.mtb_fecha.Text);
+                ex.IdPaciente = (int)cmb_pacientes.SelectedValue;
+                ex.IdOS = (int)cmb_os.SelectedValue;
+                Entidades.Examen exa = new Entidades.Examen();
+                exa.IdExamen = -1;
+                //ver como recuperar el id de examen despues de crearlo o buscar el maximo (otra alternativa)
+                exa = Negocio.ABMExamen.agregarExamen(ex);
+                if (exa.IdExamen != -1)
+                {
+                    new AnalisisExamen(exa).ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema", "Cuidado!", MessageBoxButtons.OK);
             }
         }
     }

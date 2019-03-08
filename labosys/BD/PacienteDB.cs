@@ -89,7 +89,6 @@ namespace BD
                     pos.NombreOS = os.Nombre;
                     //agrega a pos el nombre de la os
                     pacos.Add(pos); 
-
                 }
                 Conexion.getInstance().Disconnect();
                 return pacos ;
