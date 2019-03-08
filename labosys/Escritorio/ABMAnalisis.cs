@@ -36,8 +36,6 @@ namespace Escritorio
                 Entidades.Analisis analisis = new Entidades.Analisis();
                 analisis.Codigo = (string)celdas["codigo"].Value;
                 analisis.Nombre = (string)celdas["nombre"].Value;
-                analisis.CantUG = (string)celdas["cantUG"].Value;
-                analisis.CantUH = (string)celdas["cantUH"].Value;
                 analisis.CantNBU = (string)celdas["cantNBU"].Value;
                 analisis.Id = (int)celdas["id"].Value;
                 new modificarAnalisis(analisis).ShowDialog();

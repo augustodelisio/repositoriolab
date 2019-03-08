@@ -10,7 +10,7 @@ namespace Entidades
     {
         private string nombre;
         private string codigo;
-        private string cantUG, cantUH, cantNBU;
+        private string cantNBU;
         private int id;
 
         public string Nombre
@@ -23,18 +23,6 @@ namespace Entidades
         {
             get { return this.codigo; }
             set { this.codigo = value; }
-        }
-
-        public string CantUG
-        {
-            get { return this.cantUG; }
-            set { this.cantUG = value; }
-        }
-
-        public string CantUH
-        {
-            get { return this.cantUH; }
-            set { this.cantUH = value; }
         }
 
         public string CantNBU

@@ -18,8 +18,7 @@ namespace Escritorio
             InitializeComponent();
             this.txt_codigo.Text = analisis.Codigo;
             this.txt_nombre.Text = analisis.Nombre;
-            this.txt_ug.Text = analisis.CantUG;
-            this.txt_uh.Text = analisis.CantUH;
+
             this.txt_nbu.Text = analisis.CantNBU;
             id = analisis.Id;
         }
@@ -31,8 +30,7 @@ namespace Escritorio
                 Entidades.Analisis analisis = new Entidades.Analisis();
                 analisis.Codigo = this.txt_codigo.Text;
                 analisis.Nombre = this.txt_nombre.Text;
-                analisis.CantUG = (this.txt_ug.Text);
-                analisis.CantUH = (this.txt_uh.Text);
+
                 analisis.CantNBU = (this.txt_nbu.Text);
                 analisis.Id = id;
 
