@@ -180,5 +180,31 @@ namespace Escritorio
                 }
             }
         }
+
+        private void btn_obrasSocialesPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataGridViewRow row = this.dgv_pacientes.CurrentRow;
+                DataGridViewCellCollection celdas = row.Cells;
+                string dni = (string)celdas["dni"].Value;
+                string nombre = (string)celdas["nombre"].Value;
+                string apellido = (string)celdas["apellido"].Value;
+                Entidades.Paciente pa = new Entidades.Paciente(apellido, nombre, dni);
+                pa.Id = (int)celdas["id"].Value;
+                new OSPaciente(pa).ShowDialog();
+
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
+            }
+        }
+
+        private void txt_filtroDni_TextChanged(object sender, EventArgs e)
+        {
+            this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientesbyDNI(this.txt_filtroDni.Text); 
+        }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="Examen.cs" />
     <Compile Include="Obra_Social.cs" />
     <Compile Include="Paciente.cs" />
+    <Compile Include="PacienteOS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

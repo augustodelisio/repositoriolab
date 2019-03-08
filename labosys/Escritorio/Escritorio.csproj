@@ -64,6 +64,12 @@
     <Compile Include="ABMPaciente.Designer.cs">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarOSPAciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarOSPAciente.Designer.cs">
+      <DependentUpon>AgregarOSPAciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="altaAnalisis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="modificarPaciente.Designer.cs">
       <DependentUpon>modificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSPaciente.Designer.cs">
+      <DependentUpon>OSPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ABMAnalisis.resx">
@@ -116,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMPaciente.resx">
       <DependentUpon>ABMPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarOSPAciente.resx">
+      <DependentUpon>AgregarOSPAciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="altaAnalisis.resx">
       <DependentUpon>altaAnalisis.cs</DependentUpon>
@@ -137,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPaciente.resx">
       <DependentUpon>modificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSPaciente.resx">
+      <DependentUpon>OSPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

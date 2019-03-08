@@ -99,14 +99,14 @@
             this.groupBox1.Controls.Add(this.lbl_nombre);
             this.groupBox1.Location = new System.Drawing.Point(68, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 224);
+            this.groupBox1.Size = new System.Drawing.Size(323, 240);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Paciente";
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(208, 287);
+            this.btn_agregar.Location = new System.Drawing.Point(188, 300);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 8;

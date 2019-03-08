@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using Entidades;
 
 namespace BD
 {
@@ -75,6 +76,32 @@ namespace BD
             catch (Exception e)
             {
 
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
+        internal Obra_Social buscarOSporId(int idOS)
+        {
+            try
+            {
+                int id = idOS;
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from ObrasSociales where id='" + id + "'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string nombre = reader.GetString(0);
+                    Entidades.Obra_Social os = new Entidades.Obra_Social();
+                    os.Nombre = nombre;
+                    os.Id = id;
+                    Conexion.getInstance().Disconnect();
+                    return os;
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
                 Conexion.getInstance().Disconnect();
                 return null;
             }

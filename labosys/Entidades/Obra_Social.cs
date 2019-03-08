@@ -13,6 +13,7 @@ namespace Entidades
         private bool tipo, habilitado;
         private string arancel;
         private int id;
+        public Obra_Social() { }
 
         public Obra_Social(string nombre, string porcentaje, bool tipo, string arancel)
         {

@@ -35,8 +35,9 @@
             this.btn_modificarpaciente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_dni = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_filtroDni = new System.Windows.Forms.TextBox();
             this.btn_habilitar = new System.Windows.Forms.Button();
+            this.btn_obrasSocialesPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pacientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbl_dni);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_filtroDni);
             this.groupBox1.Location = new System.Drawing.Point(17, 346);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 54);
@@ -112,12 +113,13 @@
             this.lbl_dni.TabIndex = 1;
             this.lbl_dni.Text = "DNI";
             // 
-            // textBox1
+            // txt_filtroDni
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_filtroDni.Location = new System.Drawing.Point(78, 22);
+            this.txt_filtroDni.Name = "txt_filtroDni";
+            this.txt_filtroDni.Size = new System.Drawing.Size(130, 20);
+            this.txt_filtroDni.TabIndex = 0;
+            this.txt_filtroDni.TextChanged += new System.EventHandler(this.txt_filtroDni_TextChanged);
             // 
             // btn_habilitar
             // 
@@ -129,6 +131,16 @@
             this.btn_habilitar.UseVisualStyleBackColor = true;
             this.btn_habilitar.Click += new System.EventHandler(this.btn_habilitar_Click);
             // 
+            // btn_obrasSocialesPaciente
+            // 
+            this.btn_obrasSocialesPaciente.Location = new System.Drawing.Point(351, 462);
+            this.btn_obrasSocialesPaciente.Name = "btn_obrasSocialesPaciente";
+            this.btn_obrasSocialesPaciente.Size = new System.Drawing.Size(177, 35);
+            this.btn_obrasSocialesPaciente.TabIndex = 11;
+            this.btn_obrasSocialesPaciente.Text = "Obras Sociales";
+            this.btn_obrasSocialesPaciente.UseVisualStyleBackColor = true;
+            this.btn_obrasSocialesPaciente.Click += new System.EventHandler(this.btn_obrasSocialesPaciente_Click);
+            // 
             // ABMPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +148,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(579, 539);
+            this.Controls.Add(this.btn_obrasSocialesPaciente);
             this.Controls.Add(this.btn_habilitar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_modificarpaciente);
@@ -164,7 +177,8 @@
         private System.Windows.Forms.Button btn_modificarpaciente;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_dni;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_filtroDni;
         private System.Windows.Forms.Button btn_habilitar;
+        private System.Windows.Forms.Button btn_obrasSocialesPaciente;
     }
 }
