@@ -26,15 +26,16 @@ namespace Escritorio
             new altaObraSocial().ShowDialog();
             this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
             bs.ResetBindings(false);
+            actualizaColor();
         }
 
-        //VOLVER-----------------------------------------
+        //VOLVER
         private void btn_atras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //MODIFICAR OS----------------------------------------------------------------------
+        //MODIFICAR OS
         private void btn_modificarOS_Click(object sender, EventArgs e)
         {
             try
@@ -50,6 +51,7 @@ namespace Escritorio
                 new modificarOS(os).ShowDialog();
                 this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
                 bs.ResetBindings(false);
+                actualizaColor();
             }
             catch (NullReferenceException ex)
             {
@@ -91,6 +93,7 @@ namespace Escritorio
                     
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
                     bs.ResetBindings(false);
+                    actualizaColor();
                 }
                 else
                 {
@@ -120,6 +123,7 @@ namespace Escritorio
                     string actoBioquimico = (string)celdas["actoBioquimico"].Value;
                     Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Id = (int)celdas["id"].Value;
+                    row.DefaultCellStyle.BackColor = Color.DarkRed;
                     DialogResult result = MessageBox.Show("esta seguro que desea dar de alta a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
                     //bool exito = false;
                     if (result == DialogResult.Yes)
@@ -139,6 +143,7 @@ namespace Escritorio
 
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
                     bs.ResetBindings(false);
+                    actualizaColor();
                 }
                 else
                 {
@@ -152,7 +157,7 @@ namespace Escritorio
             }
         }
 
-        //CAMBIO DE BOTON HABILITAR/DESABILITAR
+        //CAMBIO DE BOTON HABILITAR/DESABILITAR------------------------------------------
         private void dgv_obrasSociales_CurrentCellChanged(object sender, EventArgs e)
         {
             try
@@ -179,6 +184,25 @@ namespace Escritorio
             {
 
             }
+        }
+
+        //METODO ACTUALIZAR COLOR--------------------------------------------------------
+        public void actualizaColor()
+        {
+            for (int i = 0; i < this.dgv_obrasSociales.RowCount; i++)
+            {
+                int hab = Convert.ToInt16(this.dgv_obrasSociales.Rows[i].Cells[3].Value);
+                if (hab != 1)
+                {
+                    this.dgv_obrasSociales.Rows[i].DefaultCellStyle.ForeColor = Color.DarkGray;
+                }
+            }
+        }
+
+        //AL COMPLETAR EL DATA BINDING
+        private void dgv_obrasSociales_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            actualizaColor();
         }
     }
 }

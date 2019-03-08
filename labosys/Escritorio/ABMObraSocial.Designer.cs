@@ -52,6 +52,7 @@
             this.dgv_obrasSociales.Size = new System.Drawing.Size(563, 306);
             this.dgv_obrasSociales.TabIndex = 6;
             this.dgv_obrasSociales.CurrentCellChanged += new System.EventHandler(this.dgv_obrasSociales_CurrentCellChanged);
+            this.dgv_obrasSociales.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_obrasSociales_DataBindingComplete);
             // 
             // btn_altaobrasocial
             // 
