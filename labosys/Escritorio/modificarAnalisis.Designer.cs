@@ -31,11 +31,7 @@
             this.btn_agregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nbu = new System.Windows.Forms.TextBox();
-            this.txt_uh = new System.Windows.Forms.TextBox();
-            this.txt_ug = new System.Windows.Forms.TextBox();
             this.lbl_cantNBU = new System.Windows.Forms.Label();
-            this.lbl_cantUH = new System.Windows.Forms.Label();
-            this.lbl_cantUg = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -45,7 +41,7 @@
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(257, 352);
+            this.btn_agregar.Location = new System.Drawing.Point(257, 283);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 12;
@@ -58,69 +54,33 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.txt_nbu);
-            this.groupBox1.Controls.Add(this.txt_uh);
-            this.groupBox1.Controls.Add(this.txt_ug);
             this.groupBox1.Controls.Add(this.lbl_cantNBU);
-            this.groupBox1.Controls.Add(this.lbl_cantUH);
-            this.groupBox1.Controls.Add(this.lbl_cantUg);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.lbl_codigo);
             this.groupBox1.Location = new System.Drawing.Point(117, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 297);
+            this.groupBox1.Size = new System.Drawing.Size(323, 227);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Analisis existente";
             // 
             // txt_nbu
             // 
-            this.txt_nbu.Location = new System.Drawing.Point(140, 255);
+            this.txt_nbu.Location = new System.Drawing.Point(140, 177);
             this.txt_nbu.Name = "txt_nbu";
             this.txt_nbu.Size = new System.Drawing.Size(100, 20);
             this.txt_nbu.TabIndex = 11;
             // 
-            // txt_uh
-            // 
-            this.txt_uh.Location = new System.Drawing.Point(140, 202);
-            this.txt_uh.Name = "txt_uh";
-            this.txt_uh.Size = new System.Drawing.Size(100, 20);
-            this.txt_uh.TabIndex = 10;
-            // 
-            // txt_ug
-            // 
-            this.txt_ug.Location = new System.Drawing.Point(140, 150);
-            this.txt_ug.Name = "txt_ug";
-            this.txt_ug.Size = new System.Drawing.Size(100, 20);
-            this.txt_ug.TabIndex = 9;
-            // 
             // lbl_cantNBU
             // 
             this.lbl_cantNBU.AutoSize = true;
-            this.lbl_cantNBU.Location = new System.Drawing.Point(48, 255);
+            this.lbl_cantNBU.Location = new System.Drawing.Point(36, 184);
             this.lbl_cantNBU.Name = "lbl_cantNBU";
             this.lbl_cantNBU.Size = new System.Drawing.Size(75, 13);
             this.lbl_cantNBU.TabIndex = 8;
             this.lbl_cantNBU.Text = "Cantidad NBU";
-            // 
-            // lbl_cantUH
-            // 
-            this.lbl_cantUH.AutoSize = true;
-            this.lbl_cantUH.Location = new System.Drawing.Point(48, 205);
-            this.lbl_cantUH.Name = "lbl_cantUH";
-            this.lbl_cantUH.Size = new System.Drawing.Size(68, 13);
-            this.lbl_cantUH.TabIndex = 7;
-            this.lbl_cantUH.Text = "Cantidad UH";
-            // 
-            // lbl_cantUg
-            // 
-            this.lbl_cantUg.AutoSize = true;
-            this.lbl_cantUg.Location = new System.Drawing.Point(48, 153);
-            this.lbl_cantUg.Name = "lbl_cantUg";
-            this.lbl_cantUg.Size = new System.Drawing.Size(68, 13);
-            this.lbl_cantUg.TabIndex = 6;
-            this.lbl_cantUg.Text = "Cantidad UG";
             // 
             // txt_nombre
             // 
@@ -177,11 +137,7 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_nbu;
-        private System.Windows.Forms.TextBox txt_uh;
-        private System.Windows.Forms.TextBox txt_ug;
         private System.Windows.Forms.Label lbl_cantNBU;
-        private System.Windows.Forms.Label lbl_cantUH;
-        private System.Windows.Forms.Label lbl_cantUg;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.TextBox txt_codigo;

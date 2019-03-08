@@ -43,9 +43,9 @@ namespace Escritorio
                 DataGridViewCellCollection celdas = row.Cells;
                 string nombre = (string)celdas["nombre"].Value;
                 string porcentaje = (string)celdas["porcentaje"].Value;
-                bool tipo = (bool)celdas["tipo"].Value;
-                string arancel = (string)celdas["arancel"].Value;
-                Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, tipo, arancel);
+                string nbu = (string)celdas["nbu"].Value;
+                string actoBioquimico = (string)celdas["actoBioquimico"].Value;
+                Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                 os.Id = (int)celdas["id"].Value;
                 new modificarOS(os).ShowDialog();
                 this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
@@ -69,9 +69,9 @@ namespace Escritorio
                 {
                     string nombre = (string)celdas["nombre"].Value;
                     string porcentaje = (string)celdas["porcentaje"].Value;
-                    bool tipo = (bool)celdas["tipo"].Value;
-                    string arancel = (string)celdas["arancel"].Value;
-                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, tipo, arancel);
+                    string nbu = (string)celdas["nbu"].Value;
+                    string actoBioquimico = (string)celdas["actoBioquimico"].Value;
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Id = (int)celdas["id"].Value;
                     row.DefaultCellStyle.BackColor = Color.Red;
                     DialogResult result = MessageBox.Show("esta seguro que desea dar de baja a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
@@ -116,9 +116,9 @@ namespace Escritorio
                 {
                     string nombre = (string)celdas["nombre"].Value;
                     string porcentaje = (string)celdas["porcentaje"].Value;
-                    bool tipo = (bool)celdas["tipo"].Value;
-                    string arancel = (string)celdas["arancel"].Value;
-                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, tipo, arancel);
+                    string nbu = (string)celdas["nbu"].Value;
+                    string actoBioquimico = (string)celdas["actoBioquimico"].Value;
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Id = (int)celdas["id"].Value;
                     DialogResult result = MessageBox.Show("esta seguro que desea dar de alta a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
                     //bool exito = false;

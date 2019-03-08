@@ -137,7 +137,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                string DNI = "%" + Dni + "%";
+                string DNI = Dni + "%";
                 SqlCommand cmd = new SqlCommand("select * from Pacientes where CONVERT(VARCHAR,dni) like '"+DNI+"'", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.Paciente> pacientes = new List<Entidades.Paciente>();

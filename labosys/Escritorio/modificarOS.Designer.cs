@@ -29,79 +29,41 @@
         private void InitializeComponent()
         {
             this.gbx_modificar = new System.Windows.Forms.GroupBox();
-            this.rbt_Inos = new System.Windows.Forms.RadioButton();
-            this.rbt_NBU = new System.Windows.Forms.RadioButton();
-            this.txt_arancel = new System.Windows.Forms.TextBox();
-            this.lbl_arancel = new System.Windows.Forms.Label();
             this.txt_porcentaje = new System.Windows.Forms.TextBox();
             this.lbl_porcentaje = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.btn_ModificarOS = new System.Windows.Forms.Button();
+            this.lbl_actoBioquimico = new System.Windows.Forms.Label();
+            this.txt_actoBioquimico = new System.Windows.Forms.TextBox();
+            this.txt_nbu = new System.Windows.Forms.TextBox();
+            this.lbl_nbu = new System.Windows.Forms.Label();
             this.gbx_modificar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbx_modificar
             // 
             this.gbx_modificar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbx_modificar.Controls.Add(this.rbt_Inos);
-            this.gbx_modificar.Controls.Add(this.rbt_NBU);
-            this.gbx_modificar.Controls.Add(this.txt_arancel);
-            this.gbx_modificar.Controls.Add(this.lbl_arancel);
+            this.gbx_modificar.Controls.Add(this.lbl_actoBioquimico);
+            this.gbx_modificar.Controls.Add(this.txt_actoBioquimico);
+            this.gbx_modificar.Controls.Add(this.txt_nbu);
+            this.gbx_modificar.Controls.Add(this.lbl_nbu);
             this.gbx_modificar.Controls.Add(this.txt_porcentaje);
             this.gbx_modificar.Controls.Add(this.lbl_porcentaje);
             this.gbx_modificar.Controls.Add(this.txt_nombre);
             this.gbx_modificar.Controls.Add(this.lbl_nombre);
             this.gbx_modificar.Location = new System.Drawing.Point(83, 51);
             this.gbx_modificar.Name = "gbx_modificar";
-            this.gbx_modificar.Size = new System.Drawing.Size(323, 224);
+            this.gbx_modificar.Size = new System.Drawing.Size(323, 228);
             this.gbx_modificar.TabIndex = 10;
             this.gbx_modificar.TabStop = false;
             this.gbx_modificar.Text = "Obra Social existente";
-            // 
-            // rbt_Inos
-            // 
-            this.rbt_Inos.AutoSize = true;
-            this.rbt_Inos.Location = new System.Drawing.Point(194, 133);
-            this.rbt_Inos.Name = "rbt_Inos";
-            this.rbt_Inos.Size = new System.Drawing.Size(51, 17);
-            this.rbt_Inos.TabIndex = 7;
-            this.rbt_Inos.TabStop = true;
-            this.rbt_Inos.Text = "INOS";
-            this.rbt_Inos.UseVisualStyleBackColor = true;
-            // 
-            // rbt_NBU
-            // 
-            this.rbt_NBU.AutoSize = true;
-            this.rbt_NBU.Location = new System.Drawing.Point(140, 133);
-            this.rbt_NBU.Name = "rbt_NBU";
-            this.rbt_NBU.Size = new System.Drawing.Size(48, 17);
-            this.rbt_NBU.TabIndex = 6;
-            this.rbt_NBU.TabStop = true;
-            this.rbt_NBU.Text = "NBU";
-            this.rbt_NBU.UseVisualStyleBackColor = true;
-            // 
-            // txt_arancel
-            // 
-            this.txt_arancel.Location = new System.Drawing.Point(140, 169);
-            this.txt_arancel.Name = "txt_arancel";
-            this.txt_arancel.Size = new System.Drawing.Size(100, 20);
-            this.txt_arancel.TabIndex = 5;
-            // 
-            // lbl_arancel
-            // 
-            this.lbl_arancel.AutoSize = true;
-            this.lbl_arancel.Location = new System.Drawing.Point(46, 176);
-            this.lbl_arancel.Name = "lbl_arancel";
-            this.lbl_arancel.Size = new System.Drawing.Size(43, 13);
-            this.lbl_arancel.TabIndex = 4;
-            this.lbl_arancel.Text = "Arancel";
             // 
             // txt_porcentaje
             // 
             this.txt_porcentaje.Location = new System.Drawing.Point(140, 94);
             this.txt_porcentaje.Name = "txt_porcentaje";
-            this.txt_porcentaje.Size = new System.Drawing.Size(100, 20);
+            this.txt_porcentaje.Size = new System.Drawing.Size(117, 20);
             this.txt_porcentaje.TabIndex = 3;
             // 
             // lbl_porcentaje
@@ -117,7 +79,7 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(140, 36);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(117, 20);
             this.txt_nombre.TabIndex = 1;
             // 
             // lbl_nombre
@@ -131,13 +93,45 @@
             // 
             // btn_ModificarOS
             // 
-            this.btn_ModificarOS.Location = new System.Drawing.Point(223, 292);
+            this.btn_ModificarOS.Location = new System.Drawing.Point(223, 300);
             this.btn_ModificarOS.Name = "btn_ModificarOS";
             this.btn_ModificarOS.Size = new System.Drawing.Size(75, 23);
             this.btn_ModificarOS.TabIndex = 11;
             this.btn_ModificarOS.Text = "Modificar";
             this.btn_ModificarOS.UseVisualStyleBackColor = true;
             this.btn_ModificarOS.Click += new System.EventHandler(this.btn_ModificarOS_Click);
+            // 
+            // lbl_actoBioquimico
+            // 
+            this.lbl_actoBioquimico.AutoSize = true;
+            this.lbl_actoBioquimico.Location = new System.Drawing.Point(20, 205);
+            this.lbl_actoBioquimico.Name = "lbl_actoBioquimico";
+            this.lbl_actoBioquimico.Size = new System.Drawing.Size(83, 13);
+            this.lbl_actoBioquimico.TabIndex = 11;
+            this.lbl_actoBioquimico.Text = "Acto Bioquimico";
+            // 
+            // txt_actoBioquimico
+            // 
+            this.txt_actoBioquimico.Location = new System.Drawing.Point(140, 198);
+            this.txt_actoBioquimico.Name = "txt_actoBioquimico";
+            this.txt_actoBioquimico.Size = new System.Drawing.Size(117, 20);
+            this.txt_actoBioquimico.TabIndex = 10;
+            // 
+            // txt_nbu
+            // 
+            this.txt_nbu.Location = new System.Drawing.Point(140, 145);
+            this.txt_nbu.Name = "txt_nbu";
+            this.txt_nbu.Size = new System.Drawing.Size(117, 20);
+            this.txt_nbu.TabIndex = 9;
+            // 
+            // lbl_nbu
+            // 
+            this.lbl_nbu.AutoSize = true;
+            this.lbl_nbu.Location = new System.Drawing.Point(76, 148);
+            this.lbl_nbu.Name = "lbl_nbu";
+            this.lbl_nbu.Size = new System.Drawing.Size(27, 13);
+            this.lbl_nbu.TabIndex = 8;
+            this.lbl_nbu.Text = "Nbu";
             // 
             // modificarOS
             // 
@@ -160,14 +154,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbx_modificar;
-        private System.Windows.Forms.TextBox txt_arancel;
-        private System.Windows.Forms.Label lbl_arancel;
         private System.Windows.Forms.TextBox txt_porcentaje;
         private System.Windows.Forms.Label lbl_porcentaje;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.RadioButton rbt_Inos;
-        private System.Windows.Forms.RadioButton rbt_NBU;
         private System.Windows.Forms.Button btn_ModificarOS;
+        private System.Windows.Forms.Label lbl_actoBioquimico;
+        private System.Windows.Forms.TextBox txt_actoBioquimico;
+        private System.Windows.Forms.TextBox txt_nbu;
+        private System.Windows.Forms.Label lbl_nbu;
     }
 }

@@ -8,19 +8,17 @@ namespace Entidades
 {
     public class Obra_Social
     {
-        private string nombre;
-        private string porcentaje;
-        private bool tipo, habilitado;
-        private string arancel;
+        private string nombre, porcentaje, nbu, actoBioquimico;
+        private bool habilitado;
         private int id;
         public Obra_Social() { }
 
-        public Obra_Social(string nombre, string porcentaje, bool tipo, string arancel)
+        public Obra_Social(string nombre, string porcentaje, string nbu, string actoBioquimico)
         {
             this.Nombre = nombre;
             this.Porcentaje = porcentaje;
-            this.Tipo = tipo; //0=NBU ----- 1=INOS
-            this.Arancel = arancel;
+            this.Nbu = nbu;
+            this.ActoBioquimico = actoBioquimico;
         }
 
         public string Nombre
@@ -35,22 +33,22 @@ namespace Entidades
             set { this.porcentaje = value; }
         }
 
-        public bool Tipo
+        public string Nbu
         {
-            get { return this.tipo; }
-            set { this.tipo = value; }
-        }
-
-        public string Arancel
-        {
-            get { return this.arancel; }
-            set { this.arancel = value; }
+            get { return this.nbu; }
+            set { this.nbu = value; }
         }
 
         public bool Habilitado
         {
             get { return this.habilitado; }
             set { this.habilitado = value; }
+        }
+
+        public string ActoBioquimico
+        {
+            get { return this.actoBioquimico; }
+            set { this.actoBioquimico = value; }
         }
 
         public int Id

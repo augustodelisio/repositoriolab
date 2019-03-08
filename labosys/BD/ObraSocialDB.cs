@@ -32,12 +32,12 @@ namespace BD
             {
                 string nombre = os.Nombre;
                 string porcentaje = os.Porcentaje;
-                string arancel = os.Arancel;
-                bool tipo = os.Tipo;
+                string nbu = os.Nbu;
                 bool habilitado = true;
+                string actoBioquimico = os.ActoBioquimico;
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("insert into dbo.ObrasSociales(nombre,porcentaje,tipo,arancel, habilitado) " +
-                    "values('" + nombre + "','" + porcentaje + "','" + tipo + "','" + arancel + "','" + habilitado + "')", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("insert into dbo.ObrasSociales(nombre,porcentaje,nbu, habilitado, actoBioquimico) " +
+                    "values('" + nombre + "','" + porcentaje + "','" + nbu + "','" + habilitado + "','" + actoBioquimico + "')", Conexion.getInstance().Conection);
                 cmd.ExecuteNonQuery();
                 Conexion.getInstance().Disconnect();
                 return true;
@@ -62,11 +62,11 @@ namespace BD
                 {
                     string nombre = reader.GetString(0);
                     string porcentaje = reader.GetString(1);
-                    bool tipo = reader.GetBoolean(2);
-                    string arancel = reader.GetString(3);
-                    int id = reader.GetInt32(4);
-                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, tipo, arancel);
-                    os.Habilitado = reader.GetBoolean(5);
+                    string nbu = reader.GetString(2);
+                    int id = reader.GetInt32(3);
+                    string actoBioquimico = reader.GetString(5);
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
+                    os.Habilitado = reader.GetBoolean(4);
                     os.Id = id;
                     obrasSociales.Add(os);
                 }
@@ -152,13 +152,13 @@ namespace BD
             {
                 string nombre = os.Nombre;
                 string porcentaje = os.Porcentaje;
-                bool tipo = os.Tipo;
-                string arancel = os.Arancel;
+                string nbu = os.Nbu;
+                string actoBioquimico = os.ActoBioquimico;
                 int id = os.Id;
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("update dbo.ObrasSociales set nombre='" + nombre + "',porcentaje='"
-                    + porcentaje + "',tipo='"
-                    + tipo + "',arancel='" + arancel
+                    + porcentaje + "',nbu='"
+                    + nbu + "',actoBioquimico='" + actoBioquimico
                     + "'where  id='" + id + "'", Conexion.getInstance().Conection);
                 cmd.ExecuteNonQuery();
                 Conexion.getInstance().Disconnect();

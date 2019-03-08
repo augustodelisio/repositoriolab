@@ -18,8 +18,8 @@ namespace Escritorio
             InitializeComponent();
             this.txt_nombre.Text = os.Nombre;
             this.txt_porcentaje.Text = os.Porcentaje;
-
-            this.txt_arancel.Text = os.Arancel;
+            this.txt_nbu.Text = os.Nbu;
+            this.txt_actoBioquimico.Text = os.ActoBioquimico;
             
             id = os.Id;
         }
@@ -28,8 +28,7 @@ namespace Escritorio
         {
             try
             {
-                bool tipo = rbt_Inos.Checked;//Si es true, entonces esta en Inos, de lo contrario esta en NBU
-                Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(txt_nombre.Text, txt_porcentaje.Text, tipo, txt_arancel.Text);
+                Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(txt_nombre.Text, txt_porcentaje.Text, txt_nbu.Text, txt_actoBioquimico.Text);
                 obraSocial.Id = id;
                 bool exito = Negocio.ABMObraSocial.modificarOS(obraSocial);
                 if (exito)

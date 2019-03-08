@@ -112,6 +112,12 @@
     <Compile Include="modificarPaciente.Designer.cs">
       <DependentUpon>modificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoExamen.Designer.cs">
+      <DependentUpon>NuevoExamen.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificarPaciente.resx">
       <DependentUpon>modificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoExamen.resx">
+      <DependentUpon>NuevoExamen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSPaciente.resx">
       <DependentUpon>OSPaciente.cs</DependentUpon>

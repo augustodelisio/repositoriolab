@@ -8,17 +8,38 @@ namespace Entidades
 {
     public class Examen
     {
-        private List<Analisis> analisis;
-        private Obra_Social os;
-        private string fecha;
-        private Paciente paciente;
+        DateTime fecha;
+        int idExamen, idPaciente, idOS;
+        string costo;
 
-
-        public string Fecha
+        public DateTime Fecha
         {
             get { return this.fecha; }
             set { this.fecha = value; }
         }
 
+        public int IdExamen
+        {
+            get { return this.idExamen; }
+            set { this.idExamen = value; }
+        }
+
+        public int IdPaciente
+        {
+            get { return this.idPaciente; }
+            set { this.idPaciente = value; }
+        }
+
+        public int IdOS
+        {
+            get { return this.idOS; }
+            set { this.idOS = value; }
+        }
+
+        public string Costo
+        {
+            get { return this.costo; }
+            set { this.costo = value; }
+        }
     }
 }

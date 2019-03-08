@@ -32,8 +32,10 @@ namespace Escritorio
         {
             string nombre = this.txt_nombre.Text;
             string porcentaje = this.txt_porcentaje.Text;
-            string arancel = this.txt_arancel.Text;
-            Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(nombre, porcentaje, tipo, arancel);          
+            string nbu = this.txt_nbu.Text;
+            string actoBioquimico = this.txt_actoBioquimico.Text;
+
+            Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);          
             Negocio.ABMObraSocial.agregarOS(obraSocial);
             this.Close();
         }
