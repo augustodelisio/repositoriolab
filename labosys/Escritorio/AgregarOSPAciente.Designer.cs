@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_afiliado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_OS = new System.Windows.Forms.ComboBox();
             this.btn_agregarOSaPaciente = new System.Windows.Forms.Button();
-            this.txt_afiliado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Obas Sociales Disponibles";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Numero de Afiliado";
+            // 
+            // txt_afiliado
+            // 
+            this.txt_afiliado.Location = new System.Drawing.Point(169, 98);
+            this.txt_afiliado.Name = "txt_afiliado";
+            this.txt_afiliado.Size = new System.Drawing.Size(172, 20);
+            this.txt_afiliado.TabIndex = 2;
             // 
             // label1
             // 
@@ -77,30 +93,17 @@
             this.btn_agregarOSaPaciente.UseVisualStyleBackColor = true;
             this.btn_agregarOSaPaciente.Click += new System.EventHandler(this.btn_agregarOSaPaciente_Click);
             // 
-            // txt_afiliado
-            // 
-            this.txt_afiliado.Location = new System.Drawing.Point(169, 98);
-            this.txt_afiliado.Name = "txt_afiliado";
-            this.txt_afiliado.Size = new System.Drawing.Size(172, 20);
-            this.txt_afiliado.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Numero de Afiliado";
-            // 
             // AgregarOSPAciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 311);
             this.Controls.Add(this.btn_agregarOSaPaciente);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AgregarOSPAciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Obra Social a Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace Negocio
 {
@@ -33,5 +34,9 @@ namespace Negocio
             return BD.ObraSocialDB.getInstance().modificarOS(os);
         }
 
+        public static Obra_Social buscarOsPorId(int idOS)
+        {
+            return BD.ObraSocialDB.getInstance().buscarOsPorId(idOS);
+        }
     }
 }

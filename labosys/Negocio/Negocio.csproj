@@ -45,6 +45,7 @@
     <Compile Include="ABMExamen.cs" />
     <Compile Include="ABMObraSocial.cs" />
     <Compile Include="ABMPaciente.cs" />
+    <Compile Include="ABMReporte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

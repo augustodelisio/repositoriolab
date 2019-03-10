@@ -51,5 +51,10 @@ namespace Escritorio
         {
             new NuevoExamen().ShowDialog();
         }
+
+        private void reporteCompletoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReporteCompleto().ShowDialog();
+        }
     }
 }

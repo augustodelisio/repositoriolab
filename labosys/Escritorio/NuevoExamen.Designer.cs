@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.mtb_fecha = new System.Windows.Forms.MaskedTextBox();
             this.cmb_pacientes = new System.Windows.Forms.ComboBox();
             this.grb_pacientes = new System.Windows.Forms.GroupBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_os = new System.Windows.Forms.ComboBox();
             this.btn_agregarAnalisis = new System.Windows.Forms.Button();
+            this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.btn_nuevoPaciente = new System.Windows.Forms.Button();
+            this.btn_nuevaOS = new System.Windows.Forms.Button();
             this.grb_pacientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +50,6 @@
             this.lbl_Fecha.Size = new System.Drawing.Size(37, 13);
             this.lbl_Fecha.TabIndex = 1;
             this.lbl_Fecha.Text = "Fecha";
-            // 
-            // mtb_fecha
-            // 
-            this.mtb_fecha.Location = new System.Drawing.Point(231, 66);
-            this.mtb_fecha.Mask = "00/00/0000";
-            this.mtb_fecha.Name = "mtb_fecha";
-            this.mtb_fecha.Size = new System.Drawing.Size(129, 20);
-            this.mtb_fecha.TabIndex = 2;
-            this.mtb_fecha.ValidatingType = typeof(System.DateTime);
             // 
             // cmb_pacientes
             // 
@@ -75,7 +68,7 @@
             this.grb_pacientes.Controls.Add(this.cmb_pacientes);
             this.grb_pacientes.Location = new System.Drawing.Point(122, 113);
             this.grb_pacientes.Name = "grb_pacientes";
-            this.grb_pacientes.Size = new System.Drawing.Size(315, 95);
+            this.grb_pacientes.Size = new System.Drawing.Size(277, 95);
             this.grb_pacientes.TabIndex = 6;
             this.grb_pacientes.TabStop = false;
             this.grb_pacientes.Text = "Paciente";
@@ -94,7 +87,7 @@
             this.groupBox1.Controls.Add(this.cmb_os);
             this.groupBox1.Location = new System.Drawing.Point(122, 230);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 93);
+            this.groupBox1.Size = new System.Drawing.Size(277, 93);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Obras Sociales";
@@ -117,17 +110,49 @@
             this.btn_agregarAnalisis.UseVisualStyleBackColor = true;
             this.btn_agregarAnalisis.Click += new System.EventHandler(this.btn_agregarAnalisis_Click);
             // 
+            // txt_fecha
+            // 
+            this.txt_fecha.Location = new System.Drawing.Point(231, 66);
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(132, 20);
+            this.txt_fecha.TabIndex = 9;
+            // 
+            // btn_nuevoPaciente
+            // 
+            this.btn_nuevoPaciente.Location = new System.Drawing.Point(426, 132);
+            this.btn_nuevoPaciente.Name = "btn_nuevoPaciente";
+            this.btn_nuevoPaciente.Size = new System.Drawing.Size(106, 22);
+            this.btn_nuevoPaciente.TabIndex = 10;
+            this.btn_nuevoPaciente.Text = "Nuevo Paciente";
+            this.btn_nuevoPaciente.UseVisualStyleBackColor = true;
+            this.btn_nuevoPaciente.Click += new System.EventHandler(this.btn_nuevoPaciente_Click);
+            // 
+            // btn_nuevaOS
+            // 
+            this.btn_nuevaOS.Location = new System.Drawing.Point(426, 270);
+            this.btn_nuevaOS.Name = "btn_nuevaOS";
+            this.btn_nuevaOS.Size = new System.Drawing.Size(106, 23);
+            this.btn_nuevaOS.TabIndex = 11;
+            this.btn_nuevaOS.Text = "Nueva OS";
+            this.btn_nuevaOS.UseVisualStyleBackColor = true;
+            this.btn_nuevaOS.Click += new System.EventHandler(this.btn_nuevaOS_Click);
+            // 
             // NuevoExamen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(580, 472);
+            this.Controls.Add(this.btn_nuevaOS);
+            this.Controls.Add(this.btn_nuevoPaciente);
+            this.Controls.Add(this.txt_fecha);
             this.Controls.Add(this.btn_agregarAnalisis);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grb_pacientes);
-            this.Controls.Add(this.mtb_fecha);
             this.Controls.Add(this.lbl_Fecha);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NuevoExamen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoExamen";
             this.grb_pacientes.ResumeLayout(false);
             this.grb_pacientes.PerformLayout();
@@ -140,12 +165,14 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Fecha;
-        private System.Windows.Forms.MaskedTextBox mtb_fecha;
         private System.Windows.Forms.ComboBox cmb_pacientes;
         private System.Windows.Forms.GroupBox grb_pacientes;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmb_os;
         private System.Windows.Forms.Button btn_agregarAnalisis;
+        private System.Windows.Forms.TextBox txt_fecha;
+        private System.Windows.Forms.Button btn_nuevoPaciente;
+        private System.Windows.Forms.Button btn_nuevaOS;
     }
 }

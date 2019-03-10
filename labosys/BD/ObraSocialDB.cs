@@ -12,7 +12,7 @@ namespace BD
 {
     public class ObraSocialDB
     {
-       
+
         //hacer singleton la clase
         private static ObraSocialDB instancia = null;
 
@@ -46,6 +46,37 @@ namespace BD
             {
                 Conexion.getInstance().Disconnect();
                 return false;
+            }
+        }
+
+        public Obra_Social buscarOsPorId(int idOS)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from ObrasSociales where id='" + idOS + "'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string nombre = reader.GetString(0);
+                    string porcentaje = reader.GetString(1);
+                    string nbu = reader.GetString(2);
+                    int id = reader.GetInt32(3);
+                    string actoBioquimico = reader.GetString(5);
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
+                    os.Habilitado = reader.GetBoolean(4);
+                    os.Id = id;
+
+                    Conexion.getInstance().Disconnect();
+                    return os;
+                }
+                else { return null; }
+            }
+            catch (Exception e)
+            {
+
+                Conexion.getInstance().Disconnect();
+                return null;
             }
         }
 

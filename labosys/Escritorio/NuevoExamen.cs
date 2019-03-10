@@ -15,8 +15,8 @@ namespace Escritorio
         public NuevoExamen()
         {
             InitializeComponent();
-            DateTime FECHA = DateTime.Today;
-            this.mtb_fecha.Text = FECHA.ToString();
+            DateTime FECHA = DateTime.Today.Date;
+            this.txt_fecha.Text = FECHA.ToString("dd/MM/yyyy");
             List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
             this.cmb_pacientes.DataSource = pacientes;
             this.cmb_pacientes.DisplayMember = "dni";
@@ -51,21 +51,55 @@ namespace Escritorio
             try
             {
                 Entidades.Examen ex = new Entidades.Examen();
-                ex.Fecha = DateTime.Parse(this.mtb_fecha.Text);
+                ex.Fecha = DateTime.Parse(this.txt_fecha.Text);
                 ex.IdPaciente = (int)cmb_pacientes.SelectedValue;
                 ex.IdOS = (int)cmb_os.SelectedValue;
                 Entidades.Examen exa = new Entidades.Examen();
-                exa.IdExamen = -1;
-                //ver como recuperar el id de examen despues de crearlo o buscar el maximo (otra alternativa)
                 exa = Negocio.ABMExamen.agregarExamen(ex);
-                if (exa.IdExamen != -1)
+                if (exa != null)
                 {
-                    new AnalisisExamen(exa).ShowDialog();
+                    if (exa.IdExamen != 0)
+                    {  
+                        this.Close();
+                        new AnalisisExamen(exa).ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("error", "Error", MessageBoxButtons.OK);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un problema", "Cuidado!", MessageBoxButtons.OK);
+                MessageBox.Show("Ha ocurrido un problema"+ex.ToString(), "Cuidado!", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btn_nuevoPaciente_Click(object sender, EventArgs e)
+        {
+            new altaPaciente().ShowDialog();
+            List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
+            this.cmb_pacientes.DataSource = pacientes;
+            this.cmb_pacientes.DisplayMember = "dni";
+            this.cmb_pacientes.ValueMember = "id";
+        }
+
+        private void btn_nuevaOS_Click(object sender, EventArgs e)
+        {
+            Entidades.Paciente pa = (Entidades.Paciente)cmb_pacientes.SelectedItem;
+            if (pa != null)
+            {
+                new AgregarOSPAciente(pa).ShowDialog();
+                if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                {
+                    this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
+                    this.cmb_os.DisplayMember = "nombreOS";
+                    this.cmb_os.ValueMember = "idOS";
+                }
+                else
+                {
+                    this.cmb_os.DataSource = null;
+                }
             }
         }
     }
