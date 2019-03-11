@@ -48,6 +48,7 @@
     <Compile Include="PacienteOS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reporte.cs" />
+    <Compile Include="subreport.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

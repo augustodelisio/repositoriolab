@@ -54,7 +54,12 @@ namespace Escritorio
 
         private void reporteCompletoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ReporteCompleto().ShowDialog();
+          //  new Subinforme().ShowDialog();
+        }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Informe().ShowDialog();
         }
     }
 }

@@ -39,9 +39,10 @@
             this.gestionObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCompletoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +128,29 @@
             this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
             this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteCompletoToolStripMenuItem,
+            this.informeToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteCompletoToolStripMenuItem
+            // 
+            this.reporteCompletoToolStripMenuItem.Name = "reporteCompletoToolStripMenuItem";
+            this.reporteCompletoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reporteCompletoToolStripMenuItem.Text = "subinforme";
+            this.reporteCompletoToolStripMenuItem.Click += new System.EventHandler(this.reporteCompletoToolStripMenuItem_Click);
+            // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informeToolStripMenuItem.Text = "informe";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -137,21 +161,6 @@
             this.label1.Size = new System.Drawing.Size(212, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "SP DESARROLLO DE SISTEMAS";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteCompletoToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // reporteCompletoToolStripMenuItem
-            // 
-            this.reporteCompletoToolStripMenuItem.Name = "reporteCompletoToolStripMenuItem";
-            this.reporteCompletoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteCompletoToolStripMenuItem.Text = "Reporte Completo";
-            this.reporteCompletoToolStripMenuItem.Click += new System.EventHandler(this.reporteCompletoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -191,6 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoExámenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteCompletoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
     }
 }
 

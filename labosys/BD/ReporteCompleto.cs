@@ -26,21 +26,21 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select ae.costo, an.codigo, ex.id  ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado from dbo.AnalisisExamen ae inner join Examenes ex on ae.idExamen = ex.id inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Analisis an on an.id = ae.idAnalisis inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id); ", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id)", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
                 while (reader.Read())
                 {
                     Entidades.reporte rep = new Entidades.reporte();
-                    rep.CostoAnalisis = reader.GetString(0);
-                    rep.CodigoAnalisis = reader.GetString(1);
-                    rep.Id = reader.GetInt32(2);
-                    rep.Fecha = reader.GetDateTime(3);
-                    rep.CostoTotal = reader.GetString(4);
-                    rep.NombreOS = reader.GetString(5);
-                    rep.Nombre = reader.GetString(6);
-                    rep.Apellido = reader.GetString(7);
-                    rep.Afiliado = reader.GetString(8);
+                    //rep.CostoAnalisis = reader.GetString(0);
+                    //rep.CodigoAnalisis = reader.GetString(1);
+                    rep.Id = reader.GetInt32(0);
+                    rep.Fecha = reader.GetDateTime(1);
+                    rep.CostoTotal = reader.GetString(2);
+                    rep.NombreOS = reader.GetString(3);
+                    rep.Nombre = reader.GetString(4);
+                    rep.Apellido = reader.GetString(5);
+                    rep.Afiliado = reader.GetString(6);
                     reportes.Add(rep);
                 }
                 Conexion.getInstance().Disconnect();
@@ -53,5 +53,32 @@ namespace BD
             }
         }
 
+        public List<Entidades.subreport> getAllSubReports(int id)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select codigo, costo, idExamen from dbo.Analisis an inner join dbo.AnalisisExamen ae on an.id= ae.idAnalisis where ae.idExamen ='" + id + "'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Entidades.subreport> reportes = new List<Entidades.subreport>();
+                while (reader.Read())
+                {
+                    Entidades.subreport rep = new Entidades.subreport();
+                    rep.CostoAnalisis = reader.GetString(0);
+                    rep.CodigoAnalisis = reader.GetString(1);
+                    rep.IdExamen = reader.GetInt32(2);
+                    reportes.Add(rep);
+                }
+                Conexion.getInstance().Disconnect();
+                return reportes;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+
+        }
     }
+
 }
