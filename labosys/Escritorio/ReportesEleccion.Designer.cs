@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_inicioTodos = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_informeCompleto = new System.Windows.Forms.Button();
+            this.txt_finTodos = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_finTodos = new System.Windows.Forms.MaskedTextBox();
-            this.btn_informeCompleto = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_inicioTodos = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,59 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Todos";
+            // 
+            // txt_inicioTodos
+            // 
+            this.txt_inicioTodos.Location = new System.Drawing.Point(64, 25);
+            this.txt_inicioTodos.Name = "txt_inicioTodos";
+            this.txt_inicioTodos.Size = new System.Drawing.Size(106, 20);
+            this.txt_inicioTodos.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(378, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "*Si la fecha de inicio se encuentra vacia se generara un informe desde el inicio";
+            // 
+            // btn_informeCompleto
+            // 
+            this.btn_informeCompleto.Location = new System.Drawing.Point(375, 19);
+            this.btn_informeCompleto.Name = "btn_informeCompleto";
+            this.btn_informeCompleto.Size = new System.Drawing.Size(103, 32);
+            this.btn_informeCompleto.TabIndex = 4;
+            this.btn_informeCompleto.Text = "Generar Infrome";
+            this.btn_informeCompleto.UseVisualStyleBackColor = true;
+            this.btn_informeCompleto.Click += new System.EventHandler(this.btn_informeCompleto_Click);
+            // 
+            // txt_finTodos
+            // 
+            this.txt_finTodos.Location = new System.Drawing.Point(225, 25);
+            this.txt_finTodos.Mask = "00/00/0000";
+            this.txt_finTodos.Name = "txt_finTodos";
+            this.txt_finTodos.Size = new System.Drawing.Size(106, 20);
+            this.txt_finTodos.TabIndex = 3;
+            this.txt_finTodos.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(198, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fin";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Inicio";
             // 
             // groupBox2
             // 
@@ -82,59 +135,6 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Inicio";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fin";
-            // 
-            // txt_finTodos
-            // 
-            this.txt_finTodos.Location = new System.Drawing.Point(225, 25);
-            this.txt_finTodos.Mask = "00/00/0000";
-            this.txt_finTodos.Name = "txt_finTodos";
-            this.txt_finTodos.Size = new System.Drawing.Size(106, 20);
-            this.txt_finTodos.TabIndex = 3;
-            this.txt_finTodos.ValidatingType = typeof(System.DateTime);
-            // 
-            // btn_informeCompleto
-            // 
-            this.btn_informeCompleto.Location = new System.Drawing.Point(375, 19);
-            this.btn_informeCompleto.Name = "btn_informeCompleto";
-            this.btn_informeCompleto.Size = new System.Drawing.Size(103, 32);
-            this.btn_informeCompleto.TabIndex = 4;
-            this.btn_informeCompleto.Text = "Generar Infrome";
-            this.btn_informeCompleto.UseVisualStyleBackColor = true;
-            this.btn_informeCompleto.Click += new System.EventHandler(this.btn_informeCompleto_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "*Si la fecha de inicio se encuentra vacia se generara un informe completo";
-            // 
-            // txt_inicioTodos
-            // 
-            this.txt_inicioTodos.Location = new System.Drawing.Point(64, 25);
-            this.txt_inicioTodos.Name = "txt_inicioTodos";
-            this.txt_inicioTodos.Size = new System.Drawing.Size(106, 20);
-            this.txt_inicioTodos.TabIndex = 6;
             // 
             // ReportesEleccion
             // 
