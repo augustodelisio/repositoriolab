@@ -40,7 +40,6 @@
             this.analisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteCompletoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -131,24 +130,16 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteCompletoToolStripMenuItem,
             this.informeToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // reporteCompletoToolStripMenuItem
-            // 
-            this.reporteCompletoToolStripMenuItem.Name = "reporteCompletoToolStripMenuItem";
-            this.reporteCompletoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteCompletoToolStripMenuItem.Text = "subinforme";
-            this.reporteCompletoToolStripMenuItem.Click += new System.EventHandler(this.reporteCompletoToolStripMenuItem_Click);
-            // 
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
             this.informeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.informeToolStripMenuItem.Text = "informe";
+            this.informeToolStripMenuItem.Text = "Informes";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // label1
@@ -199,7 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem exámenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoExámenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteCompletoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
     }
 }

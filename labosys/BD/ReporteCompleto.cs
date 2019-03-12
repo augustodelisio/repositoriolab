@@ -81,6 +81,40 @@ namespace BD
             }
 
         }
+
+        public List<Entidades.reporte> getAllReportsPorFecha(string desde, string hasta)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '"+desde+"' and ex.fecha <= '"+hasta+"')", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Entidades.reporte> reportes = new List<Entidades.reporte>();
+                while (reader.Read())
+                {
+                    Entidades.reporte rep = new Entidades.reporte();
+                    //rep.CostoAnalisis = reader.GetString(0);
+                    //rep.CodigoAnalisis = reader.GetString(1);
+                    rep.Id = reader.GetInt32(0);
+                    DateTime Fecha = reader.GetDateTime(1);
+                    rep.Fecha = Fecha.ToShortDateString();
+                    rep.CostoTotal = reader.GetString(2);
+                    rep.NombreOS = reader.GetString(3);
+                    rep.Nombre = reader.GetString(4);
+                    rep.Apellido = reader.GetString(5);
+                    rep.Afiliado = reader.GetString(6);
+                    rep.ActoBioquimico = reader.GetString(7);
+                    reportes.Add(rep);
+                }
+                Conexion.getInstance().Disconnect();
+                return reportes;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
     }
 
 }

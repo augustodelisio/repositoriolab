@@ -52,14 +52,10 @@ namespace Escritorio
             new NuevoExamen().ShowDialog();
         }
 
-        private void reporteCompletoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          //  new Subinforme().ShowDialog();
-        }
-
+  
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Informe().ShowDialog();
+            new ReportesEleccion().ShowDialog();
         }
     }
 }

@@ -13,10 +13,13 @@ namespace Escritorio
 {
     public partial class Informe : Form
     {
-        public Informe()
+        string desde, hasta;
+        public Informe(string desdedt, string hastadt)
         {
             InitializeComponent();
             reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubreportProcessing);
+            this.desde = desdedt;
+            this.hasta = hastadt;
 
         }
         void LocalReport_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
@@ -34,7 +37,7 @@ namespace Escritorio
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReports();
+            this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorFecha(desde,hasta);
             this.reportViewer1.Refresh();
         }
     }
