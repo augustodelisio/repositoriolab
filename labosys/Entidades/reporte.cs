@@ -8,9 +8,9 @@ namespace Entidades
 {
     public class reporte
     {
-        string costoAnalisis, costoTotal, codigoAnalisis, nombreOS, nombre, apellido, afiliado;
+        string costoAnalisis, costoTotal, codigoAnalisis, nombreOS, nombre, apellido, afiliado, actoBioquimico;
         int id;
-        DateTime fecha;
+        string fecha;
 
         public string CostoAnalisis
         {
@@ -52,7 +52,12 @@ namespace Entidades
             get;
             set;
         }
-        public DateTime Fecha
+        public string Fecha
+        {
+            get;
+            set;
+        }
+        public string ActoBioquimico
         {
             get;
             set;
