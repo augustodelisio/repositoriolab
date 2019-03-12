@@ -54,6 +54,9 @@ namespace Escritorio
                 ex.Fecha = DateTime.Parse(this.txt_fecha.Text);
                 ex.IdPaciente = (int)cmb_pacientes.SelectedValue;
                 ex.IdOS = (int)cmb_os.SelectedValue;
+                Entidades.Obra_Social os = Negocio.ABMObraSocial.buscarOsPorId(ex.IdOS);
+                float actobioquimico = float.Parse(os.Nbu) * float.Parse(os.ActoBioquimico);
+                ex.ActoBioquimico = actobioquimico.ToString();
                 Entidades.Examen exa = new Entidades.Examen();
                 exa = Negocio.ABMExamen.agregarExamen(ex);
                 if (exa != null)
