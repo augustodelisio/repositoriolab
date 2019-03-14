@@ -43,7 +43,6 @@ namespace BD
             }
         }
 
-        //Agrega paciente a la coleccion
         public bool agregarAnalisis(Entidades.Analisis an)
         {
             try
@@ -65,7 +64,6 @@ namespace BD
             }
         }
 
-        //devuelve todos los pacientes
         public List<Entidades.Analisis> getAllAnalisis()
         {
             try

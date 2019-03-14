@@ -34,10 +34,7 @@ namespace Negocio
             return BD.PacienteDB.getInstance().habilitarPaciente(pa);
         }
 
-        static public Entidades.Paciente buscarPacientePorDni(string dni)
-        {
-            return BD.PacienteDB.getInstance().buscarPacientePorDni(dni);
-        }
+      
         static public List<Entidades.Paciente> getAllPacientesbyDNI(string Dni)
         {
             return BD.PacienteDB.getInstance().getAllPacientesbyDNI(Dni);

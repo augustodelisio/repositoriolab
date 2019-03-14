@@ -37,6 +37,7 @@ namespace BD
             catch (Exception e)
             {
                 Conexion.getInstance().Disconnect();
+                throw new Exception("Ha ocurrido un error al intentar guardar el analisis para el examen" + e);
             }
         }
 
@@ -77,8 +78,7 @@ namespace BD
         }
 
         public Entidades.Examen buscarIdExamen(Entidades.Examen ex)
-        {
-            
+        {           
             try
             {
                 Conexion.getInstance().Connect();
@@ -93,6 +93,5 @@ namespace BD
                 return ex;
             }
         }
-
     }
 }

@@ -47,8 +47,7 @@ namespace BD
             }
             catch (SqlException ex)
             {
-                Console.Write(ex.StackTrace);
-                return false;
+                throw new Exception("No se ha podido conectar a la Base de Datos. Error: "+ex);
             }
 
         }

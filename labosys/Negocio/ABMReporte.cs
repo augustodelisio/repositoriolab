@@ -20,5 +20,9 @@ namespace Negocio
         {
             return BD.ReporteCompleto.getInstance().getAllReportsPorFecha(desde,hasta);
         }
+        public static List<Entidades.reporte> getAllReportsPorPaciente(string desde, string hasta, Entidades.Paciente pa)
+        {
+            return BD.ReporteCompleto.getInstance().getAllReportsPorPaciente(desde, hasta,pa);
+        }
     }
 }

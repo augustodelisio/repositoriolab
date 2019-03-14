@@ -12,8 +12,6 @@ namespace BD
 {
     public class ObraSocialDB
     {
-
-        //hacer singleton la clase
         private static ObraSocialDB instancia = null;
 
         public static ObraSocialDB getInstance()
@@ -25,7 +23,6 @@ namespace BD
             return ObraSocialDB.instancia;
         }
 
-        //Agrega OS a la coleccion
         public bool agregarOS(Entidades.Obra_Social os)
         {
             try
@@ -80,7 +77,6 @@ namespace BD
             }
         }
 
-        //devuelve las OS--------------------------------------------------------------------------
         public List<Entidades.Obra_Social> getAllObrasSociales()
         {
             try
@@ -138,7 +134,6 @@ namespace BD
             }
         }
 
-        //Deshabilitar OS--------------------------------------------------------------------------
         public bool deshabilitarOS(Entidades.Obra_Social os)
         {
             try
@@ -157,7 +152,6 @@ namespace BD
             }
         }
 
-        //HABILITAR OS--------------------------------------------------------------------------
         public bool habilitarOS(Entidades.Obra_Social os)
         {
             try
@@ -176,7 +170,6 @@ namespace BD
             }
         }
 
-        //MODIFICAR OS--------------------------------------------------------------------------
         public bool modificarOS(Entidades.Obra_Social os)
         {
             try
@@ -201,6 +194,5 @@ namespace BD
                 return false;
             }
         }
-
     }
 }

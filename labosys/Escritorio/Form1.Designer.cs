@@ -34,7 +34,6 @@
             this.nuevoExámenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,8 +76,7 @@
             // pacientesToolStripMenuItem
             // 
             this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDePacientesToolStripMenuItem,
-            this.listadoDePacientesToolStripMenuItem});
+            this.gestionDePacientesToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
             this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
@@ -89,13 +87,6 @@
             this.gestionDePacientesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.gestionDePacientesToolStripMenuItem.Text = "Gestion de Pacientes";
             this.gestionDePacientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDePacientesToolStripMenuItem_Click);
-            // 
-            // listadoDePacientesToolStripMenuItem
-            // 
-            this.listadoDePacientesToolStripMenuItem.Name = "listadoDePacientesToolStripMenuItem";
-            this.listadoDePacientesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.listadoDePacientesToolStripMenuItem.Text = "Listado de Pacientes";
-            this.listadoDePacientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDePacientesToolStripMenuItem_Click);
             // 
             // obrasSocialesToolStripMenuItem
             // 
@@ -123,7 +114,7 @@
             // gestionAnalisisToolStripMenuItem
             // 
             this.gestionAnalisisToolStripMenuItem.Name = "gestionAnalisisToolStripMenuItem";
-            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
             this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
             // 
@@ -181,7 +172,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDePacientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDePacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obrasSocialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionObrasSocialesToolStripMenuItem;
         private System.Windows.Forms.Label label1;

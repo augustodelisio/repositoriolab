@@ -12,9 +12,6 @@ namespace BD
 {
     public class PacienteDB
     {
-      
-
-        //hacer singleton la clase
         private static PacienteDB instancia = null;
 
         public static PacienteDB getInstance()
@@ -26,7 +23,6 @@ namespace BD
             return PacienteDB.instancia;
         }
 
-        //Agrega paciente a la coleccion
         public bool agregarPaciente(Entidades.Paciente pa)
         {
             try
@@ -53,7 +49,6 @@ namespace BD
         {
             try
             {
-
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("insert into dbo.PacienteOS(idOS,IdPaciente,afiliado) " +
                     "values('" + paos.IdOS + "','" + paos.IdPaciente + "','" + paos.NroAfiliado + "')", Conexion.getInstance().Conection);
@@ -66,8 +61,7 @@ namespace BD
                 Conexion.getInstance().Disconnect();
                 return false;
             }
-        }
-    
+        }  
 
         public List<PacienteOS> getAllOS(Paciente pa)
         {
@@ -87,7 +81,6 @@ namespace BD
                     Entidades.Obra_Social os = new Entidades.Obra_Social();
                     os = ObraSocialDB.getInstance().buscarOSporId(pos.IdOS);
                     pos.NombreOS = os.Nombre;
-                    //agrega a pos el nombre de la os
                     pacos.Add(pos); 
                 }
                 Conexion.getInstance().Disconnect();
@@ -100,7 +93,6 @@ namespace BD
             }
         }
 
-        //devuelve todos los pacientes
         public List<Entidades.Paciente> getAllPacientes()
         {
             try
@@ -223,16 +215,5 @@ namespace BD
             }
         }
 
-        public Entidades.Paciente buscarPacientePorDni(string dni)
-        {
-            //foreach (Entidades.Paciente pa in pacientes)
-            //{
-            //    if (pa.Dni == dni)
-            //    {
-            //        return pa;
-            //    }
-           // }
-            return null;
-        }
     }
 }
