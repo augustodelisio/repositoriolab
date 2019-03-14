@@ -17,9 +17,16 @@ namespace Escritorio
         public Informe(string desdedt, string hastadt)
         {
             InitializeComponent();
-            reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubreportProcessing);
-            this.desde = desdedt;
-            this.hasta = hastadt;
+            try
+            {
+                reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubreportProcessing);
+                this.desde = desdedt;
+                this.hasta = hastadt;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error "+e , "Error", MessageBoxButtons.OK);
+            }
 
         }
         void LocalReport_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
@@ -31,14 +38,20 @@ namespace Escritorio
 
         private void Informe_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorFecha(desde,hasta);
-            this.reportViewer1.Refresh();
+            try
+            {
+                this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorFecha(desde, hasta);
+                this.reportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ex, "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

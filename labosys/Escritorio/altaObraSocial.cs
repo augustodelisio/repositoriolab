@@ -12,20 +12,9 @@ namespace Escritorio
 {
     public partial class altaObraSocial : Form
     {
-        bool tipo = false;//POR DEFECTO ES NBU
         public altaObraSocial()
         {
             InitializeComponent();
-        }
-
-        private void rbt_nbu_CheckedChanged(object sender, EventArgs e)//RADIOBUTTON NBU
-        {
-            tipo = false;
-        }
-
-        private void rbt_inos_CheckedChanged(object sender, EventArgs e)//RADIOBUTTON INOS
-        {
-            tipo = true;
         }
 
         private void btn_agregarobrasocial_Click(object sender, EventArgs e)
@@ -34,12 +23,26 @@ namespace Escritorio
             string porcentaje = this.txt_porcentaje.Text;
             string nbu = this.txt_nbu.Text;
             string actoBioquimico = this.txt_actoBioquimico.Text;
+            try
+            {
+                Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
+                bool exito = Negocio.ABMObraSocial.agregarOS(obraSocial);
+                if (exito)
+                {
+                    MessageBox.Show("Obra Social agregada con exito", "Exito", MessageBoxButtons.OK);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido agregar la obra social", "Fracaso", MessageBoxButtons.OK);
 
-            Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);          
-            Negocio.ABMObraSocial.agregarOS(obraSocial);
-            this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ex, "Error", MessageBoxButtons.OK);
+
+            }
         }
-
     }
-
 }

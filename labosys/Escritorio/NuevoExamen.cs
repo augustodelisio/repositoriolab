@@ -15,35 +15,47 @@ namespace Escritorio
         public NuevoExamen()
         {
             InitializeComponent();
-            DateTime FECHA = DateTime.Today.Date;
-            this.txt_fecha.Text = FECHA.ToString("dd/MM/yyyy");
-            List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
-            this.cmb_pacientes.DataSource = pacientes;
-            this.cmb_pacientes.DisplayMember = "dni";
-            this.cmb_pacientes.ValueMember = "id";
-
+            try
+            {
+                DateTime FECHA = DateTime.Today.Date;
+                this.txt_fecha.Text = FECHA.ToString("dd/MM/yyyy");
+                List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
+                this.cmb_pacientes.DataSource = pacientes;
+                this.cmb_pacientes.DisplayMember = "dni";
+                this.cmb_pacientes.ValueMember = "id";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void cmb_pacientes_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cmb_pacientes.SelectedItem != null)
+            try
             {
-                Entidades.Paciente pa = (Entidades.Paciente)this.cmb_pacientes.SelectedItem;
-                string nombre = pa.Apellido + ", " + pa.Nombre;
-                this.lbl_nombre.Text = nombre;
-                if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                if (cmb_pacientes.SelectedItem != null)
                 {
-                    this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
-                    this.cmb_os.DisplayMember = "nombreOS";
-                    this.cmb_os.ValueMember = "idOS";
+                    Entidades.Paciente pa = (Entidades.Paciente)this.cmb_pacientes.SelectedItem;
+                    string nombre = pa.Apellido + ", " + pa.Nombre;
+                    this.lbl_nombre.Text = nombre;
+                    if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                    {
+                        this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
+                        this.cmb_os.DisplayMember = "nombreOS";
+                        this.cmb_os.ValueMember = "idOS";
+                    }
+                    else
+                    {
+                        this.cmb_os.DataSource = null;
+                    }
                 }
-                else
-                {
-                    this.cmb_os.DataSource = null;
-                }
-
+                else { this.lbl_nombre.Text = ""; }
             }
-            else { this.lbl_nombre.Text = ""; }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_agregarAnalisis_Click(object sender, EventArgs e)
@@ -80,29 +92,43 @@ namespace Escritorio
 
         private void btn_nuevoPaciente_Click(object sender, EventArgs e)
         {
-            new altaPaciente().ShowDialog();
-            List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
-            this.cmb_pacientes.DataSource = pacientes;
-            this.cmb_pacientes.DisplayMember = "dni";
-            this.cmb_pacientes.ValueMember = "id";
+            try
+            {
+                new altaPaciente().ShowDialog();
+                List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
+                this.cmb_pacientes.DataSource = pacientes;
+                this.cmb_pacientes.DisplayMember = "dni";
+                this.cmb_pacientes.ValueMember = "id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_nuevaOS_Click(object sender, EventArgs e)
         {
-            Entidades.Paciente pa = (Entidades.Paciente)cmb_pacientes.SelectedItem;
-            if (pa != null)
+            try
             {
-                new AgregarOSPAciente(pa).ShowDialog();
-                if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                Entidades.Paciente pa = (Entidades.Paciente)cmb_pacientes.SelectedItem;
+                if (pa != null)
                 {
-                    this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
-                    this.cmb_os.DisplayMember = "nombreOS";
-                    this.cmb_os.ValueMember = "idOS";
+                    new AgregarOSPAciente(pa).ShowDialog();
+                    if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                    {
+                        this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
+                        this.cmb_os.DisplayMember = "nombreOS";
+                        this.cmb_os.ValueMember = "idOS";
+                    }
+                    else
+                    {
+                        this.cmb_os.DataSource = null;
+                    }
                 }
-                else
-                {
-                    this.cmb_os.DataSource = null;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
             }
         }
     }

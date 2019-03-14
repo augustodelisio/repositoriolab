@@ -20,22 +20,26 @@ namespace Escritorio
             this.dgv_obrasSociales.DataSource = bs;
         }
 
-        //ALTA OS----------------------------------------------------------------------
         private void Btn_altaobrasocial_Click(object sender, EventArgs e)
         {
             new altaObraSocial().ShowDialog();
-            this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
-            bs.ResetBindings(false);
-            actualizaColor();
+            try
+            {
+                this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
+                bs.ResetBindings(false);
+                actualizaColor();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "Error", MessageBoxButtons.OK);
+            }
         }
 
-        //VOLVER
         private void btn_atras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //MODIFICAR OS
         private void btn_modificarOS_Click(object sender, EventArgs e)
         {
             try
@@ -57,14 +61,13 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
-        //DESHABILITAR
         private void btn_deshabilitarOS_Click(object sender, EventArgs e)
         {
             try
             {
-
                 DataGridViewRow row = this.dgv_obrasSociales.CurrentRow;
                 DataGridViewCellCollection celdas = row.Cells;
                 if ((bool)celdas["habilitado"].Value)
@@ -90,7 +93,7 @@ namespace Escritorio
                             MessageBox.Show("No se ha podido dar de baja Obra Social", "Fracaso", MessageBoxButtons.OK);
                         }
                     }
-                    
+
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
                     bs.ResetBindings(false);
                     actualizaColor();
@@ -105,14 +108,13 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
-        //HABILITAR
         private void btn_habilitarOS_Click(object sender, EventArgs e)
         {
             try
             {
-
                 DataGridViewRow row = this.dgv_obrasSociales.CurrentRow;
                 DataGridViewCellCollection celdas = row.Cells;
                 if (!(bool)celdas["habilitado"].Value)
@@ -138,9 +140,6 @@ namespace Escritorio
                             MessageBox.Show("No se ha podido dar de alta al paciente", "Fracaso", MessageBoxButtons.OK);
                         }
                     }
-
-
-
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
                     bs.ResetBindings(false);
                     actualizaColor();
@@ -155,9 +154,9 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
-        //CAMBIO DE BOTON HABILITAR/DESABILITAR------------------------------------------
         private void dgv_obrasSociales_CurrentCellChanged(object sender, EventArgs e)
         {
             try
@@ -182,24 +181,29 @@ namespace Escritorio
             }
             catch (NullReferenceException ne)
             {
-
             }
+
         }
 
-        //METODO ACTUALIZAR COLOR--------------------------------------------------------
         public void actualizaColor()
         {
-            for (int i = 0; i < this.dgv_obrasSociales.RowCount; i++)
+            try
             {
-                int hab = Convert.ToInt16(this.dgv_obrasSociales.Rows[i].Cells[3].Value);
-                if (hab != 1)
+                for (int i = 0; i < this.dgv_obrasSociales.RowCount; i++)
                 {
-                    this.dgv_obrasSociales.Rows[i].DefaultCellStyle.ForeColor = Color.DarkGray;
+                    int hab = Convert.ToInt16(this.dgv_obrasSociales.Rows[i].Cells[3].Value);
+                    if (hab != 1)
+                    {
+                        this.dgv_obrasSociales.Rows[i].DefaultCellStyle.ForeColor = Color.DarkGray;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
             }
         }
 
-        //AL COMPLETAR EL DATA BINDING
         private void dgv_obrasSociales_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             actualizaColor();

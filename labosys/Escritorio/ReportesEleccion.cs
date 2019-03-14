@@ -15,13 +15,20 @@ namespace Escritorio
         public ReportesEleccion()
         {
             InitializeComponent();
-            List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
-            this.cmb_Paciente.DataSource = pacientes;
-            this.cmb_Paciente.DisplayMember = "dni";
-            this.cmb_Paciente.ValueMember = "id";
-            this.cmb_os.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
-            this.cmb_os.DisplayMember = "nombre";
-            this.cmb_os.ValueMember = "id";
+            try
+            {
+                List<Entidades.Paciente> pacientes = Negocio.ABMPaciente.getAllPacientes();
+                this.cmb_Paciente.DataSource = pacientes;
+                this.cmb_Paciente.DisplayMember = "dni";
+                this.cmb_Paciente.ValueMember = "id";
+                this.cmb_os.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
+                this.cmb_os.DisplayMember = "nombre";
+                this.cmb_os.ValueMember = "id";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error en la carga de datos", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void ReportesEleccion_Load(object sender, EventArgs e)
@@ -72,13 +79,20 @@ namespace Escritorio
 
         private void cmb_Paciente_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cmb_Paciente.SelectedItem != null)
+            try
             {
-                Entidades.Paciente pa = (Entidades.Paciente)this.cmb_Paciente.SelectedItem;
-                string nombre = pa.Apellido + ", " + pa.Nombre;
-                this.lbl_nombrePaciente.Text = nombre;
+                if (cmb_Paciente.SelectedItem != null)
+                {
+                    Entidades.Paciente pa = (Entidades.Paciente)this.cmb_Paciente.SelectedItem;
+                    string nombre = pa.Apellido + ", " + pa.Nombre;
+                    this.lbl_nombrePaciente.Text = nombre;
+                }
+                else { this.lbl_nombrePaciente.Text = ""; }
             }
-            else { this.lbl_nombrePaciente.Text = ""; }
+            catch
+            {
+                MessageBox.Show("Error en la carga de datos", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_informeOs_Click(object sender, EventArgs e)

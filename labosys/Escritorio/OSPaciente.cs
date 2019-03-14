@@ -17,16 +17,30 @@ namespace Escritorio
         public OSPaciente(Entidades.Paciente pa)
         {
             InitializeComponent();
-            this.gb_paciente.Text = pa.Apellido + ", " + pa.Nombre;
-            bs = new BindingSource(Negocio.ABMPaciente.getAllOS(pa), "");
-            paciente = pa;
-            this.dgv_ospacientes.DataSource = bs;
+            try
+            {
+                this.gb_paciente.Text = pa.Apellido + ", " + pa.Nombre;
+                bs = new BindingSource(Negocio.ABMPaciente.getAllOS(pa), "");
+                paciente = pa;
+                this.dgv_ospacientes.DataSource = bs;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_agregarOSPaciente_Click(object sender, EventArgs e)
         {
-            new AgregarOSPAciente(paciente).ShowDialog();
-            this.dgv_ospacientes.DataSource = Negocio.ABMPaciente.getAllOS(paciente);
+            try
+            {
+                new AgregarOSPAciente(paciente).ShowDialog();
+                this.dgv_ospacientes.DataSource = Negocio.ABMPaciente.getAllOS(paciente);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

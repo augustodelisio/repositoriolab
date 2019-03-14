@@ -19,12 +19,20 @@ namespace Escritorio
             InitializeComponent();
             bs = new BindingSource(Negocio.ABMAnalisis.getAllAnalisis(), "");
             this.dgv_analisis.DataSource = bs;
+
         }
 
         private void btn_altaAnalisis_Click(object sender, EventArgs e)
         {
             new altaAnalisis().ShowDialog();
-            this.dgv_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisis();
+            try
+            {
+                this.dgv_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisis();
+            }
+            catch
+            {
+                MessageBox.Show("Error" + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_modificarAnalisis_Click(object sender, EventArgs e)
@@ -44,8 +52,8 @@ namespace Escritorio
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ningun analisis", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
         private void btn_volver_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace Escritorio
                 }
                 this.Close();
             }
-            catch( Exception k)
+            catch( Exception )
             {
                 MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
             }

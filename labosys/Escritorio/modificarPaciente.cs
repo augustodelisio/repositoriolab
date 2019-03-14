@@ -16,10 +16,17 @@ namespace Escritorio
         public modificarPaciente(Entidades.Paciente pa)
         {
             InitializeComponent();
-            this.txt_apellido.Text = pa.Apellido;
-            this.txt_dni.Text = pa.Dni;
-            this.txt_nombre.Text = pa.Nombre;
-            id = pa.Id;
+            try
+            {
+                this.txt_apellido.Text = pa.Apellido;
+                this.txt_dni.Text = pa.Dni;
+                this.txt_nombre.Text = pa.Nombre;
+                id = pa.Id;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_modificarpaciente_Click(object sender, EventArgs e)
@@ -41,7 +48,7 @@ namespace Escritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
+                MessageBox.Show("Ha ocurrido un error "+ex, "Fracaso", MessageBoxButtons.OK);
 
             }
         }

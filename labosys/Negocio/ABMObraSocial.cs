@@ -9,9 +9,9 @@ namespace Negocio
 {
     static public class ABMObraSocial
     {
-        static public void agregarOS(Entidades.Obra_Social os)
+        static public bool agregarOS(Entidades.Obra_Social os)
         {
-            BD.ObraSocialDB.getInstance().agregarOS(os);
+           return BD.ObraSocialDB.getInstance().agregarOS(os);
         }
 
         static public List<Entidades.Obra_Social> getAllObrasSociales()

@@ -20,7 +20,6 @@ namespace Escritorio
             this.txt_porcentaje.Text = os.Porcentaje;
             this.txt_nbu.Text = os.Nbu;
             this.txt_actoBioquimico.Text = os.ActoBioquimico;
-            
             id = os.Id;
         }
 

@@ -16,7 +16,7 @@ namespace Escritorio
         public ABMPaciente()
         {
             InitializeComponent();
-            //cargar los pacientes al gridview
+
             bs = new BindingSource(Negocio.ABMPaciente.getAllPacientes(), "");
             this.dgv_pacientes.DataSource = bs;
         }
@@ -24,15 +24,21 @@ namespace Escritorio
         private void btn_altapaciente_Click(object sender, EventArgs e)
         {
             new altaPaciente().ShowDialog();
-            this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
-            bs.ResetBindings(false);
+            try
+            {
+                this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
+                bs.ResetBindings(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
 
         private void btn_modificarpaciente_Click(object sender, EventArgs e)
@@ -54,6 +60,7 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
         private void btn_bajapaciente_Click(object sender, EventArgs e)
@@ -61,7 +68,6 @@ namespace Escritorio
             {
                 try
                 {
-
                     DataGridViewRow row = this.dgv_pacientes.CurrentRow;
                     DataGridViewCellCollection celdas = row.Cells;
                     if ((bool)celdas["habilitado"].Value)
@@ -85,9 +91,6 @@ namespace Escritorio
                                 MessageBox.Show("No se ha podido dar de baja al paciente", "Fracaso", MessageBoxButtons.OK);
                             }
                         }
-                        
-
-
                         this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
                         bs.ResetBindings(false);
                     }
@@ -101,6 +104,7 @@ namespace Escritorio
                 {
                     MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
                 }
+
             }
         }
 
@@ -126,9 +130,9 @@ namespace Escritorio
                     this.btn_habilitar.Visible = true;
                 }
             }
-            catch (NullReferenceException ne)
+            catch (NullReferenceException ex)
             {
-
+                
             }
 
         }
@@ -138,7 +142,6 @@ namespace Escritorio
             {
                 try
                 {
-
                     DataGridViewRow row = this.dgv_pacientes.CurrentRow;
                     DataGridViewCellCollection celdas = row.Cells;
                     if (!(bool)celdas["habilitado"].Value)
@@ -162,9 +165,6 @@ namespace Escritorio
                                 MessageBox.Show("No se ha podido dar de alta al paciente", "Fracaso", MessageBoxButtons.OK);
                             }
                         }
-                        
-
-
                         this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
                         bs.ResetBindings(false);
                     }
@@ -178,9 +178,10 @@ namespace Escritorio
                 {
                     MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
                 }
+
             }
         }
-
+            
         private void btn_obrasSocialesPaciente_Click(object sender, EventArgs e)
         {
             try
@@ -200,11 +201,19 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
             }
+
         }
 
         private void txt_filtroDni_TextChanged(object sender, EventArgs e)
         {
-            this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientesbyDNI(this.txt_filtroDni.Text); 
+            try
+            {
+                this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientesbyDNI(this.txt_filtroDni.Text);
+            }
+            catch
+            {
+                this.dgv_pacientes.DataSource = null;
+            }
         }
     }
 }

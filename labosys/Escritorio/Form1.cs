@@ -32,11 +32,6 @@ namespace Escritorio
             new ABMPaciente().ShowDialog();
         }
 
-        private void listadoDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void gestionObrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ABMObraSocial().ShowDialog();
@@ -51,8 +46,7 @@ namespace Escritorio
         {
             new NuevoExamen().ShowDialog();
         }
-
-  
+ 
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ReportesEleccion().ShowDialog();

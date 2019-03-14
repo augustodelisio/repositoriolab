@@ -12,21 +12,29 @@ namespace Escritorio
 {
     public partial class AnalisisExamen : Form
     {
+        
         BindingSource bs;
         private Entidades.Examen examen;
         List<Entidades.Analisis> analisis= new List<Entidades.Analisis>();
         public AnalisisExamen(Entidades.Examen ex)
         {
             InitializeComponent();
-            examen = ex;
-            bs = new BindingSource(analisis,"");
-            dgv_analisis.DataSource = bs;
-            this.cmb_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisis();
-            this.cmb_analisis.DisplayMember = "codigo";
-            this.cmb_analisis.ValueMember = "id";
-            this.ControlBox = false;
-            this.btn_eliminarAnalisis.Enabled = false;
-            this.btn_eliminarAnalisis.Visible = false;
+            try
+            {
+                examen = ex;
+                bs = new BindingSource(analisis, "");
+                dgv_analisis.DataSource = bs;
+                this.cmb_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisis();
+                this.cmb_analisis.DisplayMember = "codigo";
+                this.cmb_analisis.ValueMember = "id";
+                this.ControlBox = false;
+                this.btn_eliminarAnalisis.Enabled = false;
+                this.btn_eliminarAnalisis.Visible = false;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error" + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_agregarAnalisis_Click(object sender, EventArgs e)
@@ -135,13 +143,24 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ningun analisis", "Cuidado", MessageBoxButtons.OK);
             }
+            finally
+            {
+                MessageBox.Show("Error" + e, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void actualizarBinding()
         {
-            bs.ResetBindings(false);
-            bs = new BindingSource(analisis, "");
-            dgv_analisis.DataSource = bs;
+            try
+            {
+                bs.ResetBindings(false);
+                bs = new BindingSource(analisis, "");
+                dgv_analisis.DataSource = bs;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }
