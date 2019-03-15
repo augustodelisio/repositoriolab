@@ -328,11 +328,6 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -635,7 +630,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.56604cm</Top>
+        <Top>3.8625cm</Top>
         <Height>1.8cm</Height>
         <Width>17.71167cm</Width>
         <Style>
@@ -718,8 +713,8 @@ Ruben De Lisio</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>1.81694cm</Top>
-        <Left>13.45438cm</Left>
+        <Top>1.85222cm</Top>
+        <Left>13.45437cm</Left>
         <Height>0.60799cm</Height>
         <Width>4.25729cm</Width>
         <ZIndex>2</ZIndex>
@@ -737,8 +732,8 @@ Ruben De Lisio</Value>
         <Source>Embedded</Source>
         <Value>logo</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.67868cm</Top>
-        <Left>16.62938cm</Left>
+        <Top>0.71396cm</Top>
+        <Left>16.62937cm</Left>
         <Height>1.13827cm</Height>
         <Width>1.0823cm</Width>
         <ZIndex>3</ZIndex>
@@ -748,6 +743,55 @@ Ruben De Lisio</Value>
           </Border>
         </Style>
       </Image>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Apellido.Value</Value>
+                <Style>
+                  <FontFamily>Franklin Gothic Book</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Franklin Gothic Book</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Nombre.Value</Value>
+                <Style>
+                  <FontFamily>Franklin Gothic Book</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.20104cm</Top>
+        <Height>0.66146cm</Height>
+        <Width>5.92667cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.1875in</Height>
     <Style />

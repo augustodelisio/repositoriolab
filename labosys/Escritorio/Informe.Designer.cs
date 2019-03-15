@@ -30,14 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.reporteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // reporteBindingSource
+            // 
+            this.reporteBindingSource.DataSource = typeof(Entidades.reporte);
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewer1.AutoSize = true;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.reporteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -49,10 +56,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // reporteBindingSource
-            // 
-            this.reporteBindingSource.DataSource = typeof(Entidades.reporte);
-            // 
             // Informe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -60,10 +63,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Informe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informe";
             this.Load += new System.EventHandler(this.Informe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporteBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

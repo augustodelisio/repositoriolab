@@ -26,7 +26,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id)", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) order by ex.fecha", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
                 while (reader.Read())
@@ -87,7 +87,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '"+desde+"' and ex.fecha <= '"+hasta+"')", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '"+desde+"' and ex.fecha <= '"+hasta+ "') order by ex.fecha", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
                 while (reader.Read())
@@ -120,7 +120,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '" + desde + "' and ex.fecha <= '" + hasta + "' and pa.id='"+pa.Id+"')", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '" + desde + "' and ex.fecha <= '" + hasta + "' and pa.id='"+pa.Id+ "') order by ex.fecha", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
                 while (reader.Read())
@@ -154,7 +154,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '" + desde + "' and ex.fecha <= '" + hasta + "' and os.id='" + os.Id + "')", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) where(ex.fecha >= '" + desde + "' and ex.fecha <= '" + hasta + "' and os.id='" + os.Id + "') order by ex.fecha", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
                 while (reader.Read())

@@ -70,6 +70,7 @@ namespace Escritorio
                 float actobioquimico = float.Parse(os.Nbu) * float.Parse(os.ActoBioquimico);
                 ex.ActoBioquimico = actobioquimico.ToString();
                 Entidades.Examen exa = new Entidades.Examen();
+                ex.Nbu = os.Nbu;
                 exa = Negocio.ABMExamen.agregarExamen(ex);
                 if (exa != null)
                 {

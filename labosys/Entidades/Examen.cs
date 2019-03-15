@@ -10,7 +10,7 @@ namespace Entidades
     {
         DateTime fecha;
         int idExamen, idPaciente, idOS;
-        string costo,actoBioquimico;
+        string costo,actoBioquimico,nbu;
 
         public DateTime Fecha
         {
@@ -45,6 +45,11 @@ namespace Entidades
         {
             get { return this.actoBioquimico; }
             set { this.actoBioquimico = value; }
+        }
+        public string Nbu
+        {
+            get { return this.nbu; }
+            set { this.nbu = value; }
         }
     }
 }

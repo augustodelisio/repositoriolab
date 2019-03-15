@@ -75,9 +75,9 @@ namespace BD
                 while (reader.Read())
                 {
                     Entidades.Analisis ana = new Entidades.Analisis();
-                    ana.Codigo = reader.GetString(1);
-                    ana.Nombre = reader.GetString(2);
-                    ana.CantNBU =reader.GetString(3);
+                    ana.Codigo = reader.GetString(1).Trim();
+                    ana.Nombre = reader.GetString(2).Trim(); 
+                    ana.CantNBU =reader.GetString(3).Trim();
                     ana.Id = reader.GetInt32(0);
                     analisis.Add(ana);
                 }
