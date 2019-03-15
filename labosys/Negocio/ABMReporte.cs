@@ -24,5 +24,9 @@ namespace Negocio
         {
             return BD.ReporteCompleto.getInstance().getAllReportsPorPaciente(desde, hasta,pa);
         }
+        public static List<Entidades.reporte> getAllReportsPorOS(string desde, string hasta, Entidades.Obra_Social os)
+        {
+            return BD.ReporteCompleto.getInstance().getAllReportsPorOS(desde, hasta, os);
+        }
     }
 }

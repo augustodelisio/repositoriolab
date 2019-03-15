@@ -11,25 +11,25 @@ using Microsoft.Reporting.WinForms;
 
 namespace Escritorio
 {
-    public partial class Informe : Form
+    public partial class InformePaciente : Form
     {
         string desde, hasta;
-        public Informe(string desdedt, string hastadt)
+        Entidades.Paciente paciente;
+        public InformePaciente(string desdedt, string hastadt, Entidades.Paciente pa)
         {
             InitializeComponent();
-            this.reportViewer1.LocalReport.DisplayName =  DateTime.Now.Date.ToString("dd-MM-yyyy");
-
+            this.reportViewer1.LocalReport.DisplayName =  pa.Apellido +" "+ DateTime.Now.Date.ToString("dd-MM-yyyy");
             try
             {
                 reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubreportProcessing);
                 this.desde = desdedt;
                 this.hasta = hastadt;
+                paciente = pa;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                MessageBox.Show("Error "+e , "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error " + e, "Error", MessageBoxButtons.OK);
             }
-
         }
         void LocalReport_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
         {
@@ -38,8 +38,10 @@ namespace Escritorio
             e.DataSources.Add(new ReportDataSource("DataSet1", subre));
         }
 
-        private void Informe_Load(object sender, EventArgs e)
+
+        private void InformePaciente_Load(object sender, EventArgs e)
         {
+
             this.reportViewer1.RefreshReport();
         }
 
@@ -47,12 +49,12 @@ namespace Escritorio
         {
             try
             {
-                this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorFecha(desde, hasta);
+                this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorPaciente(desde, hasta,paciente);
                 this.reportViewer1.Refresh();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
             }
         }
     }

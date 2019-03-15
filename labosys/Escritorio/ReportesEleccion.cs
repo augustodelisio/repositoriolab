@@ -65,7 +65,7 @@ namespace Escritorio
                 string desde = "20000101";
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
-                //new InformePaciente(desde, hasta, pa).ShowDialog();
+                new InformePaciente(desde, hasta, pa).ShowDialog();
             }
             else
             {
@@ -73,7 +73,7 @@ namespace Escritorio
                 string desde = desdeDt.ToString("yyyyMMdd");
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
-                //new InformePaciente(desde, hasta, pa).ShowDialog();
+                new InformePaciente(desde, hasta, pa).ShowDialog();
             }
         }
 
@@ -103,7 +103,7 @@ namespace Escritorio
                 string desde = "20000101";
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
-                //new InformeOS(desde, hasta, os).ShowDialog();
+                new InformeOS(desde, hasta, os).ShowDialog();
             }
             else
             {
@@ -111,7 +111,7 @@ namespace Escritorio
                 string desde = desdeDt.ToString("yyyyMMdd");
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
-                //new InformeOS(desde, hasta, os).ShowDialog();
+                new InformeOS(desde, hasta, os).ShowDialog();
             }
         }
     }

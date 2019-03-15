@@ -88,6 +88,8 @@
             // 
             // dgv_analisis
             // 
+            this.dgv_analisis.AllowUserToAddRows = false;
+            this.dgv_analisis.AllowUserToDeleteRows = false;
             this.dgv_analisis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_analisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_analisis.Location = new System.Drawing.Point(93, 51);

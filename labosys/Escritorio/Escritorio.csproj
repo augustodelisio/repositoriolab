@@ -132,6 +132,18 @@
     <Compile Include="Informe.Designer.cs">
       <DependentUpon>Informe.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformeOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeOS.Designer.cs">
+      <DependentUpon>InformeOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformePaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformePaciente.Designer.cs">
+      <DependentUpon>InformePaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="modificarAnalisis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,14 @@
     <EmbeddedResource Include="informe.rdlc" />
     <EmbeddedResource Include="Informe.resx">
       <DependentUpon>Informe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeOS.rdlc" />
+    <EmbeddedResource Include="InformeOS.resx">
+      <DependentUpon>InformeOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformePaciente.rdlc" />
+    <EmbeddedResource Include="InformePaciente.resx">
+      <DependentUpon>InformePaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificarAnalisis.resx">
       <DependentUpon>modificarAnalisis.cs</DependentUpon>

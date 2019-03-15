@@ -35,9 +35,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_os = new System.Windows.Forms.ComboBox();
             this.btn_agregarAnalisis = new System.Windows.Forms.Button();
-            this.txt_fecha = new System.Windows.Forms.TextBox();
             this.btn_nuevoPaciente = new System.Windows.Forms.Button();
             this.btn_nuevaOS = new System.Windows.Forms.Button();
+            this.txt_fecha = new System.Windows.Forms.MaskedTextBox();
             this.grb_pacientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -110,13 +110,6 @@
             this.btn_agregarAnalisis.UseVisualStyleBackColor = true;
             this.btn_agregarAnalisis.Click += new System.EventHandler(this.btn_agregarAnalisis_Click);
             // 
-            // txt_fecha
-            // 
-            this.txt_fecha.Location = new System.Drawing.Point(231, 66);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(132, 20);
-            this.txt_fecha.TabIndex = 9;
-            // 
             // btn_nuevoPaciente
             // 
             this.btn_nuevoPaciente.Location = new System.Drawing.Point(426, 132);
@@ -137,15 +130,24 @@
             this.btn_nuevaOS.UseVisualStyleBackColor = true;
             this.btn_nuevaOS.Click += new System.EventHandler(this.btn_nuevaOS_Click);
             // 
+            // txt_fecha
+            // 
+            this.txt_fecha.Location = new System.Drawing.Point(230, 62);
+            this.txt_fecha.Mask = "00/00/0000";
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(132, 20);
+            this.txt_fecha.TabIndex = 12;
+            this.txt_fecha.ValidatingType = typeof(System.DateTime);
+            // 
             // NuevoExamen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(580, 472);
+            this.Controls.Add(this.txt_fecha);
             this.Controls.Add(this.btn_nuevaOS);
             this.Controls.Add(this.btn_nuevoPaciente);
-            this.Controls.Add(this.txt_fecha);
             this.Controls.Add(this.btn_agregarAnalisis);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grb_pacientes);
@@ -171,8 +173,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmb_os;
         private System.Windows.Forms.Button btn_agregarAnalisis;
-        private System.Windows.Forms.TextBox txt_fecha;
         private System.Windows.Forms.Button btn_nuevoPaciente;
         private System.Windows.Forms.Button btn_nuevaOS;
+        private System.Windows.Forms.MaskedTextBox txt_fecha;
     }
 }

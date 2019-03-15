@@ -114,7 +114,7 @@
             // gestionAnalisisToolStripMenuItem
             // 
             this.gestionAnalisisToolStripMenuItem.Name = "gestionAnalisisToolStripMenuItem";
-            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
             this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
             // 
