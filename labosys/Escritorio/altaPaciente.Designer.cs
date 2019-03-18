@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_apellido = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nombre
@@ -114,6 +117,10 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // altaPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +137,7 @@
             this.Text = "Nuevo Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +152,6 @@
         private System.Windows.Forms.TextBox txt_dni;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_agregar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -36,13 +36,13 @@ namespace BD
                     //rep.CodigoAnalisis = reader.GetString(1);
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
-                    rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2);
-                    rep.NombreOS = reader.GetString(3);
-                    rep.Nombre = reader.GetString(4);
-                    rep.Apellido = reader.GetString(5);
-                    rep.Afiliado = reader.GetString(6);
-                    rep.ActoBioquimico = reader.GetString(7);
+                    rep.Fecha = Fecha.ToShortDateString().Trim();
+                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.NombreOS = reader.GetString(3).Trim();
+                    rep.Nombre = reader.GetString(4).Trim();
+                    rep.Apellido = reader.GetString(5).Trim();
+                    rep.Afiliado = reader.GetString(6).Trim();
+                    rep.ActoBioquimico = reader.GetString(7).Trim();
                     reportes.Add(rep);
                 }
                 Conexion.getInstance().Disconnect();
@@ -66,8 +66,8 @@ namespace BD
                 while (reader.Read())
                 {
                     Entidades.subreport rep = new Entidades.subreport();
-                    rep.CodigoAnalisis = reader.GetString(0);
-                    rep.CostoAnalisis = reader.GetString(1);
+                    rep.CodigoAnalisis = reader.GetString(0).Trim();
+                    rep.CostoAnalisis = reader.GetString(1).Trim();
                     rep.IdExamen = reader.GetInt32(2);
                     reportes.Add(rep);
                 }
@@ -97,13 +97,13 @@ namespace BD
                     //rep.CodigoAnalisis = reader.GetString(1);
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
-                    rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2);
-                    rep.NombreOS = reader.GetString(3);
-                    rep.Nombre = reader.GetString(4);
-                    rep.Apellido = reader.GetString(5);
-                    rep.Afiliado = reader.GetString(6);
-                    rep.ActoBioquimico = reader.GetString(7);
+                    rep.Fecha = Fecha.ToShortDateString().Trim();
+                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.NombreOS = reader.GetString(3).Trim();
+                    rep.Nombre = reader.GetString(4).Trim();
+                    rep.Apellido = reader.GetString(5).Trim();
+                    rep.Afiliado = reader.GetString(6).Trim();
+                    rep.ActoBioquimico = reader.GetString(7).Trim();
                     reportes.Add(rep);
                 }
                 Conexion.getInstance().Disconnect();
@@ -131,12 +131,12 @@ namespace BD
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2);
-                    rep.NombreOS = reader.GetString(3);
-                    rep.Nombre = reader.GetString(4);
-                    rep.Apellido = reader.GetString(5);
-                    rep.Afiliado = reader.GetString(6);
-                    rep.ActoBioquimico = reader.GetString(7);
+                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.NombreOS = reader.GetString(3).Trim();
+                    rep.Nombre = reader.GetString(4).Trim();
+                    rep.Apellido = reader.GetString(5).Trim();
+                    rep.Afiliado = reader.GetString(6).Trim();
+                    rep.ActoBioquimico = reader.GetString(7).Trim();
                     reportes.Add(rep);
                 }
                 Conexion.getInstance().Disconnect();
@@ -165,12 +165,12 @@ namespace BD
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2);
-                    rep.NombreOS = reader.GetString(3);
-                    rep.Nombre = reader.GetString(4);
-                    rep.Apellido = reader.GetString(5);
-                    rep.Afiliado = reader.GetString(6);
-                    rep.ActoBioquimico = reader.GetString(7);
+                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.NombreOS = reader.GetString(3).Trim();
+                    rep.Nombre = reader.GetString(4).Trim();
+                    rep.Apellido = reader.GetString(5).Trim();
+                    rep.Afiliado = reader.GetString(6).Trim();
+                    rep.ActoBioquimico = reader.GetString(7).Trim();
                     reportes.Add(rep);
                 }
                 Conexion.getInstance().Disconnect();

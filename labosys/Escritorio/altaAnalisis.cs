@@ -56,9 +56,9 @@ namespace Escritorio
                 if (valido)
                 {
                     Entidades.Analisis analisis = new Entidades.Analisis();
-                    analisis.Codigo = this.txt_codigo.Text;
-                    analisis.Nombre = this.txt_nombre.Text;
-                    analisis.CantNBU = (this.txt_nbu.Text);
+                    analisis.Codigo = this.txt_codigo.Text.Trim();
+                    analisis.Nombre = this.txt_nombre.Text.Trim();
+                    analisis.CantNBU = (this.txt_nbu.Text).Trim();
 
                     bool exito = Negocio.ABMAnalisis.agregarAnalisis(analisis);
                     if (exito)

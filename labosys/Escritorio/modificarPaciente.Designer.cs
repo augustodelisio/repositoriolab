@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_dni = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.btn_modificarpaciente = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -115,6 +118,10 @@
             this.btn_modificarpaciente.UseVisualStyleBackColor = true;
             this.btn_modificarpaciente.Click += new System.EventHandler(this.btn_modificarpaciente_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // modificarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +138,7 @@
             this.Text = "Actualizar Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +154,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Button btn_modificarpaciente;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

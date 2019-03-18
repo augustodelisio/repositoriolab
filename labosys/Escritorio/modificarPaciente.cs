@@ -18,9 +18,9 @@ namespace Escritorio
             InitializeComponent();
             try
             {
-                this.txt_apellido.Text = pa.Apellido;
-                this.txt_dni.Text = pa.Dni;
-                this.txt_nombre.Text = pa.Nombre;
+                this.txt_apellido.Text = pa.Apellido.Trim();
+                this.txt_dni.Text = pa.Dni.Trim();
+                this.txt_nombre.Text = pa.Nombre.Trim();
                 id = pa.Id;
             }
             catch(Exception e)
@@ -33,17 +33,48 @@ namespace Escritorio
         {
             try
             {
-                Entidades.Paciente paciente = new Entidades.Paciente(txt_apellido.Text, txt_nombre.Text, txt_dni.Text);
-                paciente.Id = id;
-                bool exito = Negocio.ABMPaciente.modificarPaciente(paciente);
-                if (exito)
+                bool camposValidos = true;
+                if (!Validador.validarString(txt_nombre.Text))
                 {
-                    MessageBox.Show("Paciente modificado con exito", "Exito", MessageBoxButtons.OK);
-                    this.Close();
+                    errorProvider1.SetError(txt_nombre, "El campo no puede estar vacio");
+                    camposValidos = false;
                 }
                 else
                 {
-                    MessageBox.Show("El paciente no se ha podido modificar", "Fracaso", MessageBoxButtons.OK);
+                    errorProvider1.SetError(txt_nombre, "");
+                }
+                if (!Validador.validarString(txt_apellido.Text))
+                {
+                    errorProvider1.SetError(txt_apellido, "El campo debe contener solo digitos y/o ,");
+                    camposValidos = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_apellido, "");
+                }
+                if (!Validador.validarDNI(txt_dni.Text))
+                {
+                    errorProvider1.SetError(txt_dni, "El campo debe tener 8 digitos");
+                    camposValidos = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_dni, "");
+                }
+                if (camposValidos)
+                {
+                    Entidades.Paciente paciente = new Entidades.Paciente(txt_apellido.Text.Trim(), txt_nombre.Text.Trim(), txt_dni.Text.Trim());
+                    paciente.Id = id;
+                    bool exito = Negocio.ABMPaciente.modificarPaciente(paciente);
+                    if (exito)
+                    {
+                        MessageBox.Show("Paciente modificado con exito", "Exito", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El paciente no se ha podido modificar", "Fracaso", MessageBoxButtons.OK);
+                    }
                 }
             }
             catch (Exception ex)

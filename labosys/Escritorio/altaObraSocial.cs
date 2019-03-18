@@ -58,10 +58,10 @@ namespace Escritorio
             }
             if (camposValidos)
             {
-                string nombre = this.txt_nombre.Text;
-                string porcentaje = this.txt_porcentaje.Text;
-                string nbu = this.txt_nbu.Text;
-                string actoBioquimico = this.txt_actoBioquimico.Text;
+                string nombre = this.txt_nombre.Text.Trim();
+                string porcentaje = this.txt_porcentaje.Text.Trim();
+                string nbu = this.txt_nbu.Text.Trim();
+                string actoBioquimico = this.txt_actoBioquimico.Text.Trim();
                 try
                 {
                     Entidades.Obra_Social obraSocial = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);

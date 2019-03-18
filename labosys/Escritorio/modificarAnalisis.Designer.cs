@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nbu = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_agregar
@@ -114,6 +117,10 @@
             this.lbl_codigo.TabIndex = 0;
             this.lbl_codigo.Text = "Codigo";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // modificarAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +135,7 @@
             this.Text = "Actualizar Analisis";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,5 +150,6 @@
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.Label lbl_codigo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

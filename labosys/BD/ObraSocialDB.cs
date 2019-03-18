@@ -27,11 +27,11 @@ namespace BD
         {
             try
             {
-                string nombre = os.Nombre;
-                string porcentaje = os.Porcentaje;
-                string nbu = os.Nbu;
+                string nombre = os.Nombre.Trim();
+                string porcentaje = os.Porcentaje.Trim();
+                string nbu = os.Nbu.Trim();
                 bool habilitado = true;
-                string actoBioquimico = os.ActoBioquimico;
+                string actoBioquimico = os.ActoBioquimico.Trim();
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("insert into dbo.ObrasSociales(nombre,porcentaje,nbu, habilitado, actoBioquimico) " +
                     "values('" + nombre + "','" + porcentaje + "','" + nbu + "','" + habilitado + "','" + actoBioquimico + "')", Conexion.getInstance().Conection);
@@ -55,11 +55,11 @@ namespace BD
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    string nombre = reader.GetString(0);
-                    string porcentaje = reader.GetString(1);
-                    string nbu = reader.GetString(2);
+                    string nombre = reader.GetString(0).Trim();
+                    string porcentaje = reader.GetString(1).Trim();
+                    string nbu = reader.GetString(2).Trim();
                     int id = reader.GetInt32(3);
-                    string actoBioquimico = reader.GetString(5);
+                    string actoBioquimico = reader.GetString(5).Trim();
                     Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Habilitado = reader.GetBoolean(4);
                     os.Id = id;
@@ -87,11 +87,11 @@ namespace BD
                 List<Entidades.Obra_Social> obrasSociales = new List<Entidades.Obra_Social>();
                 while (reader.Read())
                 {
-                    string nombre = reader.GetString(0);
-                    string porcentaje = reader.GetString(1);
-                    string nbu = reader.GetString(2);
+                    string nombre = reader.GetString(0).Trim();
+                    string porcentaje = reader.GetString(1).Trim();
+                    string nbu = reader.GetString(2).Trim();
                     int id = reader.GetInt32(3);
-                    string actoBioquimico = reader.GetString(5);
+                    string actoBioquimico = reader.GetString(5).Trim();
                     Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Habilitado = reader.GetBoolean(4);
                     os.Id = id;
@@ -118,7 +118,7 @@ namespace BD
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    string nombre = reader.GetString(0);
+                    string nombre = reader.GetString(0).Trim();
                     Entidades.Obra_Social os = new Entidades.Obra_Social();
                     os.Nombre = nombre;
                     os.Id = id;
@@ -174,10 +174,10 @@ namespace BD
         {
             try
             {
-                string nombre = os.Nombre;
-                string porcentaje = os.Porcentaje;
-                string nbu = os.Nbu;
-                string actoBioquimico = os.ActoBioquimico;
+                string nombre = os.Nombre.Trim();
+                string porcentaje = os.Porcentaje.Trim();
+                string nbu = os.Nbu.Trim();
+                string actoBioquimico = os.ActoBioquimico.Trim();
                 int id = os.Id;
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("update dbo.ObrasSociales set nombre='" + nombre + "',porcentaje='"

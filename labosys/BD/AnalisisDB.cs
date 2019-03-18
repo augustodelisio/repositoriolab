@@ -47,9 +47,9 @@ namespace BD
         {
             try
             {
-                string codigo = an.Codigo;
-                string nombre = an.Nombre;
-                string nbu = an.CantNBU;
+                string codigo = an.Codigo.Trim();
+                string nombre = an.Nombre.Trim();
+                string nbu = an.CantNBU.Trim();
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("insert into dbo.Analisis(codigo,nombre,cantNBU) " +
                     "values('" + codigo + "','" + nombre + "','"+ nbu + "')", Conexion.getInstance().Conection);

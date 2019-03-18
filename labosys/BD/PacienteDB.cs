@@ -27,9 +27,9 @@ namespace BD
         {
             try
             {
-                string nombre = pa.Nombre;
-                string apellido = pa.Apellido;
-                string dni = pa.Dni;
+                string nombre = pa.Nombre.Trim();
+                string apellido = pa.Apellido.Trim();
+                string dni = pa.Dni.Trim();
                 bool habilitado = true;
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("insert into dbo.Pacientes(apellido,nombre,dni,habilitado) " +
@@ -75,7 +75,7 @@ namespace BD
                 {
                     Entidades.PacienteOS pos = new PacienteOS();
                     pos.Id = reader.GetInt32(0);
-                    pos.NroAfiliado = reader.GetString(3);
+                    pos.NroAfiliado = reader.GetString(3).Trim();
                     pos.IdOS = reader.GetInt32(1);
                     pos.IdPaciente = reader.GetInt32(2);
                     Entidades.Obra_Social os = new Entidades.Obra_Social();
@@ -103,9 +103,9 @@ namespace BD
                 List<Entidades.Paciente> pacientes = new List<Entidades.Paciente>();
                 while (reader.Read())
                 {
-                    string apellido = reader.GetString(0);
-                    string nombre = reader.GetString(1);
-                    string dni = reader.GetString(2);
+                    string apellido = reader.GetString(0).Trim();
+                    string nombre = reader.GetString(1).Trim();
+                    string dni = reader.GetString(2).Trim();
                     int id = reader.GetInt32(4);
                     Entidades.Paciente pa = new Entidades.Paciente(apellido,nombre,dni);
                     pa.Habilitado = reader.GetBoolean(3);
@@ -134,9 +134,9 @@ namespace BD
                 List<Entidades.Paciente> pacientes = new List<Entidades.Paciente>();
                 while (reader.Read())
                 {
-                    string apellido = reader.GetString(0);
-                    string nombre = reader.GetString(1);
-                    string dni = reader.GetString(2);
+                    string apellido = reader.GetString(0).Trim();
+                    string nombre = reader.GetString(1).Trim();
+                    string dni = reader.GetString(2).Trim();
                     int id = reader.GetInt32(4);
                     Entidades.Paciente pa = new Entidades.Paciente(apellido, nombre, dni);
                     pa.Habilitado = reader.GetBoolean(3);
@@ -196,9 +196,9 @@ namespace BD
         {
             try
             {
-                string nombre = paciente.Nombre;
-                string dni = paciente.Dni;
-                string apellido = paciente.Apellido;
+                string nombre = paciente.Nombre.Trim();
+                string dni = paciente.Dni.Trim();
+                string apellido = paciente.Apellido.Trim();
                 int id = paciente.Id;
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("update dbo.Pacientes set nombre='" + nombre + "',apellido='"
