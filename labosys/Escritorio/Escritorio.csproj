@@ -183,6 +183,7 @@
       <DependentUpon>ReportesEleccion.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Validador.cs" />
     <EmbeddedResource Include="ABMAnalisis.resx">
       <DependentUpon>ABMAnalisis.cs</DependentUpon>
     </EmbeddedResource>

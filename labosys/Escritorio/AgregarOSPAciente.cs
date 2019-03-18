@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 
 namespace Escritorio
 {
@@ -30,16 +32,23 @@ namespace Escritorio
                 Entidades.PacienteOS paos = new Entidades.PacienteOS();
                 paos.IdOS = (int)this.cmb_OS.SelectedValue;
                 paos.IdPaciente = paciente.Id;
-                paos.NroAfiliado = this.txt_afiliado.Text;
-                bool exito = Negocio.ABMPaciente.agregarOsaPaciente(paos);
-                if (exito)
+                if (!Validador.validarString(this.txt_afiliado.Text))
                 {
-                    MessageBox.Show("obra social agregada al paciente correctamente", "Exito", MessageBoxButtons.OK);
-                    this.Close();
+                    errorProvider.SetError(txt_afiliado, "El campo no puede estar vacio");
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido agregar la obra social al paciente", "Fracaso", MessageBoxButtons.OK);
+                    paos.NroAfiliado = this.txt_afiliado.Text;
+                    bool exito = Negocio.ABMPaciente.agregarOsaPaciente(paos);
+                    if (exito)
+                    {
+                        MessageBox.Show("obra social agregada al paciente correctamente", "Exito", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido agregar la obra social al paciente", "Fracaso", MessageBoxButtons.OK);
+                    }
                 }
             }
             catch (Exception ex)

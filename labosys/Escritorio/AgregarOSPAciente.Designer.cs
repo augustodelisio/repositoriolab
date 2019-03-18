@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_afiliado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_OS = new System.Windows.Forms.ComboBox();
             this.btn_agregarOSaPaciente = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -93,6 +96,10 @@
             this.btn_agregarOSaPaciente.UseVisualStyleBackColor = true;
             this.btn_agregarOSaPaciente.Click += new System.EventHandler(this.btn_agregarOSaPaciente_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // AgregarOSPAciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +114,7 @@
             this.Text = "Agregar Obra Social a Paciente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,5 +127,6 @@
         private System.Windows.Forms.Button btn_agregarOSaPaciente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_afiliado;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

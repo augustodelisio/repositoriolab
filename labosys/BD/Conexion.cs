@@ -40,7 +40,7 @@ namespace BD
         {
             try
             {
-                cn = new SqlConnection("Data Source=POTASIO-PC\\SQLEXPRESS;Initial Catalog=Labosys;Integrated Security=True");
+                cn = new SqlConnection("Data Source=.;Initial Catalog=Labosys;Integrated Security=True");
                 cn.Open();
 
                 return true;
