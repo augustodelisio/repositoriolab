@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_porcentaje = new System.Windows.Forms.Label();
@@ -36,9 +37,11 @@
             this.txt_nbu = new System.Windows.Forms.TextBox();
             this.btn_agregarobrasocial = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_actoBioquimico = new System.Windows.Forms.TextBox();
             this.lbl_actoBioquimico = new System.Windows.Forms.Label();
+            this.txt_actoBioquimico = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nombre
@@ -116,13 +119,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Obra Social";
             // 
-            // txt_actoBioquimico
-            // 
-            this.txt_actoBioquimico.Location = new System.Drawing.Point(160, 191);
-            this.txt_actoBioquimico.Name = "txt_actoBioquimico";
-            this.txt_actoBioquimico.Size = new System.Drawing.Size(117, 20);
-            this.txt_actoBioquimico.TabIndex = 6;
-            // 
             // lbl_actoBioquimico
             // 
             this.lbl_actoBioquimico.AutoSize = true;
@@ -131,6 +127,17 @@
             this.lbl_actoBioquimico.Size = new System.Drawing.Size(83, 13);
             this.lbl_actoBioquimico.TabIndex = 7;
             this.lbl_actoBioquimico.Text = "Acto Bioquimico";
+            // 
+            // txt_actoBioquimico
+            // 
+            this.txt_actoBioquimico.Location = new System.Drawing.Point(160, 191);
+            this.txt_actoBioquimico.Name = "txt_actoBioquimico";
+            this.txt_actoBioquimico.Size = new System.Drawing.Size(117, 20);
+            this.txt_actoBioquimico.TabIndex = 6;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // altaObraSocial
             // 
@@ -146,6 +153,7 @@
             this.Text = "Nueva Obra Social";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +170,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_actoBioquimico;
         private System.Windows.Forms.TextBox txt_actoBioquimico;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

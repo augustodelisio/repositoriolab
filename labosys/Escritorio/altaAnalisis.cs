@@ -46,7 +46,7 @@ namespace Escritorio
                 }
                 if (!Validador.validarDecimal(txt_nbu.Text))
                 {
-                    errorProvider.SetError(txt_nbu, "El campo debe contener solo digitos y ,");
+                    errorProvider.SetError(txt_nbu, "El campo debe contener solo digitos y/o ,");
                     valido = false;
                 }
                 else
