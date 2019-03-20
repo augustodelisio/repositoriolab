@@ -6,13 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.23542cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -74,10 +71,9 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <ColSpan>6</ColSpan>
+                    <ColSpan>5</ColSpan>
                   </CellContents>
                 </TablixCell>
-                <TablixCell />
                 <TablixCell />
                 <TablixCell />
                 <TablixCell />
@@ -174,7 +170,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Apellido</Value>
+                              <Value>Paciente</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Demi</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -187,40 +183,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox9">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Nombre</Value>
-                              <Style>
-                                <FontFamily>Franklin Gothic Demi</FontFamily>
-                                <FontSize>12pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -461,38 +423,10 @@
                               <Value>=Fields!Apellido.Value</Value>
                               <Style />
                             </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Apellido</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Nombre">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
+                            <TextRun>
+                              <Value>, </Value>
+                              <Style />
+                            </TextRun>
                             <TextRun>
                               <Value>=Fields!Nombre.Value</Value>
                               <Style />
@@ -503,7 +437,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre</rd:DefaultName>
+                      <rd:DefaultName>Apellido</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -684,7 +618,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -703,7 +636,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>3.91542cm</Top>
         <Height>1.8cm</Height>
-        <Width>20.21167cm</Width>
+        <Width>19.94709cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -737,8 +670,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Laboratorio de Analisis Clinico
-Ruben De Lisio</Value>
+                <Value>Laboratorio de Analisis Clinicos
+Dr. Ruben De Lisio</Value>
                 <Style>
                   <FontFamily>Berlin Sans FB</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -820,6 +753,13 @@ Ruben De Lisio</Value>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
+              <TextRun>
+                <Value>Obra Social: </Value>
+                <Style>
+                  <FontFamily>franklin Gothic Book</FontFamily>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
               <TextRun>
                 <Value>=Fields!NombreOS.Value</Value>
                 <Style>

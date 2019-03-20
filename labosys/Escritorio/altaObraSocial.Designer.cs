@@ -75,6 +75,8 @@
             this.txt_porcentaje.Name = "txt_porcentaje";
             this.txt_porcentaje.Size = new System.Drawing.Size(117, 20);
             this.txt_porcentaje.TabIndex = 3;
+            this.txt_porcentaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_porcentaje_KeyUp);
+            this.txt_porcentaje.Leave += new System.EventHandler(this.txt_porcentaje_Leave);
             // 
             // lbl_nbu
             // 

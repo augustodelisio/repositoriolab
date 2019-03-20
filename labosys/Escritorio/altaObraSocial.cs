@@ -29,7 +29,7 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_nombre, "");
             }
-            if (!Validador.validarDecimal(txt_porcentaje.Text))
+            if (!Validador.validarPorcentaje(txt_porcentaje.Text))
             {
                 errorProvider1.SetError(txt_porcentaje, "El campo debe contener solo digitos y/o ,");
                 camposValidos = false;
@@ -40,7 +40,7 @@ namespace Escritorio
             }
             if (!Validador.validarDecimal(txt_nbu.Text))
             {
-                errorProvider1.SetError(txt_nbu, "El campo debe contener solo digitos y/o ,");
+                errorProvider1.SetError(txt_nbu, "El campo debe contener un valor entre 1 y 100,");
                 camposValidos = false;
             }
             else
@@ -88,24 +88,37 @@ namespace Escritorio
 
         private void txt_nbu_KeyUp(object sender, KeyEventArgs e)
         {
-            {
-                string tex = this.txt_nbu.Text;
-                this.txt_nbu.Text = tex.Replace(".", ",");
-                int largo = txt_nbu.Text.Length;
-                this.txt_nbu.Select();
-                this.txt_nbu.Select(largo, 0);
-            }
+            string tex = this.txt_nbu.Text;
+            this.txt_nbu.Text = tex.Replace(".", ",");
+            int largo = txt_nbu.Text.Length;
+            this.txt_nbu.Select();
+            this.txt_nbu.Select(largo, 0);
         }
 
         private void txt_actoBioquimico_KeyUp(object sender, KeyEventArgs e)
         {
-            {
-                string tex = this.txt_actoBioquimico.Text;
-                this.txt_actoBioquimico.Text = tex.Replace(".", ",");
-                int largo = txt_actoBioquimico.Text.Length;
-                this.txt_actoBioquimico.Select();
-                this.txt_actoBioquimico.Select(largo, 0);
-            }
+            string tex = this.txt_actoBioquimico.Text;
+            this.txt_actoBioquimico.Text = tex.Replace(".", ",");
+            int largo = txt_actoBioquimico.Text.Length;
+            this.txt_actoBioquimico.Select();
+            this.txt_actoBioquimico.Select(largo, 0);
+        }
+
+        private void txt_porcentaje_KeyUp(object sender, KeyEventArgs e)
+        {
+            string tex = this.txt_porcentaje.Text;
+            this.txt_porcentaje.Text = tex.Replace(".", "");
+            this.txt_porcentaje.Text = tex.Replace(",", "");
+            int largo = txt_porcentaje.Text.Length;
+            this.txt_porcentaje.Select();
+            this.txt_porcentaje.Select(largo, 0);
+        }
+
+        private void txt_porcentaje_Leave(object sender, EventArgs e)
+        {
+            string tex = this.txt_porcentaje.Text;
+            this.txt_porcentaje.Text = tex.Replace(".", "");
+            this.txt_porcentaje.Text = tex.Replace(",", "");
         }
     }
 }

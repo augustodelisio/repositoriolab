@@ -78,8 +78,14 @@ namespace Escritorio
                     string actoBioquimico = (string)celdas["actoBioquimico"].Value;
                     Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Id = (int)celdas["id"].Value;
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                    DialogResult result = MessageBox.Show("esta seguro que desea dar de baja a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
+                    
+                    //COLORES
+                    row.DefaultCellStyle.BackColor = Color.DarkRed;
+                    row.DefaultCellStyle.ForeColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+                    row.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                    DialogResult result = MessageBox.Show("Dar de baja a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
                     //bool exito = false;
                     if (result == DialogResult.Yes)
                     {
@@ -125,19 +131,25 @@ namespace Escritorio
                     string actoBioquimico = (string)celdas["actoBioquimico"].Value;
                     Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
                     os.Id = (int)celdas["id"].Value;
+                    
+                    //COLORES
                     row.DefaultCellStyle.BackColor = Color.DarkRed;
-                    DialogResult result = MessageBox.Show("esta seguro que desea dar de alta a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
+                    row.DefaultCellStyle.ForeColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+                    row.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                    DialogResult result = MessageBox.Show("Dar de alta a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
                     //bool exito = false;
                     if (result == DialogResult.Yes)
                     {
                         bool exito = Negocio.ABMObraSocial.habilitarOS(os);
                         if (exito)
                         {
-                            MessageBox.Show("Paciente dado de alta con exito", "Exito", MessageBoxButtons.OK);
+                            MessageBox.Show("Obra Social se dio de alta con exito", "Exito", MessageBoxButtons.OK);
                         }
                         else
                         {
-                            MessageBox.Show("No se ha podido dar de alta al paciente", "Fracaso", MessageBoxButtons.OK);
+                            MessageBox.Show("No se ha podido dar de alta la Obra Social", "Fracaso", MessageBoxButtons.OK);
                         }
                     }
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();

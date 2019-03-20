@@ -43,5 +43,21 @@ namespace Escritorio
             if (txt.Length == 0) return false;
             return Regex.IsMatch(txt, @"^(?:\d+\,?\d*)?$");
         }
+        public static bool validarPorcentaje(string porc)
+        {
+            try
+            {
+                int val = Convert.ToInt32(porc);
+                if ((porc.Length == 0) || (val > 100) || (val < 1)) return false;
+            }
+            catch (Exception ex)
+            {
+            }
+           
+            Regex reg = new Regex(@"\d{1,3}");
+            Match match = reg.Match(porc);
+            return match.Success;
+
+        }
     }
 }
