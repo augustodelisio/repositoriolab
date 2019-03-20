@@ -38,6 +38,7 @@
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbl_avisoCod = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -56,30 +57,32 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.lbl_avisoCod);
             this.groupBox1.Controls.Add(this.txt_nbu);
             this.groupBox1.Controls.Add(this.lbl_cantNBU);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.lbl_codigo);
-            this.groupBox1.Location = new System.Drawing.Point(116, 61);
+            this.groupBox1.Location = new System.Drawing.Point(59, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 220);
+            this.groupBox1.Size = new System.Drawing.Size(435, 241);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Analisis";
             // 
             // txt_nbu
             // 
-            this.txt_nbu.Location = new System.Drawing.Point(140, 158);
+            this.txt_nbu.Location = new System.Drawing.Point(140, 167);
             this.txt_nbu.Name = "txt_nbu";
             this.txt_nbu.Size = new System.Drawing.Size(100, 20);
             this.txt_nbu.TabIndex = 11;
+            this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
             // lbl_cantNBU
             // 
             this.lbl_cantNBU.AutoSize = true;
-            this.lbl_cantNBU.Location = new System.Drawing.Point(14, 161);
+            this.lbl_cantNBU.Location = new System.Drawing.Point(14, 170);
             this.lbl_cantNBU.Name = "lbl_cantNBU";
             this.lbl_cantNBU.Size = new System.Drawing.Size(75, 13);
             this.lbl_cantNBU.TabIndex = 8;
@@ -87,7 +90,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(140, 94);
+            this.txt_nombre.Location = new System.Drawing.Point(140, 102);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 3;
@@ -95,7 +98,7 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(45, 97);
+            this.lbl_nombre.Location = new System.Drawing.Point(45, 105);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 2;
@@ -103,15 +106,16 @@
             // 
             // txt_codigo
             // 
-            this.txt_codigo.Location = new System.Drawing.Point(140, 36);
+            this.txt_codigo.Location = new System.Drawing.Point(140, 39);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(100, 20);
             this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.Leave += new System.EventHandler(this.txt_codigo_Leave);
             // 
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
-            this.lbl_codigo.Location = new System.Drawing.Point(45, 39);
+            this.lbl_codigo.Location = new System.Drawing.Point(45, 42);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(40, 13);
             this.lbl_codigo.TabIndex = 0;
@@ -120,6 +124,18 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // lbl_avisoCod
+            // 
+            this.lbl_avisoCod.AutoSize = true;
+            this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
+            this.lbl_avisoCod.Location = new System.Drawing.Point(246, 34);
+            this.lbl_avisoCod.Name = "lbl_avisoCod";
+            this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
+            this.lbl_avisoCod.TabIndex = 13;
+            this.lbl_avisoCod.Text = "Aviso";
+            this.lbl_avisoCod.Visible = false;
             // 
             // altaAnalisis
             // 
@@ -151,5 +167,6 @@
         private System.Windows.Forms.Label lbl_cantNBU;
         private System.Windows.Forms.TextBox txt_nbu;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label lbl_avisoCod;
     }
 }

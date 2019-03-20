@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_avisoCod = new System.Windows.Forms.Label();
             this.txt_nbu = new System.Windows.Forms.TextBox();
             this.lbl_cantNBU = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(257, 283);
+            this.btn_agregar.Location = new System.Drawing.Point(191, 296);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 12;
@@ -56,30 +57,44 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.lbl_avisoCod);
             this.groupBox1.Controls.Add(this.txt_nbu);
             this.groupBox1.Controls.Add(this.lbl_cantNBU);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.lbl_codigo);
-            this.groupBox1.Location = new System.Drawing.Point(117, 32);
+            this.groupBox1.Location = new System.Drawing.Point(51, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 227);
+            this.groupBox1.Size = new System.Drawing.Size(448, 227);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Analisis existente";
             // 
+            // lbl_avisoCod
+            // 
+            this.lbl_avisoCod.AutoSize = true;
+            this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
+            this.lbl_avisoCod.Location = new System.Drawing.Point(237, 31);
+            this.lbl_avisoCod.Name = "lbl_avisoCod";
+            this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
+            this.lbl_avisoCod.TabIndex = 12;
+            this.lbl_avisoCod.Text = "Aviso";
+            this.lbl_avisoCod.Visible = false;
+            // 
             // txt_nbu
             // 
-            this.txt_nbu.Location = new System.Drawing.Point(140, 177);
+            this.txt_nbu.Location = new System.Drawing.Point(131, 181);
             this.txt_nbu.Name = "txt_nbu";
             this.txt_nbu.Size = new System.Drawing.Size(100, 20);
             this.txt_nbu.TabIndex = 11;
+            this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
             // lbl_cantNBU
             // 
             this.lbl_cantNBU.AutoSize = true;
-            this.lbl_cantNBU.Location = new System.Drawing.Point(36, 184);
+            this.lbl_cantNBU.Location = new System.Drawing.Point(18, 184);
             this.lbl_cantNBU.Name = "lbl_cantNBU";
             this.lbl_cantNBU.Size = new System.Drawing.Size(75, 13);
             this.lbl_cantNBU.TabIndex = 8;
@@ -87,7 +102,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(140, 94);
+            this.txt_nombre.Location = new System.Drawing.Point(131, 110);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 3;
@@ -95,7 +110,7 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(45, 97);
+            this.lbl_nombre.Location = new System.Drawing.Point(49, 113);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 2;
@@ -103,15 +118,16 @@
             // 
             // txt_codigo
             // 
-            this.txt_codigo.Location = new System.Drawing.Point(140, 36);
+            this.txt_codigo.Location = new System.Drawing.Point(131, 40);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(100, 20);
             this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.Leave += new System.EventHandler(this.txt_codigo_Leave);
             // 
             // lbl_codigo
             // 
             this.lbl_codigo.AutoSize = true;
-            this.lbl_codigo.Location = new System.Drawing.Point(45, 39);
+            this.lbl_codigo.Location = new System.Drawing.Point(49, 43);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(40, 13);
             this.lbl_codigo.TabIndex = 0;
@@ -151,5 +167,6 @@
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lbl_avisoCod;
     }
 }

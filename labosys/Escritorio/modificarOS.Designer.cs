@@ -77,6 +77,7 @@
             this.txt_actoBioquimico.Name = "txt_actoBioquimico";
             this.txt_actoBioquimico.Size = new System.Drawing.Size(117, 20);
             this.txt_actoBioquimico.TabIndex = 10;
+            this.txt_actoBioquimico.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_actoBioquimico_KeyUp);
             // 
             // txt_nbu
             // 
@@ -84,6 +85,7 @@
             this.txt_nbu.Name = "txt_nbu";
             this.txt_nbu.Size = new System.Drawing.Size(117, 20);
             this.txt_nbu.TabIndex = 9;
+            this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
             // lbl_nbu
             // 

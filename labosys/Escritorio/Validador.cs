@@ -19,6 +19,15 @@ namespace Escritorio
             return match.Success;
         }
 
+        public static bool validarCodAnalisis(string cod)
+        {
+            if ((cod.Length < 3) || (cod.Length > 6))
+                return false;
+            Regex reg = new Regex(@"\d{3,6}");
+            Match match = reg.Match(cod);
+            return match.Success;
+        }
+
         public static bool validarString(string legajo)
         {
             if (legajo.Length == 0) return false;

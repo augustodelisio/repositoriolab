@@ -26,9 +26,9 @@ namespace Escritorio
             bool valido = true;
             try
             {
-                if (!Validador.validarString(txt_codigo.Text))
+                if (!Validador.validarCodAnalisis(txt_codigo.Text))
                 {
-                    errorProvider.SetError(txt_codigo, "El campo no puede ser vacio");
+                    errorProvider.SetError(txt_codigo, "El campo debe contener entre 3 y 6 dígitos");
                     valido = false;
                 }
                 else
@@ -55,6 +55,7 @@ namespace Escritorio
                 }
                 if (valido)
                 {
+                    
                     Entidades.Analisis analisis = new Entidades.Analisis();
                     analisis.Codigo = this.txt_codigo.Text.Trim();
                     analisis.Nombre = this.txt_nombre.Text.Trim();
@@ -79,6 +80,29 @@ namespace Escritorio
                 MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
             }
         
+        }
+
+        private void txt_codigo_Leave(object sender, EventArgs e)
+        {
+            if ((this.txt_codigo.Text.Length >= 3) && (this.txt_codigo.Text.Length <= 6))
+            {
+                if (this.txt_codigo.Text.Length != 3)
+                {
+                    this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 3 numeros";
+                    this.lbl_avisoCod.Visible = true;
+                }
+                else this.lbl_avisoCod.Text = "";
+            }
+            else this.lbl_avisoCod.Text = "";
+        }
+
+        private void txt_nbu_KeyUp(object sender, KeyEventArgs e) //CAMBIAR "." POR ","
+        {
+            string tex = this.txt_nbu.Text;
+            this.txt_nbu.Text = tex.Replace(".", ",");
+            int largo = txt_nbu.Text.Length;
+            this.txt_nbu.Select();
+            this.txt_nbu.Select(largo,0);
         }
     }
     

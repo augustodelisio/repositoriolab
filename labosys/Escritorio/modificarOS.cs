@@ -86,5 +86,27 @@ namespace Escritorio
                 }
             }
         }
+
+        private void txt_actoBioquimico_KeyUp(object sender, KeyEventArgs e)
+        {
+            {
+                string tex = this.txt_actoBioquimico.Text;
+                this.txt_actoBioquimico.Text = tex.Replace(".", ",");
+                int largo = txt_actoBioquimico.Text.Length;
+                this.txt_actoBioquimico.Select();
+                this.txt_actoBioquimico.Select(largo, 0);
+            }
+        }
+
+        private void txt_nbu_KeyUp(object sender, KeyEventArgs e)
+        {
+            {
+                string tex = this.txt_nbu.Text;
+                this.txt_nbu.Text = tex.Replace(".", ",");
+                int largo = txt_nbu.Text.Length;
+                this.txt_nbu.Select();
+                this.txt_nbu.Select(largo, 0);
+            }
+        }
     }
 }
