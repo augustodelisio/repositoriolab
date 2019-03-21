@@ -75,7 +75,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("La Obra Social no se ha podido modificar", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("La Obra Social no se ha podido modificar, es probable que ya exista otra obra social con el nombre ingresado", "Fracaso", MessageBoxButtons.OK);
                     }
                 }
 

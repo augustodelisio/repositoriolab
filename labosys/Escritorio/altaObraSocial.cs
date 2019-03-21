@@ -73,7 +73,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido agregar la obra social", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("No se ha podido agregar la obra social, es probable que ya exista otra obra social cargada con ese mismo nombre", "Fracaso", MessageBoxButtons.OK);
 
                     }
                 }

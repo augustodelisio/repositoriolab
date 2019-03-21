@@ -11,7 +11,12 @@ namespace Negocio
     {
         static public bool agregarOS(Entidades.Obra_Social os)
         {
-           return BD.ObraSocialDB.getInstance().agregarOS(os);
+            Entidades.Obra_Social obra = BD.ObraSocialDB.getInstance().buscarOsPorNombre(os.Nombre);
+            if (obra == null)
+            {
+                return BD.ObraSocialDB.getInstance().agregarOS(os);
+            }
+            return false;
         }
 
         static public List<Entidades.Obra_Social> getAllObrasSociales()
@@ -31,7 +36,12 @@ namespace Negocio
 
         static public bool modificarOS(Entidades.Obra_Social os)
         {
-            return BD.ObraSocialDB.getInstance().modificarOS(os);
+            Entidades.Obra_Social obra = BD.ObraSocialDB.getInstance().buscarOsPorNombre(os.Nombre);
+            if (obra == null || obra.Id==os.Id)
+            {
+                return BD.ObraSocialDB.getInstance().modificarOS(os);
+            }
+            return false;
         }
 
         public static Obra_Social buscarOsPorId(int idOS)

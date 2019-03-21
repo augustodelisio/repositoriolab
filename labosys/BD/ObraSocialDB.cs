@@ -77,6 +77,36 @@ namespace BD
             }
         }
 
+        public Obra_Social buscarOsPorNombre(string nombre)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from ObrasSociales where nombre='" + nombre + "'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string porcentaje = reader.GetString(1).Trim();
+                    string nbu = reader.GetString(2).Trim();
+                    int id = reader.GetInt32(3);
+                    string actoBioquimico = reader.GetString(5).Trim();
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
+                    os.Habilitado = reader.GetBoolean(4);
+                    os.Id = id;
+
+                    Conexion.getInstance().Disconnect();
+                    return os;
+                }
+                else { return null; }
+            }
+            catch (Exception e)
+            {
+
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
         public List<Entidades.Obra_Social> getAllObrasSociales()
         {
             try
