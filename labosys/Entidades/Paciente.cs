@@ -15,6 +15,8 @@ namespace Entidades
         private bool habilitado;
         int id;
 
+        public Paciente() { }
+        
         public Paciente(string apellido, string nombre, string dni)
         {
             this.Nombre = nombre;

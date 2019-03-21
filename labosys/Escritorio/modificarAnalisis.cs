@@ -71,7 +71,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("El analisis no se pudo modificar", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El analisis no se pudo modificar, es probable que ya exista otro analisis con el codigo ingresado", "Fracaso", MessageBoxButtons.OK);
                     }
                 }
             }

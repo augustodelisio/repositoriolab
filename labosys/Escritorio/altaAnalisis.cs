@@ -70,7 +70,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("El analisis no se pudo dar de alta", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El analisis no se pudo dar de alta, es probable que ya exista otro analisis con el mismo codigo", "Fracaso", MessageBoxButtons.OK);
                     }
 
                 }

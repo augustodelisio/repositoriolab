@@ -47,7 +47,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido agregar la obra social al paciente", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("No se ha podido agregar la obra social al paciente, es probable que la misma ya se encuentre cargada", "Fracaso", MessageBoxButtons.OK);
                     }
                 }
             }

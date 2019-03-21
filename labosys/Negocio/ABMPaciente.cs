@@ -48,6 +48,16 @@ namespace Negocio
 
         public static bool agregarOsaPaciente(PacienteOS paos)
         {
+            Entidades.Paciente pa = new Entidades.Paciente();
+            pa.Id = paos.IdPaciente;
+            List<Entidades.PacienteOS> oss = BD.PacienteDB.getInstance().getAllOS(pa);
+            foreach (Entidades.PacienteOS os in oss)
+            {
+                if (os.Id == paos.IdOS)
+                {
+                    return false;
+                }
+            }
             return BD.PacienteDB.getInstance().agregarOsaPaciente(paos);
         }
 

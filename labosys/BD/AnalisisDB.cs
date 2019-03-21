@@ -90,5 +90,31 @@ namespace BD
                 return null;
             }
         }
+
+        public Entidades.Analisis getAnalisisByCodigo(string codigo)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from Analisis where codigo ='"+codigo+"'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    Entidades.Analisis ana = new Entidades.Analisis();
+                    ana.Codigo = reader.GetString(1).Trim();
+                    ana.Nombre = reader.GetString(2).Trim();
+                    ana.CantNBU = reader.GetString(3).Trim();
+                    ana.Id = reader.GetInt32(0);
+                    return ana;
+                }
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
     }
 }
