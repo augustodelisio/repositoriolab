@@ -154,6 +154,34 @@ namespace BD
             }
         }
 
+        public Entidades.Paciente getPacientesbyDNI(string Dni)
+        {
+            try
+            {
+                string dni = Dni;
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from dbo.Pacientes where dni='"+dni+"'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string apellido = reader.GetString(0).Trim();
+                    string nombre = reader.GetString(1).Trim();
+                    int id = reader.GetInt32(4);
+                    Entidades.Paciente pac = new Entidades.Paciente(apellido, nombre, dni);
+                    pac.Id = id;
+                    Conexion.getInstance().Disconnect();
+                    return pac;
+                }
+                return null;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
+
         public bool deshabilitarPaciente(Entidades.Paciente pa)
         {
             try

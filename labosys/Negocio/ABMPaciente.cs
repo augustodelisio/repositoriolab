@@ -11,7 +11,12 @@ namespace Negocio
     {
         static public bool agregarPaciente(Entidades.Paciente pa)
         {
-           return BD.PacienteDB.getInstance().agregarPaciente(pa);
+            Entidades.Paciente pacienteEncontrado = BD.PacienteDB.getInstance().getPacientesbyDNI(pa.Dni);
+            if (pacienteEncontrado == null)
+            {
+                return BD.PacienteDB.getInstance().agregarPaciente(pa);
+            }
+            return false;
         }
 
         static public List<Entidades.Paciente> getAllPacientes()
@@ -48,7 +53,12 @@ namespace Negocio
 
         static public bool modificarPaciente(Entidades.Paciente pa)
         {
-            return BD.PacienteDB.getInstance().modificarPaciente(pa);
+            Entidades.Paciente pacienteEncontrado = BD.PacienteDB.getInstance().getPacientesbyDNI(pa.Dni);
+            if (pacienteEncontrado == null || pacienteEncontrado.Id ==pa.Id)
+            {
+                return BD.PacienteDB.getInstance().modificarPaciente(pa);
+            }
+            return false;
         }
     }
 }

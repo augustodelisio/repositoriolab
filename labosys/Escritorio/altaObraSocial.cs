@@ -31,7 +31,7 @@ namespace Escritorio
             }
             if (!Validador.validarPorcentaje(txt_porcentaje.Text))
             {
-                errorProvider1.SetError(txt_porcentaje, "El campo debe contener solo digitos y/o ,");
+                errorProvider1.SetError(txt_porcentaje, "El campo debe tener un valor entre 0 y 100");
                 camposValidos = false;
             }
             else
@@ -40,7 +40,7 @@ namespace Escritorio
             }
             if (!Validador.validarDecimal(txt_nbu.Text))
             {
-                errorProvider1.SetError(txt_nbu, "El campo debe contener un valor entre 1 y 100,");
+                errorProvider1.SetError(txt_nbu, "Debe contener solo digitos y/o ,");
                 camposValidos = false;
             }
             else
@@ -107,8 +107,7 @@ namespace Escritorio
         private void txt_porcentaje_KeyUp(object sender, KeyEventArgs e)
         {
             string tex = this.txt_porcentaje.Text;
-            this.txt_porcentaje.Text = tex.Replace(".", "");
-            this.txt_porcentaje.Text = tex.Replace(",", "");
+            this.txt_porcentaje.Text = tex.Replace(".", ",");
             int largo = txt_porcentaje.Text.Length;
             this.txt_porcentaje.Select();
             this.txt_porcentaje.Select(largo, 0);
@@ -117,8 +116,7 @@ namespace Escritorio
         private void txt_porcentaje_Leave(object sender, EventArgs e)
         {
             string tex = this.txt_porcentaje.Text;
-            this.txt_porcentaje.Text = tex.Replace(".", "");
-            this.txt_porcentaje.Text = tex.Replace(",", "");
+            this.txt_porcentaje.Text = tex.Replace(".", ",");
         }
     }
 }

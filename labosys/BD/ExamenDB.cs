@@ -65,7 +65,7 @@ namespace BD
                 string fecha = ex.Fecha.ToString("yyyyMMdd");
                 Conexion.getInstance().Connect();
                 SqlCommand cmd = new SqlCommand("insert into dbo.Examenes(fecha,idPaciente,idOS,costo,actoBioquimico,nbu) " +
-                    "values('" + fecha + "','" + ex.IdPaciente + "','" + ex.IdOS + "','"+"0"+"','"+ex.ActoBioquimico+"','"+ex.Nbu+"')", Conexion.getInstance().Conection);
+                    "values('" + fecha + "','" + ex.IdPaciente + "','" + ex.IdOS + "','"+'0'+"','"+ex.ActoBioquimico+"','"+ex.Nbu+"')", Conexion.getInstance().Conection);
                 cmd.ExecuteNonQuery();
                 Conexion.getInstance().Disconnect();
                 return buscarIdExamen(ex);

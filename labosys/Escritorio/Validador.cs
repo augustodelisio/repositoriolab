@@ -47,16 +47,14 @@ namespace Escritorio
         {
             try
             {
-                int val = Convert.ToInt32(porc);
+                float val = float.Parse(porc);
                 if ((porc.Length == 0) || (val > 100) || (val < 1)) return false;
             }
             catch (Exception ex)
             {
             }
-           
-            Regex reg = new Regex(@"\d{1,3}");
-            Match match = reg.Match(porc);
-            return match.Success;
+
+            return Regex.IsMatch(porc, @"^(?:\d{1,3}\,?\d{1,3})?$");
 
         }
     }

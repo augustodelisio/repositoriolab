@@ -61,12 +61,13 @@ namespace Escritorio
                     if (exito)
                     {
                         MessageBox.Show("El paciente se agrego exitosamente", "Exito!", MessageBoxButtons.OK);
+                        this.Close();
+
                     }
                     else
                     {
-                        MessageBox.Show("El paciente no se pudo dar de alta", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente no se pudo dar de alta, es probable que ya existe orto paciente con el dni ingresado", "Fracaso", MessageBoxButtons.OK);
                     }
-                    this.Close();
                 }
             }
             catch (Exception)

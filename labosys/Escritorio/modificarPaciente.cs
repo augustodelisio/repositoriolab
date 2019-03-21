@@ -73,7 +73,7 @@ namespace Escritorio
                     }
                     else
                     {
-                        MessageBox.Show("El paciente no se ha podido modificar", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente no se ha podido modificar, es probable que el dni ingresado coincida con alguno existente.", "Fracaso", MessageBoxButtons.OK);
                     }
                 }
             }
