@@ -54,9 +54,12 @@
             // 
             // dgv_pacientes
             // 
+            this.dgv_pacientes.AllowUserToAddRows = false;
+            this.dgv_pacientes.AllowUserToDeleteRows = false;
             this.dgv_pacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pacientes.Location = new System.Drawing.Point(12, 12);
+            this.dgv_pacientes.MultiSelect = false;
             this.dgv_pacientes.Name = "dgv_pacientes";
             this.dgv_pacientes.ReadOnly = true;
             this.dgv_pacientes.Size = new System.Drawing.Size(561, 306);

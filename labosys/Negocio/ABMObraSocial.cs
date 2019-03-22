@@ -24,6 +24,10 @@ namespace Negocio
             return BD.ObraSocialDB.getInstance().getAllObrasSociales();
         }
 
+        static public List<Entidades.Obra_Social> getAllObrasSocialesbyNombre(string nombre)
+        {
+            return BD.ObraSocialDB.getInstance().getAllObrasSocialesbyNombre(nombre);
+        }
         static public bool deshabilitarOS(Entidades.Obra_Social os)
         {
             return BD.ObraSocialDB.getInstance().deshabilitarOS(os);

@@ -82,6 +82,7 @@ namespace Escritorio
         {
             try
             {
+
                 Entidades.Obra_Social os = Negocio.ABMObraSocial.buscarOsPorId(examen.IdOS);
                 float costoTotal=0;
                 foreach (Entidades.Analisis ana in analisis)
@@ -99,16 +100,18 @@ namespace Escritorio
                     "\n\n Desea confirmar la operacion?", "Confirmar Operacion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
+                    Entidades.Examen exa = new Entidades.Examen();
+                    exa = Negocio.ABMExamen.agregarExamen(examen);
                     foreach (Entidades.Analisis ana in analisis)
                     {
                         float cantNbu = float.Parse(ana.CantNBU);
                         float nbu = float.Parse(os.Nbu);
                         float costo = nbu * cantNbu;
-                        Negocio.ABMExamen.agregarAnalisisAlExamen(examen, ana, costo);
+                        Negocio.ABMExamen.agregarAnalisisAlExamen(exa, ana, costo);
                     }
                     float actobioquimico = float.Parse(os.Nbu) * float.Parse(os.ActoBioquimico);
                     float costoExamen = costoTotal + actobioquimico;
-                    bool exito = Negocio.ABMExamen.agregarCosto(costoExamen, examen);
+                    bool exito = Negocio.ABMExamen.agregarCosto(costoExamen, exa);
                     if (exito)
                     {
                         MessageBox.Show("Examen guardado con exito", "Exito", MessageBoxButtons.OK);
@@ -143,10 +146,7 @@ namespace Escritorio
             {
                 MessageBox.Show("No ha seleccionado ningun analisis", "Cuidado", MessageBoxButtons.OK);
             }
-            finally
-            {
-                MessageBox.Show("Error" + e, "Error", MessageBoxButtons.OK);
-            }
+
         }
 
         private void actualizarBinding()

@@ -37,9 +37,12 @@
             // 
             // dgv_ospacientes
             // 
+            this.dgv_ospacientes.AllowUserToAddRows = false;
+            this.dgv_ospacientes.AllowUserToDeleteRows = false;
             this.dgv_ospacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ospacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ospacientes.Location = new System.Drawing.Point(33, 31);
+            this.dgv_ospacientes.MultiSelect = false;
             this.dgv_ospacientes.Name = "dgv_ospacientes";
             this.dgv_ospacientes.ReadOnly = true;
             this.dgv_ospacientes.Size = new System.Drawing.Size(665, 184);

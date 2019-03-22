@@ -220,5 +220,10 @@ namespace Escritorio
         {
             actualizaColor();
         }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+            this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSocialesbyNombre(this.txt_nombre.Text);
+        }
     }
 }

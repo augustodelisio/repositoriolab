@@ -28,7 +28,7 @@ namespace Escritorio
             {
                 if (!Validador.validarCodAnalisis(txt_codigo.Text))
                 {
-                    errorProvider.SetError(txt_codigo, "El campo debe contener entre 3 y 6 dígitos");
+                    errorProvider.SetError(txt_codigo, "El campo debe contener entre 4 y 6 dígitos");
                     valido = false;
                 }
                 else
@@ -84,11 +84,11 @@ namespace Escritorio
 
         private void txt_codigo_Leave(object sender, EventArgs e)
         {
-            if ((this.txt_codigo.Text.Length >= 3) && (this.txt_codigo.Text.Length <= 6))
+            if ((this.txt_codigo.Text.Length >= 4) && (this.txt_codigo.Text.Length <= 6))
             {
-                if (this.txt_codigo.Text.Length != 3)
+                if (this.txt_codigo.Text.Length != 4)
                 {
-                    this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 3 numeros";
+                    this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 4 numeros";
                     this.lbl_avisoCod.Visible = true;
                 }
                 else this.lbl_avisoCod.Text = "";

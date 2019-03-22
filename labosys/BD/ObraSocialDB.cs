@@ -138,6 +138,39 @@ namespace BD
             }
         }
 
+
+        public List<Entidades.Obra_Social> getAllObrasSocialesbyNombre(string nom)
+        {
+            try
+            {
+                string nombr = "%" + nom + "%";
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from ObrasSociales where nombre like '"+nombr+"'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Entidades.Obra_Social> obrasSociales = new List<Entidades.Obra_Social>();
+                while (reader.Read())
+                {
+                    string nombre = reader.GetString(0).Trim();
+                    string porcentaje = reader.GetString(1).Trim();
+                    string nbu = reader.GetString(2).Trim();
+                    int id = reader.GetInt32(3);
+                    string actoBioquimico = reader.GetString(5).Trim();
+                    Entidades.Obra_Social os = new Entidades.Obra_Social(nombre, porcentaje, nbu, actoBioquimico);
+                    os.Habilitado = reader.GetBoolean(4);
+                    os.Id = id;
+                    obrasSociales.Add(os);
+                }
+                Conexion.getInstance().Disconnect();
+                return obrasSociales;
+            }
+            catch (Exception e)
+            {
+
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
         internal Obra_Social buscarOSporId(int idOS)
         {
             try
@@ -217,6 +250,27 @@ namespace BD
                 cmd.ExecuteNonQuery();
                 Conexion.getInstance().Disconnect();
                 return true;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return false;
+            }
+        }
+
+        public bool buscarAfiliadoOS(Entidades.PacienteOS os)
+        {
+            try
+            {
+                int id = os.IdOS;
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from PacienteOS where idOS='" + id + "' and afiliado ='"+os.NroAfiliado+"'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception e)
             {

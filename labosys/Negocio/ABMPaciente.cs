@@ -48,17 +48,22 @@ namespace Negocio
 
         public static bool agregarOsaPaciente(PacienteOS paos)
         {
-            Entidades.Paciente pa = new Entidades.Paciente();
-            pa.Id = paos.IdPaciente;
-            List<Entidades.PacienteOS> oss = BD.PacienteDB.getInstance().getAllOS(pa);
-            foreach (Entidades.PacienteOS os in oss)
+            bool existe = BD.ObraSocialDB.getInstance().buscarAfiliadoOS(paos);
+            if (existe==false)
             {
-                if (os.Id == paos.IdOS)
+                Entidades.Paciente pa = new Entidades.Paciente();
+                pa.Id = paos.IdPaciente;
+                List<Entidades.PacienteOS> oss = BD.PacienteDB.getInstance().getAllOS(pa);
+                foreach (Entidades.PacienteOS os in oss)
                 {
-                    return false;
+                    if (os.Id == paos.IdOS)
+                    {
+                        return false;
+                    }
                 }
+                return BD.PacienteDB.getInstance().agregarOsaPaciente(paos);
             }
-            return BD.PacienteDB.getInstance().agregarOsaPaciente(paos);
+            return false;
         }
 
         static public bool modificarPaciente(Entidades.Paciente pa)

@@ -29,6 +29,8 @@ namespace Escritorio
                 MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
             }
         }
+        private Entidades.Paciente paciente;
+
 
         private void cmb_pacientes_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -37,16 +39,21 @@ namespace Escritorio
                 if (cmb_pacientes.SelectedItem != null)
                 {
                     Entidades.Paciente pa = (Entidades.Paciente)this.cmb_pacientes.SelectedItem;
+                    this.paciente = pa;
                     string nombre = pa.Apellido + ", " + pa.Nombre;
                     this.lbl_nombre.Text = nombre;
                     if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
                     {
+                        this.cmb_os.Enabled = true;
+                        this.btn_agregarAnalisis.Enabled = true;
                         this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
                         this.cmb_os.DisplayMember = "nombreOS";
                         this.cmb_os.ValueMember = "idOS";
                     }
                     else
                     {
+                        this.cmb_os.Enabled = false;
+                        this.btn_agregarAnalisis.Enabled = false;
                         this.cmb_os.DataSource = null;
                     }
                 }
@@ -60,29 +67,40 @@ namespace Escritorio
 
         private void btn_agregarAnalisis_Click(object sender, EventArgs e)
         {
+            bool valido = true;
             try
             {
-                Entidades.Examen ex = new Entidades.Examen();
-                ex.Fecha = DateTime.Parse(this.txt_fecha.Text);
-                ex.IdPaciente = (int)cmb_pacientes.SelectedValue;
-                ex.IdOS = (int)cmb_os.SelectedValue;
-                Entidades.Obra_Social os = Negocio.ABMObraSocial.buscarOsPorId(ex.IdOS);
-                float actobioquimico = float.Parse(os.Nbu) * float.Parse(os.ActoBioquimico);
-                ex.ActoBioquimico = actobioquimico.ToString();
-                Entidades.Examen exa = new Entidades.Examen();
-                ex.Nbu = os.Nbu;
-                exa = Negocio.ABMExamen.agregarExamen(ex);
-                if (exa != null)
+                if (!txt_fecha.MaskCompleted)
                 {
-                    if (exa.IdExamen != 0)
-                    {  
-                        this.Close();
-                        new AnalisisExamen(exa).ShowDialog();
-                    }
-                    else
+                    valido = false;
+                }
+                if (valido)
+                {
+                    Entidades.Examen ex = new Entidades.Examen();
+                    ex.Fecha = DateTime.Parse(this.txt_fecha.Text);
+                    ex.IdPaciente = (int)cmb_pacientes.SelectedValue;
+                    ex.IdOS = (int)cmb_os.SelectedValue;
+                    Entidades.Obra_Social os = Negocio.ABMObraSocial.buscarOsPorId(ex.IdOS);
+                    float actobioquimico = float.Parse(os.Nbu) * float.Parse(os.ActoBioquimico);
+                    ex.ActoBioquimico = actobioquimico.ToString();
+                    //Entidades.Examen exa = new Entidades.Examen();
+                    ex.Nbu = os.Nbu;
+                    //exa = Negocio.ABMExamen.agregarExamen(ex);
+                    if (ex != null)
                     {
-                        MessageBox.Show("error", "Error", MessageBoxButtons.OK);
+                        //if (ex.IdExamen != 0)
+                        {
+                            this.Close();
+                            new AnalisisExamen(ex).ShowDialog();
+                        }
+                       // else
+                        {
+                        //    MessageBox.Show("error", "Error", MessageBoxButtons.OK);
+                        }
                     }
+                }else
+                {
+                    MessageBox.Show("La fecha ingresada no es valida", "Cuidado!", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
@@ -111,19 +129,24 @@ namespace Escritorio
         {
             try
             {
-                Entidades.Paciente pa = (Entidades.Paciente)cmb_pacientes.SelectedItem;
-                if (pa != null)
+                if (cmb_pacientes.SelectedItem != null)
                 {
-                    new AgregarOSPAciente(pa).ShowDialog();
-                    if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                    Entidades.Paciente pa = (Entidades.Paciente)cmb_pacientes.SelectedItem;
+                    if (pa != null)
                     {
-                        this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
-                        this.cmb_os.DisplayMember = "nombreOS";
-                        this.cmb_os.ValueMember = "idOS";
-                    }
-                    else
-                    {
-                        this.cmb_os.DataSource = null;
+                        new AgregarOSPAciente(pa).ShowDialog();
+                        if (Negocio.ABMPaciente.getAllOS(pa).Count > 0)
+                        {
+                            this.cmb_os.DataSource = Negocio.ABMPaciente.getAllOS(pa);
+                            this.cmb_os.DisplayMember = "nombreOS";
+                            this.cmb_os.ValueMember = "idOS";
+                            this.cmb_os.Enabled = true;
+                            this.btn_agregarAnalisis.Enabled = true;
+                        }
+                        else
+                        {
+                            this.cmb_os.DataSource = null;
+                        }
                     }
                 }
             }

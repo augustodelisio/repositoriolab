@@ -40,7 +40,7 @@ namespace Escritorio
 
         private void btn_informeCompleto_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.txt_inicioTodos.Text))
+            if (!txt_inicioTodos.MaskCompleted)
             {
                     string desde = "20000101";
                     DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
@@ -60,7 +60,7 @@ namespace Escritorio
         private void btn_informePaciente_Click(object sender, EventArgs e)
         {
             Entidades.Paciente pa = (Entidades.Paciente)cmb_Paciente.SelectedItem;
-            if (string.IsNullOrEmpty(this.txt_inicioTodos.Text))
+            if (!txt_inicioPaciente.MaskCompleted)
             {
                 string desde = "20000101";
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
@@ -98,7 +98,7 @@ namespace Escritorio
         private void btn_informeOs_Click(object sender, EventArgs e)
         {
             Entidades.Obra_Social os = (Entidades.Obra_Social)cmb_os.SelectedItem;
-            if (string.IsNullOrEmpty(this.txt_inicioTodos.Text))
+            if (!txt_inicioOS.MaskCompleted)
             {
                 string desde = "20000101";
                 DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);

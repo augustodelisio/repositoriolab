@@ -65,6 +65,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_modificarAnalisis
             // 
@@ -93,6 +94,7 @@
             this.dgv_analisis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_analisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_analisis.Location = new System.Drawing.Point(93, 51);
+            this.dgv_analisis.MultiSelect = false;
             this.dgv_analisis.Name = "dgv_analisis";
             this.dgv_analisis.ReadOnly = true;
             this.dgv_analisis.Size = new System.Drawing.Size(561, 306);

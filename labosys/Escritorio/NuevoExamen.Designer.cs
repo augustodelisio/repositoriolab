@@ -55,6 +55,7 @@
             // 
             this.cmb_pacientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_pacientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_pacientes.CausesValidation = false;
             this.cmb_pacientes.FormattingEnabled = true;
             this.cmb_pacientes.Location = new System.Drawing.Point(109, 19);
             this.cmb_pacientes.Name = "cmb_pacientes";

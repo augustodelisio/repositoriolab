@@ -13,6 +13,10 @@ namespace Negocio
         {
             return BD.AnalisisDB.getInstance().getAllAnalisis();
         }
+        static public List<Entidades.Analisis> getAllAnalisisbyCodigo(string codigo)
+        {
+            return BD.AnalisisDB.getInstance().getAllAnalisisbyCodigo(codigo);
+        }
         static public bool agregarAnalisis(Entidades.Analisis ana)
         {
             Entidades.Analisis analisis = BD.AnalisisDB.getInstance().getAnalisisByCodigo(ana.Codigo);

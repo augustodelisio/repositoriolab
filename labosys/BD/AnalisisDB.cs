@@ -91,6 +91,34 @@ namespace BD
             }
         }
 
+        public List<Entidades.Analisis> getAllAnalisisbyCodigo(string codi)
+        {
+            try
+            {
+                string codigo = codi + "%";
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("select * from Analisis where codigo like '"+codigo+"'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Entidades.Analisis> analisis = new List<Entidades.Analisis>();
+                while (reader.Read())
+                {
+                    Entidades.Analisis ana = new Entidades.Analisis();
+                    ana.Codigo = reader.GetString(1).Trim();
+                    ana.Nombre = reader.GetString(2).Trim();
+                    ana.CantNBU = reader.GetString(3).Trim();
+                    ana.Id = reader.GetInt32(0);
+                    analisis.Add(ana);
+                }
+                Conexion.getInstance().Disconnect();
+                return analisis;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
         public Entidades.Analisis getAnalisisByCodigo(string codigo)
         {
             try

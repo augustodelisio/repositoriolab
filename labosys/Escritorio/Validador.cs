@@ -21,9 +21,9 @@ namespace Escritorio
 
         public static bool validarCodAnalisis(string cod)
         {
-            if ((cod.Length < 3) || (cod.Length > 6))
+            if ((cod.Length < 4) || (cod.Length > 6))
                 return false;
-            Regex reg = new Regex(@"\d{3,6}");
+            Regex reg = new Regex(@"\d{4,6}");
             Match match = reg.Match(cod);
             return match.Success;
         }

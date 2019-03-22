@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_avisoCod = new System.Windows.Forms.Label();
             this.txt_nbu = new System.Windows.Forms.TextBox();
             this.lbl_cantNBU = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lbl_avisoCod = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,18 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Analisis";
+            // 
+            // lbl_avisoCod
+            // 
+            this.lbl_avisoCod.AutoSize = true;
+            this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
+            this.lbl_avisoCod.Location = new System.Drawing.Point(276, 39);
+            this.lbl_avisoCod.Name = "lbl_avisoCod";
+            this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
+            this.lbl_avisoCod.TabIndex = 13;
+            this.lbl_avisoCod.Text = "Aviso";
+            this.lbl_avisoCod.Visible = false;
             // 
             // txt_nbu
             // 
@@ -124,18 +136,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // lbl_avisoCod
-            // 
-            this.lbl_avisoCod.AutoSize = true;
-            this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
-            this.lbl_avisoCod.Location = new System.Drawing.Point(246, 34);
-            this.lbl_avisoCod.Name = "lbl_avisoCod";
-            this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
-            this.lbl_avisoCod.TabIndex = 13;
-            this.lbl_avisoCod.Text = "Aviso";
-            this.lbl_avisoCod.Visible = false;
             // 
             // altaAnalisis
             // 

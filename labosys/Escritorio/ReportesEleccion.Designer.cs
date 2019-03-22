@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_inicioTodos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_informeCompleto = new System.Windows.Forms.Button();
             this.txt_finTodos = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_inicioPaciente = new System.Windows.Forms.TextBox();
+            this.lbl_nombrePaciente = new System.Windows.Forms.Label();
+            this.cmb_Paciente = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_informePaciente = new System.Windows.Forms.Button();
             this.txt_finPaciente = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmb_Paciente = new System.Windows.Forms.ComboBox();
-            this.lbl_nombrePaciente = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_os = new System.Windows.Forms.ComboBox();
-            this.txt_inicioOS = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_informeOs = new System.Windows.Forms.Button();
             this.txt_finOS = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txt_inicioTodos = new System.Windows.Forms.MaskedTextBox();
+            this.txt_inicioPaciente = new System.Windows.Forms.MaskedTextBox();
+            this.txt_inicioOS = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,13 +72,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Todos";
-            // 
-            // txt_inicioTodos
-            // 
-            this.txt_inicioTodos.Location = new System.Drawing.Point(64, 32);
-            this.txt_inicioTodos.Name = "txt_inicioTodos";
-            this.txt_inicioTodos.Size = new System.Drawing.Size(106, 20);
-            this.txt_inicioTodos.TabIndex = 6;
             // 
             // label3
             // 
@@ -128,9 +121,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_inicioPaciente);
             this.groupBox2.Controls.Add(this.lbl_nombrePaciente);
             this.groupBox2.Controls.Add(this.cmb_Paciente);
-            this.groupBox2.Controls.Add(this.txt_inicioPaciente);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btn_informePaciente);
             this.groupBox2.Controls.Add(this.txt_finPaciente);
@@ -143,29 +136,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Por Paciente";
             // 
-            // groupBox3
+            // lbl_nombrePaciente
             // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.cmb_os);
-            this.groupBox3.Controls.Add(this.txt_inicioOS);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.btn_informeOs);
-            this.groupBox3.Controls.Add(this.txt_finOS);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(27, 298);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(729, 100);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Por Obra Social";
+            this.lbl_nombrePaciente.AutoSize = true;
+            this.lbl_nombrePaciente.Location = new System.Drawing.Point(402, 57);
+            this.lbl_nombrePaciente.Name = "lbl_nombrePaciente";
+            this.lbl_nombrePaciente.Size = new System.Drawing.Size(0, 13);
+            this.lbl_nombrePaciente.TabIndex = 14;
             // 
-            // txt_inicioPaciente
+            // cmb_Paciente
             // 
-            this.txt_inicioPaciente.Location = new System.Drawing.Point(64, 29);
-            this.txt_inicioPaciente.Name = "txt_inicioPaciente";
-            this.txt_inicioPaciente.Size = new System.Drawing.Size(106, 20);
-            this.txt_inicioPaciente.TabIndex = 12;
+            this.cmb_Paciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_Paciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_Paciente.FormattingEnabled = true;
+            this.cmb_Paciente.Location = new System.Drawing.Point(402, 29);
+            this.cmb_Paciente.Name = "cmb_Paciente";
+            this.cmb_Paciente.Size = new System.Drawing.Size(141, 21);
+            this.cmb_Paciente.TabIndex = 13;
+            this.cmb_Paciente.SelectedValueChanged += new System.EventHandler(this.cmb_Paciente_SelectedValueChanged);
             // 
             // label4
             // 
@@ -213,24 +201,22 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Inicio";
             // 
-            // cmb_Paciente
+            // groupBox3
             // 
-            this.cmb_Paciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmb_Paciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_Paciente.FormattingEnabled = true;
-            this.cmb_Paciente.Location = new System.Drawing.Point(402, 29);
-            this.cmb_Paciente.Name = "cmb_Paciente";
-            this.cmb_Paciente.Size = new System.Drawing.Size(141, 21);
-            this.cmb_Paciente.TabIndex = 13;
-            this.cmb_Paciente.SelectedValueChanged += new System.EventHandler(this.cmb_Paciente_SelectedValueChanged);
-            // 
-            // lbl_nombrePaciente
-            // 
-            this.lbl_nombrePaciente.AutoSize = true;
-            this.lbl_nombrePaciente.Location = new System.Drawing.Point(402, 57);
-            this.lbl_nombrePaciente.Name = "lbl_nombrePaciente";
-            this.lbl_nombrePaciente.Size = new System.Drawing.Size(0, 13);
-            this.lbl_nombrePaciente.TabIndex = 14;
+            this.groupBox3.Controls.Add(this.txt_inicioOS);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.cmb_os);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.btn_informeOs);
+            this.groupBox3.Controls.Add(this.txt_finOS);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(27, 298);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(729, 100);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Por Obra Social";
             // 
             // label7
             // 
@@ -249,13 +235,6 @@
             this.cmb_os.Name = "cmb_os";
             this.cmb_os.Size = new System.Drawing.Size(141, 21);
             this.cmb_os.TabIndex = 21;
-            // 
-            // txt_inicioOS
-            // 
-            this.txt_inicioOS.Location = new System.Drawing.Point(64, 39);
-            this.txt_inicioOS.Name = "txt_inicioOS";
-            this.txt_inicioOS.Size = new System.Drawing.Size(106, 20);
-            this.txt_inicioOS.TabIndex = 20;
             // 
             // label8
             // 
@@ -303,6 +282,33 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Inicio";
             // 
+            // txt_inicioTodos
+            // 
+            this.txt_inicioTodos.Location = new System.Drawing.Point(64, 32);
+            this.txt_inicioTodos.Mask = "00/00/0000";
+            this.txt_inicioTodos.Name = "txt_inicioTodos";
+            this.txt_inicioTodos.Size = new System.Drawing.Size(106, 20);
+            this.txt_inicioTodos.TabIndex = 3;
+            this.txt_inicioTodos.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_inicioPaciente
+            // 
+            this.txt_inicioPaciente.Location = new System.Drawing.Point(65, 29);
+            this.txt_inicioPaciente.Mask = "00/00/0000";
+            this.txt_inicioPaciente.Name = "txt_inicioPaciente";
+            this.txt_inicioPaciente.Size = new System.Drawing.Size(105, 20);
+            this.txt_inicioPaciente.TabIndex = 15;
+            this.txt_inicioPaciente.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_inicioOS
+            // 
+            this.txt_inicioOS.Location = new System.Drawing.Point(65, 39);
+            this.txt_inicioOS.Mask = "00/00/0000";
+            this.txt_inicioOS.Name = "txt_inicioOS";
+            this.txt_inicioOS.Size = new System.Drawing.Size(105, 20);
+            this.txt_inicioOS.TabIndex = 23;
+            this.txt_inicioOS.ValidatingType = typeof(System.DateTime);
+            // 
             // ReportesEleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,10 +340,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_inicioTodos;
         private System.Windows.Forms.Label lbl_nombrePaciente;
         private System.Windows.Forms.ComboBox cmb_Paciente;
-        private System.Windows.Forms.TextBox txt_inicioPaciente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_informePaciente;
         private System.Windows.Forms.MaskedTextBox txt_finPaciente;
@@ -345,11 +349,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmb_os;
-        private System.Windows.Forms.TextBox txt_inicioOS;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_informeOs;
         private System.Windows.Forms.MaskedTextBox txt_finOS;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox txt_inicioTodos;
+        private System.Windows.Forms.MaskedTextBox txt_inicioPaciente;
+        private System.Windows.Forms.MaskedTextBox txt_inicioOS;
     }
 }

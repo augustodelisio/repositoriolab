@@ -43,9 +43,12 @@
             // 
             // dgv_obrasSociales
             // 
+            this.dgv_obrasSociales.AllowUserToAddRows = false;
+            this.dgv_obrasSociales.AllowUserToDeleteRows = false;
             this.dgv_obrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_obrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_obrasSociales.Location = new System.Drawing.Point(12, 12);
+            this.dgv_obrasSociales.MultiSelect = false;
             this.dgv_obrasSociales.Name = "dgv_obrasSociales";
             this.dgv_obrasSociales.ReadOnly = true;
             this.dgv_obrasSociales.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -130,6 +133,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(130, 20);
             this.txt_nombre.TabIndex = 0;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             // 
             // ABMObraSocial
             // 
