@@ -114,5 +114,10 @@ namespace Escritorio
                 new InformeOS(desde, hasta, os).ShowDialog();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

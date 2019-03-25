@@ -215,5 +215,10 @@ namespace Escritorio
                 this.dgv_pacientes.DataSource = null;
             }
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

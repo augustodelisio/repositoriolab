@@ -65,5 +65,10 @@ namespace Escritorio
         {
             this.dgv_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisisbyCodigo(this.textBox1.Text);
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
