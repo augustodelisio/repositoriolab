@@ -87,6 +87,7 @@
             // 
             // cmb_OS
             // 
+            this.cmb_OS.CausesValidation = false;
             this.cmb_OS.FormattingEnabled = true;
             this.cmb_OS.Location = new System.Drawing.Point(166, 44);
             this.cmb_OS.Name = "cmb_OS";

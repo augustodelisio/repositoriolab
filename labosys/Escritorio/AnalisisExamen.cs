@@ -162,5 +162,43 @@ namespace Escritorio
                 MessageBox.Show("Error" + ex, "Error", MessageBoxButtons.OK);
             }
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmb_analisis_Enter(object sender, EventArgs e)
+        {
+            if (analisis.Count >= 0)
+            {
+                this.btn_eliminarAnalisis.Visible = true;
+                this.btn_eliminarAnalisis.Enabled = true;
+            }
+            if (cmb_analisis.SelectedItem != null)
+            {
+                Entidades.Analisis ana = (Entidades.Analisis)cmb_analisis.SelectedItem;
+                if (!analisis.Contains(ana))
+                {
+                    analisis.Add(ana);
+                    actualizarBinding();
+                }
+                else
+                {
+                    MessageBox.Show("El analisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
+                }
+
+            }
+            this.ControlBox = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new altaAnalisis().ShowDialog();
+            this.cmb_analisis.DataSource = Negocio.ABMAnalisis.getAllAnalisis();
+            this.cmb_analisis.DisplayMember = "codigo";
+            this.cmb_analisis.ValueMember = "id";
+        }
+
     }
 }
