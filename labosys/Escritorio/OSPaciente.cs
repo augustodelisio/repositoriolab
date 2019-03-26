@@ -42,5 +42,10 @@ namespace Escritorio
                 MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
             }
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

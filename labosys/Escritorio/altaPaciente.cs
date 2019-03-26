@@ -74,6 +74,11 @@ namespace Escritorio
             {
                 MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
             }
-        }       
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

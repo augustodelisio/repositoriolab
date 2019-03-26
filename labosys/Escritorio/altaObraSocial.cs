@@ -118,5 +118,10 @@ namespace Escritorio
             string tex = this.txt_porcentaje.Text;
             this.txt_porcentaje.Text = tex.Replace(".", ",");
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

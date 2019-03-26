@@ -83,11 +83,11 @@ namespace Escritorio
 
         private void txt_codigo_Leave(object sender, EventArgs e)
         {
-            if ((this.txt_codigo.Text.Length >= 3) && (this.txt_codigo.Text.Length <= 6))
+            if ((this.txt_codigo.Text.Length >= 4) && (this.txt_codigo.Text.Length <= 6))
             {
                 if (this.txt_codigo.Text.Length != 3)
                 {
-                    this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 3 numeros";
+                    this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 4 numeros";
                     this.lbl_avisoCod.Visible = true;
                 }
                 else this.lbl_avisoCod.Text = "";
@@ -104,6 +104,11 @@ namespace Escritorio
                 this.txt_nbu.Select();
                 this.txt_nbu.Select(largo, 0);
             }
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

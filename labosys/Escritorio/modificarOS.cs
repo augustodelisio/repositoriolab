@@ -108,5 +108,10 @@ namespace Escritorio
                 this.txt_nbu.Select(largo, 0);
             }
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
