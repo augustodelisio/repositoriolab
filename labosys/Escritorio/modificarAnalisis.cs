@@ -85,7 +85,7 @@ namespace Escritorio
         {
             if ((this.txt_codigo.Text.Length >= 4) && (this.txt_codigo.Text.Length <= 6))
             {
-                if (this.txt_codigo.Text.Length != 3)
+                if (this.txt_codigo.Text.Length != 4)
                 {
                     this.lbl_avisoCod.Text = "Se recomienda que el campo\ncontenga 4 numeros";
                     this.lbl_avisoCod.Visible = true;

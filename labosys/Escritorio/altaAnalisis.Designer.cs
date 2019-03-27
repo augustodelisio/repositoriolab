@@ -82,7 +82,7 @@
             this.lbl_avisoCod.AutoSize = true;
             this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
-            this.lbl_avisoCod.Location = new System.Drawing.Point(235, 66);
+            this.lbl_avisoCod.Location = new System.Drawing.Point(137, 66);
             this.lbl_avisoCod.Name = "lbl_avisoCod";
             this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
             this.lbl_avisoCod.TabIndex = 13;

@@ -154,6 +154,37 @@ namespace BD
             }
         }
 
+        public List<Entidades.Paciente> getAllPacientesbyApellido(string Apellido)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                string APELLIDO = Apellido + "%";
+                SqlCommand cmd = new SqlCommand("select * from Pacientes where CONVERT(VARCHAR,apellido) like '" + APELLIDO + "'", Conexion.getInstance().Conection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Entidades.Paciente> pacientes = new List<Entidades.Paciente>();
+                while (reader.Read())
+                {
+                    string apellido = reader.GetString(0).Trim();
+                    string nombre = reader.GetString(1).Trim();
+                    string dni = reader.GetString(2).Trim();
+                    int id = reader.GetInt32(4);
+                    Entidades.Paciente pa = new Entidades.Paciente(apellido, nombre, dni);
+                    pa.Habilitado = reader.GetBoolean(3);
+                    pa.Id = id;
+                    pacientes.Add(pa);
+                }
+                Conexion.getInstance().Disconnect();
+                return pacientes;
+            }
+            catch (Exception e)
+            {
+
+                Conexion.getInstance().Disconnect();
+                return null;
+            }
+        }
+
         public Entidades.Paciente getPacientesbyDNI(string Dni)
         {
             try

@@ -34,13 +34,15 @@
             this.btn_bajapaciente = new System.Windows.Forms.Button();
             this.btn_modificarpaciente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_filtroDni = new System.Windows.Forms.TextBox();
             this.btn_habilitar = new System.Windows.Forms.Button();
             this.btn_obrasSocialesPaciente = new System.Windows.Forms.Button();
             this.btn_atras = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_filtroNombre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pacientes)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_pacientes
@@ -61,7 +63,7 @@
             // 
             this.btn_altapaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_altapaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_altapaciente.Location = new System.Drawing.Point(393, 348);
+            this.btn_altapaciente.Location = new System.Drawing.Point(392, 399);
             this.btn_altapaciente.Name = "btn_altapaciente";
             this.btn_altapaciente.Size = new System.Drawing.Size(180, 35);
             this.btn_altapaciente.TabIndex = 6;
@@ -73,9 +75,9 @@
             // 
             this.btn_bajapaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_bajapaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_bajapaciente.Location = new System.Drawing.Point(393, 434);
+            this.btn_bajapaciente.Location = new System.Drawing.Point(484, 332);
             this.btn_bajapaciente.Name = "btn_bajapaciente";
-            this.btn_bajapaciente.Size = new System.Drawing.Size(180, 35);
+            this.btn_bajapaciente.Size = new System.Drawing.Size(88, 35);
             this.btn_bajapaciente.TabIndex = 7;
             this.btn_bajapaciente.Text = "Deshabilitar";
             this.btn_bajapaciente.UseVisualStyleBackColor = false;
@@ -85,7 +87,7 @@
             // 
             this.btn_modificarpaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_modificarpaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarpaciente.Location = new System.Drawing.Point(393, 392);
+            this.btn_modificarpaciente.Location = new System.Drawing.Point(392, 440);
             this.btn_modificarpaciente.Name = "btn_modificarpaciente";
             this.btn_modificarpaciente.Size = new System.Drawing.Size(180, 35);
             this.btn_modificarpaciente.TabIndex = 8;
@@ -96,7 +98,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Controls.Add(this.lbl_dni);
             this.groupBox1.Controls.Add(this.txt_filtroDni);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,31 +108,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrar por DNI";
             // 
-            // lbl_dni
-            // 
-            this.lbl_dni.AutoSize = true;
-            this.lbl_dni.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dni.Location = new System.Drawing.Point(18, 25);
-            this.lbl_dni.Name = "lbl_dni";
-            this.lbl_dni.Size = new System.Drawing.Size(35, 17);
-            this.lbl_dni.TabIndex = 1;
-            this.lbl_dni.Text = "DNI:";
-            // 
             // txt_filtroDni
             // 
-            this.txt_filtroDni.Location = new System.Drawing.Point(78, 22);
+            this.txt_filtroDni.Location = new System.Drawing.Point(42, 22);
             this.txt_filtroDni.Name = "txt_filtroDni";
-            this.txt_filtroDni.Size = new System.Drawing.Size(150, 23);
+            this.txt_filtroDni.Size = new System.Drawing.Size(186, 23);
             this.txt_filtroDni.TabIndex = 0;
             this.txt_filtroDni.TextChanged += new System.EventHandler(this.txt_filtroDni_TextChanged);
+            this.txt_filtroDni.Enter += new System.EventHandler(this.txt_filtroDni_Enter);
             // 
             // btn_habilitar
             // 
             this.btn_habilitar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_habilitar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_habilitar.Location = new System.Drawing.Point(393, 434);
+            this.btn_habilitar.Location = new System.Drawing.Point(484, 332);
             this.btn_habilitar.Name = "btn_habilitar";
-            this.btn_habilitar.Size = new System.Drawing.Size(180, 35);
+            this.btn_habilitar.Size = new System.Drawing.Size(88, 35);
             this.btn_habilitar.TabIndex = 10;
             this.btn_habilitar.Text = "Habilitar";
             this.btn_habilitar.UseVisualStyleBackColor = false;
@@ -141,7 +133,7 @@
             // 
             this.btn_obrasSocialesPaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_obrasSocialesPaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_obrasSocialesPaciente.Location = new System.Drawing.Point(393, 475);
+            this.btn_obrasSocialesPaciente.Location = new System.Drawing.Point(392, 481);
             this.btn_obrasSocialesPaciente.Name = "btn_obrasSocialesPaciente";
             this.btn_obrasSocialesPaciente.Size = new System.Drawing.Size(180, 35);
             this.btn_obrasSocialesPaciente.TabIndex = 11;
@@ -161,6 +153,28 @@
             this.btn_atras.UseVisualStyleBackColor = false;
             this.btn_atras.Click += new System.EventHandler(this.btn_atras_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.txt_filtroNombre);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 399);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(250, 54);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtrar por Apellido";
+            // 
+            // txt_filtroNombre
+            // 
+            this.txt_filtroNombre.Location = new System.Drawing.Point(42, 22);
+            this.txt_filtroNombre.Name = "txt_filtroNombre";
+            this.txt_filtroNombre.Size = new System.Drawing.Size(186, 23);
+            this.txt_filtroNombre.TabIndex = 0;
+            this.txt_filtroNombre.TextChanged += new System.EventHandler(this.txt_filtroNombre_TextChanged);
+            this.txt_filtroNombre.Enter += new System.EventHandler(this.txt_filtroNombre_Enter);
+            // 
             // ABMPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +182,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_obrasSocialesPaciente);
             this.Controls.Add(this.btn_habilitar);
@@ -185,6 +200,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pacientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -195,10 +212,11 @@
         private System.Windows.Forms.Button btn_bajapaciente;
         private System.Windows.Forms.Button btn_modificarpaciente;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.TextBox txt_filtroDni;
         private System.Windows.Forms.Button btn_habilitar;
         private System.Windows.Forms.Button btn_obrasSocialesPaciente;
         private System.Windows.Forms.Button btn_atras;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txt_filtroNombre;
     }
 }

@@ -23,7 +23,7 @@ namespace Escritorio
         {
             if ((cod.Length < 4) || (cod.Length > 6))
                 return false;
-            Regex reg = new Regex(@"\d{4,6}");
+            Regex reg = new Regex(@"^\d{4,6}$");
             Match match = reg.Match(cod);
             return match.Success;
         }

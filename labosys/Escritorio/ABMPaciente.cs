@@ -220,5 +220,27 @@ namespace Escritorio
         {
             this.Close();
         }
+
+        private void txt_filtroNombre_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientesbyApellido(this.txt_filtroNombre.Text);
+            }
+            catch
+            {
+                this.dgv_pacientes.DataSource = null;
+            }
+        }
+
+        private void txt_filtroNombre_Enter(object sender, EventArgs e)
+        {
+            this.txt_filtroDni.Text = "";
+        }
+
+        private void txt_filtroDni_Enter(object sender, EventArgs e)
+        {
+            this.txt_filtroNombre.Text = "";
+        }
     }
 }

@@ -82,7 +82,7 @@
             this.lbl_avisoCod.AutoSize = true;
             this.lbl_avisoCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_avisoCod.ForeColor = System.Drawing.Color.Olive;
-            this.lbl_avisoCod.Location = new System.Drawing.Point(211, 63);
+            this.lbl_avisoCod.Location = new System.Drawing.Point(128, 66);
             this.lbl_avisoCod.Name = "lbl_avisoCod";
             this.lbl_avisoCod.Size = new System.Drawing.Size(35, 15);
             this.lbl_avisoCod.TabIndex = 12;
@@ -103,7 +103,7 @@
             this.lbl_cantNBU.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cantNBU.Location = new System.Drawing.Point(34, 184);
             this.lbl_cantNBU.Name = "lbl_cantNBU";
-            this.lbl_cantNBU.Size = new System.Drawing.Size(94, 17);
+            this.lbl_cantNBU.Size = new System.Drawing.Size(93, 15);
             this.lbl_cantNBU.TabIndex = 8;
             this.lbl_cantNBU.Text = "Cantidad NBU";
             // 
@@ -120,7 +120,7 @@
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.Location = new System.Drawing.Point(68, 113);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
+            this.lbl_nombre.Size = new System.Drawing.Size(57, 15);
             this.lbl_nombre.TabIndex = 2;
             this.lbl_nombre.Text = "Nombre";
             // 
@@ -138,7 +138,7 @@
             this.lbl_codigo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.Location = new System.Drawing.Point(74, 43);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(52, 17);
+            this.lbl_codigo.Size = new System.Drawing.Size(51, 15);
             this.lbl_codigo.TabIndex = 0;
             this.lbl_codigo.Text = "Codigo";
             // 

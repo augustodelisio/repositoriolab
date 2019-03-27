@@ -45,6 +45,11 @@ namespace Negocio
             return BD.PacienteDB.getInstance().getAllPacientesbyDNI(Dni);
         }
 
+        static public List<Entidades.Paciente> getAllPacientesbyApellido(string Apellido)
+        {
+            return BD.PacienteDB.getInstance().getAllPacientesbyApellido(Apellido);
+        }
+
 
         public static bool agregarOsaPaciente(PacienteOS paos)
         {
