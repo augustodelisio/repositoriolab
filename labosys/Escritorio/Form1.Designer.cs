@@ -59,7 +59,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1333, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1333, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,13 +68,13 @@
             this.exámenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoExámenToolStripMenuItem});
             this.exámenToolStripMenuItem.Name = "exámenToolStripMenuItem";
-            this.exámenToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
+            this.exámenToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.exámenToolStripMenuItem.Text = "Exámen";
             // 
             // nuevoExámenToolStripMenuItem
             // 
             this.nuevoExámenToolStripMenuItem.Name = "nuevoExámenToolStripMenuItem";
-            this.nuevoExámenToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.nuevoExámenToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.nuevoExámenToolStripMenuItem.Text = "Nuevo exámen";
             this.nuevoExámenToolStripMenuItem.Click += new System.EventHandler(this.nuevoExámenToolStripMenuItem_Click);
             // 
@@ -83,13 +83,13 @@
             this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDePacientesToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             // 
             // gestionDePacientesToolStripMenuItem
             // 
             this.gestionDePacientesToolStripMenuItem.Name = "gestionDePacientesToolStripMenuItem";
-            this.gestionDePacientesToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.gestionDePacientesToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.gestionDePacientesToolStripMenuItem.Text = "Gestion de Pacientes";
             this.gestionDePacientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDePacientesToolStripMenuItem_Click);
             // 
@@ -98,13 +98,13 @@
             this.obrasSocialesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionObrasSocialesToolStripMenuItem});
             this.obrasSocialesToolStripMenuItem.Name = "obrasSocialesToolStripMenuItem";
-            this.obrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(111, 23);
+            this.obrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(110, 21);
             this.obrasSocialesToolStripMenuItem.Text = "Obras Sociales";
             // 
             // gestionObrasSocialesToolStripMenuItem
             // 
             this.gestionObrasSocialesToolStripMenuItem.Name = "gestionObrasSocialesToolStripMenuItem";
-            this.gestionObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
+            this.gestionObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.gestionObrasSocialesToolStripMenuItem.Text = "Gestion Obras Sociales";
             this.gestionObrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.gestionObrasSocialesToolStripMenuItem_Click);
             // 
@@ -113,13 +113,13 @@
             this.analisisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionAnalisisToolStripMenuItem});
             this.analisisToolStripMenuItem.Name = "analisisToolStripMenuItem";
-            this.analisisToolStripMenuItem.Size = new System.Drawing.Size(66, 23);
+            this.analisisToolStripMenuItem.Size = new System.Drawing.Size(65, 21);
             this.analisisToolStripMenuItem.Text = "Analisis";
             // 
             // gestionAnalisisToolStripMenuItem
             // 
             this.gestionAnalisisToolStripMenuItem.Name = "gestionAnalisisToolStripMenuItem";
-            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
             this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
             // 
@@ -128,13 +128,13 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informeToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.informeToolStripMenuItem.Text = "Informes";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -155,6 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -171,6 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

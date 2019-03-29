@@ -50,7 +50,7 @@
             this.lbl_Fecha.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fecha.Location = new System.Drawing.Point(116, 58);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(43, 17);
+            this.lbl_Fecha.Size = new System.Drawing.Size(42, 15);
             this.lbl_Fecha.TabIndex = 1;
             this.lbl_Fecha.Text = "Fecha";
             // 
@@ -62,9 +62,10 @@
             this.cmb_pacientes.FormattingEnabled = true;
             this.cmb_pacientes.Location = new System.Drawing.Point(45, 19);
             this.cmb_pacientes.Name = "cmb_pacientes";
-            this.cmb_pacientes.Size = new System.Drawing.Size(220, 25);
+            this.cmb_pacientes.Size = new System.Drawing.Size(220, 23);
             this.cmb_pacientes.TabIndex = 4;
             this.cmb_pacientes.SelectedValueChanged += new System.EventHandler(this.cmb_pacientes_SelectedValueChanged);
+            this.cmb_pacientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_pacientes_KeyUp);
             // 
             // grb_pacientes
             // 
@@ -84,8 +85,8 @@
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Location = new System.Drawing.Point(109, 63);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(43, 17);
-            this.lbl_nombre.TabIndex = 5;
+            this.lbl_nombre.Size = new System.Drawing.Size(42, 15);
+            this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "label1";
             // 
             // groupBox1
@@ -106,8 +107,10 @@
             this.cmb_os.FormattingEnabled = true;
             this.cmb_os.Location = new System.Drawing.Point(45, 42);
             this.cmb_os.Name = "cmb_os";
-            this.cmb_os.Size = new System.Drawing.Size(220, 25);
-            this.cmb_os.TabIndex = 0;
+            this.cmb_os.Size = new System.Drawing.Size(220, 23);
+            this.cmb_os.TabIndex = 5;
+            this.cmb_os.Tag = "botonOS";
+            this.cmb_os.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_os_KeyUp);
             // 
             // btn_agregarAnalisis
             // 
@@ -163,7 +166,7 @@
             this.btn_atras.Name = "btn_atras";
             this.btn_atras.Size = new System.Drawing.Size(100, 30);
             this.btn_atras.TabIndex = 18;
-            this.btn_atras.Text = "Volver";
+            this.btn_atras.Text = "Cerrar";
             this.btn_atras.UseVisualStyleBackColor = false;
             this.btn_atras.Click += new System.EventHandler(this.btn_atras_Click);
             // 
@@ -171,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.btn_atras);
@@ -183,6 +187,8 @@
             this.Controls.Add(this.lbl_Fecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevoExamen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Examen";

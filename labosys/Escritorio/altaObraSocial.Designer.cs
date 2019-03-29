@@ -50,7 +50,7 @@
             // 
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(79, 34);
+            this.lbl_nombre.Location = new System.Drawing.Point(63, 33);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(58, 15);
             this.lbl_nombre.TabIndex = 0;
@@ -58,16 +58,16 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(160, 31);
+            this.txt_nombre.Location = new System.Drawing.Point(147, 31);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(155, 23);
+            this.txt_nombre.Size = new System.Drawing.Size(218, 23);
             this.txt_nombre.TabIndex = 1;
             // 
             // lbl_porcentaje
             // 
             this.lbl_porcentaje.AutoSize = true;
             this.lbl_porcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_porcentaje.Location = new System.Drawing.Point(65, 88);
+            this.lbl_porcentaje.Location = new System.Drawing.Point(49, 87);
             this.lbl_porcentaje.Name = "lbl_porcentaje";
             this.lbl_porcentaje.Size = new System.Drawing.Size(76, 15);
             this.lbl_porcentaje.TabIndex = 2;
@@ -75,9 +75,9 @@
             // 
             // txt_porcentaje
             // 
-            this.txt_porcentaje.Location = new System.Drawing.Point(160, 85);
+            this.txt_porcentaje.Location = new System.Drawing.Point(147, 85);
             this.txt_porcentaje.Name = "txt_porcentaje";
-            this.txt_porcentaje.Size = new System.Drawing.Size(155, 23);
+            this.txt_porcentaje.Size = new System.Drawing.Size(117, 23);
             this.txt_porcentaje.TabIndex = 3;
             this.txt_porcentaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_porcentaje_KeyUp);
             this.txt_porcentaje.Leave += new System.EventHandler(this.txt_porcentaje_Leave);
@@ -86,7 +86,7 @@
             // 
             this.lbl_nbu.AutoSize = true;
             this.lbl_nbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nbu.Location = new System.Drawing.Point(104, 141);
+            this.lbl_nbu.Location = new System.Drawing.Point(88, 140);
             this.lbl_nbu.Name = "lbl_nbu";
             this.lbl_nbu.Size = new System.Drawing.Size(33, 15);
             this.lbl_nbu.TabIndex = 4;
@@ -94,9 +94,9 @@
             // 
             // txt_nbu
             // 
-            this.txt_nbu.Location = new System.Drawing.Point(160, 138);
+            this.txt_nbu.Location = new System.Drawing.Point(147, 138);
             this.txt_nbu.Name = "txt_nbu";
-            this.txt_nbu.Size = new System.Drawing.Size(155, 23);
+            this.txt_nbu.Size = new System.Drawing.Size(117, 23);
             this.txt_nbu.TabIndex = 5;
             this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
@@ -124,9 +124,9 @@
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(63, 58);
+            this.groupBox1.Location = new System.Drawing.Point(42, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 249);
+            this.groupBox1.Size = new System.Drawing.Size(396, 249);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Obra Social";
@@ -135,7 +135,7 @@
             // 
             this.lbl_actoBioquimico.AutoSize = true;
             this.lbl_actoBioquimico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_actoBioquimico.Location = new System.Drawing.Point(31, 194);
+            this.lbl_actoBioquimico.Location = new System.Drawing.Point(15, 193);
             this.lbl_actoBioquimico.Name = "lbl_actoBioquimico";
             this.lbl_actoBioquimico.Size = new System.Drawing.Size(110, 15);
             this.lbl_actoBioquimico.TabIndex = 7;
@@ -143,9 +143,9 @@
             // 
             // txt_actoBioquimico
             // 
-            this.txt_actoBioquimico.Location = new System.Drawing.Point(160, 191);
+            this.txt_actoBioquimico.Location = new System.Drawing.Point(147, 191);
             this.txt_actoBioquimico.Name = "txt_actoBioquimico";
-            this.txt_actoBioquimico.Size = new System.Drawing.Size(155, 23);
+            this.txt_actoBioquimico.Size = new System.Drawing.Size(117, 23);
             this.txt_actoBioquimico.TabIndex = 6;
             this.txt_actoBioquimico.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_actoBioquimico_KeyUp);
             // 
@@ -177,9 +177,11 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "altaObraSocial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Obra Social";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.altaObraSocial_KeyUp);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

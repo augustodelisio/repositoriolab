@@ -61,7 +61,24 @@ namespace BD
                 Conexion.getInstance().Disconnect();
                 return false;
             }
-        }  
+        }
+
+        public bool modificarOsaPaciente(PacienteOS paos)
+        {
+            try
+            {
+                Conexion.getInstance().Connect();
+                SqlCommand cmd = new SqlCommand("update dbo.PacienteOS set afiliado='"+ paos.NroAfiliado + "' where IdPaciente='"+paos.IdPaciente+"' and idOS='"+paos.IdOS+"'", Conexion.getInstance().Conection);
+                cmd.ExecuteNonQuery();
+                Conexion.getInstance().Disconnect();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Conexion.getInstance().Disconnect();
+                return false;
+            }
+        }
 
         public List<PacienteOS> getAllOS(Paciente pa)
         {

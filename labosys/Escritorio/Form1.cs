@@ -56,5 +56,14 @@ namespace Escritorio
         {
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea salir?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.No)
+            { 
+                e.Cancel = true;
+            }
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace Escritorio
         private void btn_altapaciente_Click(object sender, EventArgs e)
         {
             new altaPaciente().ShowDialog();
+            this.txt_filtroDni.Text = "";
+            this.txt_filtroNombre.Text = "";
             try
             {
                 this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
@@ -58,8 +60,10 @@ namespace Escritorio
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No se ha seleccionado ningún paciente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            this.txt_filtroDni.Text = "";
+            this.txt_filtroNombre.Text = "";
 
         }
 
@@ -77,33 +81,43 @@ namespace Escritorio
                         string apellido = (string)celdas["apellido"].Value;
                         Entidades.Paciente pa = new Entidades.Paciente(apellido, nombre, dni);
                         pa.Id = (int)celdas["id"].Value;
-                        DialogResult result = MessageBox.Show("esta seguro que desea dar de baja a '" + apellido + "'?", "Cuidado", MessageBoxButtons.YesNo);
+
+                        //COLORES
+                        row.DefaultCellStyle.BackColor = Color.DarkRed;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                        row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+                        row.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                        DialogResult result = MessageBox.Show("¿Dar de baja a " + apellido + ", " + nombre + "?", "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         //bool exito = false;
                         if (result == DialogResult.Yes)
                         {
                             bool exito = Negocio.ABMPaciente.deshabilitarPaciente(pa);
                             if (exito)
                             {
-                                MessageBox.Show("Paciente dado de baja con exito", "Exito", MessageBoxButtons.OK);
+                                MessageBox.Show("Paciente dado de baja con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("No se ha podido dar de baja al paciente", "Fracaso", MessageBoxButtons.OK);
+                                MessageBox.Show("No se ha podido dar de baja al paciente", "Fracaso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
                         bs.ResetBindings(false);
+                        actualizaColor();
                     }
                     else
                     {
-                        MessageBox.Show("El paciente ya se encuentra deshabilitado", "Ciudado!", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente ya se encuentra deshabilitado", "Ciudado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
                 catch (NullReferenceException ex)
                 {
-                    MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
+                    MessageBox.Show("No ha seleccionado ningún paciente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                this.txt_filtroDni.Text = "";
+                this.txt_filtroNombre.Text = "";
 
             }
         }
@@ -151,33 +165,43 @@ namespace Escritorio
                         string apellido = (string)celdas["apellido"].Value;
                         Entidades.Paciente pa = new Entidades.Paciente(apellido, nombre, dni);
                         pa.Id = (int)celdas["id"].Value;
-                        DialogResult result = MessageBox.Show("esta seguro que desea dar de alta a '" + apellido + "'?", "Cuidado", MessageBoxButtons.YesNo);
+                        
+                        //COLORES
+                        row.DefaultCellStyle.BackColor = Color.DarkRed;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                        row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+                        row.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                        DialogResult result = MessageBox.Show("¿Dar de alta a " + apellido + ", " + nombre + "?", "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         //bool exito = false;
                         if (result == DialogResult.Yes)
                         {
                             bool exito = Negocio.ABMPaciente.habilitarPaciente(pa);
                             if (exito)
                             {
-                                MessageBox.Show("Paciente dado de alta con exito", "Exito", MessageBoxButtons.OK);
+                                MessageBox.Show("Paciente dado de alta con Éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("No se ha podido dar de alta al paciente", "Fracaso", MessageBoxButtons.OK);
+                                MessageBox.Show("No se ha podido dar de alta al paciente", "Fracaso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         this.dgv_pacientes.DataSource = Negocio.ABMPaciente.getAllPacientes();
                         bs.ResetBindings(false);
+                        actualizaColor();
                     }
                     else
                     {
-                        MessageBox.Show("El paciente ya se encuentra habilitado", "Ciudado!", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente ya se encuentra habilitado", "Ciudado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
                 catch (NullReferenceException ex)
                 {
-                    MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
+                    MessageBox.Show("No se ha seleccionado ningún paciente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                this.txt_filtroDni.Text = "";
+                this.txt_filtroNombre.Text = "";
 
             }
         }
@@ -186,7 +210,6 @@ namespace Escritorio
         {
             try
             {
-
                 DataGridViewRow row = this.dgv_pacientes.CurrentRow;
                 DataGridViewCellCollection celdas = row.Cells;
                 string dni = (string)celdas["dni"].Value;
@@ -199,9 +222,10 @@ namespace Escritorio
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ningun paciente", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No se ha seleccionado ningún paciente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            this.txt_filtroDni.Text = "";
+            this.txt_filtroNombre.Text = "";
         }
 
         private void txt_filtroDni_TextChanged(object sender, EventArgs e)
@@ -218,7 +242,7 @@ namespace Escritorio
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void txt_filtroNombre_TextChanged(object sender, EventArgs e)
@@ -241,6 +265,30 @@ namespace Escritorio
         private void txt_filtroDni_Enter(object sender, EventArgs e)
         {
             this.txt_filtroNombre.Text = "";
+        }
+
+        public void actualizaColor()
+        {
+            try
+            {
+                for (int i = 0; i < this.dgv_pacientes.RowCount; i++)
+                {
+                    int hab = Convert.ToInt16(this.dgv_pacientes.Rows[i].Cells[3].Value);
+                    if (hab != 1)
+                    {
+                        this.dgv_pacientes.Rows[i].DefaultCellStyle.ForeColor = Color.DarkGray;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void dgv_pacientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            actualizaColor();
         }
     }
 }

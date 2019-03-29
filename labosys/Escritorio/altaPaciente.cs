@@ -26,7 +26,7 @@ namespace Escritorio
                 bool camposValidos = true;
                 if (!Validador.validarString(txt_nombre.Text))
                 {
-                    errorProvider1.SetError(txt_nombre, "El campo no puede estar vacio");
+                    errorProvider1.SetError(txt_nombre, "El campo no puede estar vacío");
                     camposValidos = false;
                 }
                 else
@@ -35,7 +35,7 @@ namespace Escritorio
                 }
                 if (!Validador.validarString(txt_apellido.Text))
                 {
-                    errorProvider1.SetError(txt_apellido, "El campo debe contener solo digitos y/o ,");
+                    errorProvider1.SetError(txt_apellido, "El campo debe contener solo dígitos y/o ,");
                     camposValidos = false;
                 }
                 else
@@ -44,7 +44,7 @@ namespace Escritorio
                 }
                 if (!Validador.validarDNI(txt_dni.Text))
                 {
-                    errorProvider1.SetError(txt_dni, "El campo debe tener 8 digitos");
+                    errorProvider1.SetError(txt_dni, "El campo debe tener 8 dígitos");
                     camposValidos = false;
                 }
                 else
@@ -60,25 +60,33 @@ namespace Escritorio
                     bool exito = Negocio.ABMPaciente.agregarPaciente(paciente);
                     if (exito)
                     {
-                        MessageBox.Show("El paciente se agrego exitosamente", "Exito!", MessageBoxButtons.OK);
-                        this.Close();
+                        MessageBox.Show("El paciente se agrego exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
 
                     }
                     else
                     {
-                        MessageBox.Show("El paciente no se pudo dar de alta, es probable que ya existe orto paciente con el dni ingresado", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente no se pudo dar de alta.\nEs probable que ya exista otro paciente con el DNI ingresado.", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
+                MessageBox.Show("Ha ocurrido un error, contacte con el proveedor del software", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void altaPaciente_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
         }
     }
 }

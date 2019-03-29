@@ -13,6 +13,7 @@ namespace Escritorio
     public partial class modificarPaciente : Form
     {
         int id;
+        bool cerrar;
         public modificarPaciente(Entidades.Paciente pa)
         {
             InitializeComponent();
@@ -22,10 +23,11 @@ namespace Escritorio
                 this.txt_dni.Text = pa.Dni.Trim();
                 this.txt_nombre.Text = pa.Nombre.Trim();
                 id = pa.Id;
+                cerrar = false;
             }
             catch(Exception e)
             {
-                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,18 +70,19 @@ namespace Escritorio
                     bool exito = Negocio.ABMPaciente.modificarPaciente(paciente);
                     if (exito)
                     {
-                        MessageBox.Show("Paciente modificado con exito", "Exito", MessageBoxButtons.OK);
+                        MessageBox.Show("Paciente modificado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cerrar = true;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("El paciente no se ha podido modificar, es probable que el dni ingresado coincida con alguno existente.", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El paciente no se ha podido modificar\nEs probable que el dni ingresado coincida con alguno existente.", "Fracaso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error "+ex, "Fracaso", MessageBoxButtons.OK);
+                MessageBox.Show("Ha ocurrido un error "+ex, "Fracaso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -87,6 +90,26 @@ namespace Escritorio
         private void btn_atras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void modificarPaciente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!cerrar)
+            {
+                DialogResult resultado = MessageBox.Show("¿Descartar cambios?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void modificarPaciente_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

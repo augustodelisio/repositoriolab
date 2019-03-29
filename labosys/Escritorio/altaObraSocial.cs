@@ -29,24 +29,27 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_nombre, "");
             }
+
             if (!Validador.validarPorcentaje(txt_porcentaje.Text))
             {
-                errorProvider1.SetError(txt_porcentaje, "El campo debe tener un valor entre 0 y 100");
+                errorProvider1.SetError(txt_porcentaje, "El campo debe contener un valor entre 0 y 100");
                 camposValidos = false;
             }
             else
             {
                 errorProvider1.SetError(txt_porcentaje, "");
             }
+
             if (!Validador.validarDecimal(txt_nbu.Text))
             {
-                errorProvider1.SetError(txt_nbu, "Debe contener solo digitos y/o ,");
+                errorProvider1.SetError(txt_nbu, "El campo debe contener solo digitos y/o ,");
                 camposValidos = false;
             }
             else
             {
                 errorProvider1.SetError(txt_nbu, "");
             }
+
             if (!Validador.validarDecimal(txt_actoBioquimico.Text))
             {
                 errorProvider1.SetError(txt_actoBioquimico, "El campo debe contener solo digitos y/o ,");
@@ -56,6 +59,7 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_actoBioquimico, "");
             }
+
             if (camposValidos)
             {
                 string nombre = this.txt_nombre.Text.Trim();
@@ -68,19 +72,19 @@ namespace Escritorio
                     bool exito = Negocio.ABMObraSocial.agregarOS(obraSocial);
                     if (exito)
                     {
-                        MessageBox.Show("Obra Social agregada con exito", "Exito", MessageBoxButtons.OK);
-                        this.Close();
+                        MessageBox.Show("Obra Social agregada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido agregar la obra social, es probable que ya exista otra obra social cargada con ese mismo nombre", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("No se ha podido agregar la obra social.\nEs probable que ya exista otra Obra Social con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error: " + ex + ". Contacte con su proveedor de software", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -121,7 +125,15 @@ namespace Escritorio
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void altaObraSocial_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
         }
     }
 }

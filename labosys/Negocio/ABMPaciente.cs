@@ -61,12 +61,22 @@ namespace Negocio
                 List<Entidades.PacienteOS> oss = BD.PacienteDB.getInstance().getAllOS(pa);
                 foreach (Entidades.PacienteOS os in oss)
                 {
-                    if (os.Id == paos.IdOS)
+                    if (os.IdOS == paos.IdOS)
                     {
                         return false;
                     }
                 }
                 return BD.PacienteDB.getInstance().agregarOsaPaciente(paos);
+            }
+            return false;
+        }
+
+        public static bool modificarOsaPaciente(PacienteOS paos)
+        {
+            bool existe = BD.ObraSocialDB.getInstance().buscarAfiliadoOS(paos);
+            if (existe == false)
+            {
+                return BD.PacienteDB.getInstance().modificarOsaPaciente(paos);
             }
             return false;
         }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BD
 {
@@ -39,8 +34,8 @@ namespace BD
         public bool Connect()
         {
             try
-            {
-                cn = new SqlConnection("Data Source=POTASIO-PC\\SQLEXPRESS;Initial Catalog=Labosys;Integrated Security=True");
+            { 
+                cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["labosys"].ConnectionString);
                 cn.Open();
 
                 return true;

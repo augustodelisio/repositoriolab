@@ -58,6 +58,7 @@
             this.dgv_pacientes.Size = new System.Drawing.Size(561, 306);
             this.dgv_pacientes.TabIndex = 5;
             this.dgv_pacientes.CurrentCellChanged += new System.EventHandler(this.dgv_pacientes_CurrentCellChanged);
+            this.dgv_pacientes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_pacientes_DataBindingComplete);
             // 
             // btn_altapaciente
             // 
@@ -119,6 +120,7 @@
             // 
             // btn_habilitar
             // 
+            this.btn_habilitar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_habilitar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_habilitar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_habilitar.Location = new System.Drawing.Point(484, 332);
@@ -194,6 +196,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ABMPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Pacientes";

@@ -23,6 +23,7 @@ namespace Escritorio
         private void Btn_altaobrasocial_Click(object sender, EventArgs e)
         {
             new altaObraSocial().ShowDialog();
+            this.txt_nombre.Text = "";
             try
             {
                 this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
@@ -31,13 +32,13 @@ namespace Escritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error" + ex + ". Contacte con el proveedor del software", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void btn_modificarOS_Click(object sender, EventArgs e)
@@ -59,9 +60,9 @@ namespace Escritorio
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            this.txt_nombre.Text = "";
         }
 
         private void btn_deshabilitarOS_Click(object sender, EventArgs e)
@@ -85,18 +86,18 @@ namespace Escritorio
                     row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
                     row.DefaultCellStyle.SelectionForeColor = Color.White;
 
-                    DialogResult result = MessageBox.Show("Dar de baja a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("¿Dar de baja a " + nombre + "?", "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     //bool exito = false;
                     if (result == DialogResult.Yes)
                     {
                         bool exito = Negocio.ABMObraSocial.deshabilitarOS(os);
                         if (exito)
                         {
-                            MessageBox.Show("Obra Social dada de baja con exito", "Exito", MessageBoxButtons.OK);
+                            MessageBox.Show("Obra Social dada de baja con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("No se ha podido dar de baja Obra Social", "Fracaso", MessageBoxButtons.OK);
+                            MessageBox.Show("No se ha podido dar de baja Obra Social", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 
@@ -106,14 +107,15 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show("La Obra Social ya se encuentra deshabilitada", "Ciudado!", MessageBoxButtons.OK);
+                    MessageBox.Show("La Obra Social ya se encuentra deshabilitada", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            this.txt_nombre.Text = "";
 
         }
 
@@ -138,18 +140,18 @@ namespace Escritorio
                     row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
                     row.DefaultCellStyle.SelectionForeColor = Color.White;
 
-                    DialogResult result = MessageBox.Show("Dar de alta a '" + nombre + "'?", "Cuidado", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("¿Dar de alta a " + nombre + "?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     //bool exito = false;
                     if (result == DialogResult.Yes)
                     {
                         bool exito = Negocio.ABMObraSocial.habilitarOS(os);
                         if (exito)
                         {
-                            MessageBox.Show("Obra Social se dio de alta con exito", "Exito", MessageBoxButtons.OK);
+                            MessageBox.Show("Obra Social " + nombre + " se dió de alta con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("No se ha podido dar de alta la Obra Social", "Fracaso", MessageBoxButtons.OK);
+                            MessageBox.Show("No se ha podido dar de alta la Obra Social", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     this.dgv_obrasSociales.DataSource = Negocio.ABMObraSocial.getAllObrasSociales();
@@ -158,14 +160,15 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show("La Obra Social ya se encuentra habilitada", "Ciudado!", MessageBoxButtons.OK);
+                    MessageBox.Show("La Obra Social ya se encuentra habilitada", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No ha seleccionado ninguna Obra Social", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            this.txt_nombre.Text = "";
 
         }
 
@@ -212,7 +215,7 @@ namespace Escritorio
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error: " + e + ". Contacte con el proveedor del software", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

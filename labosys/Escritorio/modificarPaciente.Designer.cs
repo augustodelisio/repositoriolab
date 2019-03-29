@@ -75,7 +75,7 @@
             this.lbl_dni.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dni.Location = new System.Drawing.Point(74, 156);
             this.lbl_dni.Name = "lbl_dni";
-            this.lbl_dni.Size = new System.Drawing.Size(30, 17);
+            this.lbl_dni.Size = new System.Drawing.Size(29, 15);
             this.lbl_dni.TabIndex = 4;
             this.lbl_dni.Text = "Dni";
             // 
@@ -92,7 +92,7 @@
             this.lbl_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_apellido.Location = new System.Drawing.Point(45, 97);
             this.lbl_apellido.Name = "lbl_apellido";
-            this.lbl_apellido.Size = new System.Drawing.Size(60, 17);
+            this.lbl_apellido.Size = new System.Drawing.Size(59, 15);
             this.lbl_apellido.TabIndex = 2;
             this.lbl_apellido.Text = "Apellido";
             // 
@@ -109,7 +109,7 @@
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.Location = new System.Drawing.Point(45, 39);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
+            this.lbl_nombre.Size = new System.Drawing.Size(57, 15);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
             // 
@@ -156,9 +156,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "modificarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Paciente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificarPaciente_FormClosing);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.modificarPaciente_KeyUp);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

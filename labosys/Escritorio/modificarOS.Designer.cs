@@ -59,80 +59,82 @@
             this.gbx_modificar.Controls.Add(this.txt_nombre);
             this.gbx_modificar.Controls.Add(this.lbl_nombre);
             this.gbx_modificar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbx_modificar.Location = new System.Drawing.Point(69, 47);
+            this.gbx_modificar.Location = new System.Drawing.Point(45, 55);
             this.gbx_modificar.Name = "gbx_modificar";
-            this.gbx_modificar.Size = new System.Drawing.Size(346, 245);
+            this.gbx_modificar.Size = new System.Drawing.Size(393, 245);
             this.gbx_modificar.TabIndex = 10;
             this.gbx_modificar.TabStop = false;
-            this.gbx_modificar.Text = "Obra Social existente";
+            this.gbx_modificar.Text = "Modificar Obra Social";
             // 
             // lbl_actoBioquimico
             // 
             this.lbl_actoBioquimico.AutoSize = true;
-            this.lbl_actoBioquimico.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_actoBioquimico.Location = new System.Drawing.Point(20, 205);
+            this.lbl_actoBioquimico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_actoBioquimico.Location = new System.Drawing.Point(11, 196);
             this.lbl_actoBioquimico.Name = "lbl_actoBioquimico";
-            this.lbl_actoBioquimico.Size = new System.Drawing.Size(110, 17);
+            this.lbl_actoBioquimico.Size = new System.Drawing.Size(110, 15);
             this.lbl_actoBioquimico.TabIndex = 11;
             this.lbl_actoBioquimico.Text = "Acto Bioquimico";
             // 
             // txt_actoBioquimico
             // 
-            this.txt_actoBioquimico.Location = new System.Drawing.Point(140, 198);
+            this.txt_actoBioquimico.Location = new System.Drawing.Point(144, 193);
             this.txt_actoBioquimico.Name = "txt_actoBioquimico";
-            this.txt_actoBioquimico.Size = new System.Drawing.Size(149, 23);
+            this.txt_actoBioquimico.Size = new System.Drawing.Size(113, 23);
             this.txt_actoBioquimico.TabIndex = 10;
             this.txt_actoBioquimico.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_actoBioquimico_KeyUp);
             // 
             // txt_nbu
             // 
-            this.txt_nbu.Location = new System.Drawing.Point(140, 145);
+            this.txt_nbu.Location = new System.Drawing.Point(144, 140);
             this.txt_nbu.Name = "txt_nbu";
-            this.txt_nbu.Size = new System.Drawing.Size(149, 23);
+            this.txt_nbu.Size = new System.Drawing.Size(113, 23);
             this.txt_nbu.TabIndex = 9;
             this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
             // lbl_nbu
             // 
             this.lbl_nbu.AutoSize = true;
-            this.lbl_nbu.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nbu.Location = new System.Drawing.Point(76, 148);
+            this.lbl_nbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nbu.Location = new System.Drawing.Point(88, 143);
             this.lbl_nbu.Name = "lbl_nbu";
-            this.lbl_nbu.Size = new System.Drawing.Size(34, 17);
+            this.lbl_nbu.Size = new System.Drawing.Size(33, 15);
             this.lbl_nbu.TabIndex = 8;
             this.lbl_nbu.Text = "Nbu";
             // 
             // txt_porcentaje
             // 
-            this.txt_porcentaje.Location = new System.Drawing.Point(140, 94);
+            this.txt_porcentaje.Location = new System.Drawing.Point(144, 89);
             this.txt_porcentaje.Name = "txt_porcentaje";
-            this.txt_porcentaje.Size = new System.Drawing.Size(149, 23);
+            this.txt_porcentaje.Size = new System.Drawing.Size(113, 23);
             this.txt_porcentaje.TabIndex = 3;
+            this.txt_porcentaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_porcentaje_KeyUp);
+            this.txt_porcentaje.Leave += new System.EventHandler(this.txt_porcentaje_Leave);
             // 
             // lbl_porcentaje
             // 
             this.lbl_porcentaje.AutoSize = true;
-            this.lbl_porcentaje.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_porcentaje.Location = new System.Drawing.Point(45, 97);
+            this.lbl_porcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_porcentaje.Location = new System.Drawing.Point(45, 92);
             this.lbl_porcentaje.Name = "lbl_porcentaje";
-            this.lbl_porcentaje.Size = new System.Drawing.Size(73, 17);
+            this.lbl_porcentaje.Size = new System.Drawing.Size(76, 15);
             this.lbl_porcentaje.TabIndex = 2;
             this.lbl_porcentaje.Text = "Porcentaje";
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(140, 36);
+            this.txt_nombre.Location = new System.Drawing.Point(144, 36);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(149, 23);
+            this.txt_nombre.Size = new System.Drawing.Size(223, 23);
             this.txt_nombre.TabIndex = 1;
             // 
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(59, 39);
+            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombre.Location = new System.Drawing.Point(63, 39);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
+            this.lbl_nombre.Size = new System.Drawing.Size(58, 15);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
             // 
@@ -140,7 +142,7 @@
             // 
             this.btn_ModificarOS.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_ModificarOS.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ModificarOS.Location = new System.Drawing.Point(184, 323);
+            this.btn_ModificarOS.Location = new System.Drawing.Point(187, 347);
             this.btn_ModificarOS.Name = "btn_ModificarOS";
             this.btn_ModificarOS.Size = new System.Drawing.Size(130, 30);
             this.btn_ModificarOS.TabIndex = 11;
@@ -168,6 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.btn_atras);
@@ -175,6 +178,8 @@
             this.Controls.Add(this.gbx_modificar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "modificarOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Obra Social";

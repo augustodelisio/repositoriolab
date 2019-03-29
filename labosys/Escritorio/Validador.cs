@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Escritorio
 {
@@ -43,18 +44,22 @@ namespace Escritorio
             if (txt.Length == 0) return false;
             return Regex.IsMatch(txt, @"^(?:\d+\,?\d*)?$");
         }
-        public static bool validarPorcentaje(string porc)
+        public static bool validarPorcentaje(string porc)//ME HICISTE RENEGAR HDP
         {
             try
             {
-                float val = float.Parse(porc);
-                if ((porc.Length == 0) || (val > 100) || (val < 1)) return false;
+                string ult = "";
+                if (porc.Length > 0)
+                {
+                    ult = porc.Substring(porc.Length - 1, 1);
+                }
+                if ((porc.Length == 0) || (ult==",") ) return false;
             }
             catch (Exception ex)
             {
+                MessageBox.Show("No funciona el VALIDADOR DE PORCENTAJE", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            return Regex.IsMatch(porc, @"^(?:\d{1,3}\,?\d{1,3})?$");
+            return Regex.IsMatch(porc, @"^(?:(\d{1,2}\,\d?|1?0?0?))?$");
 
         }
     }

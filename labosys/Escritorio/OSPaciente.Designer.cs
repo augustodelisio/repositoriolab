@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OSPaciente));
             this.dgv_ospacientes = new System.Windows.Forms.DataGridView();
             this.gb_paciente = new System.Windows.Forms.GroupBox();
-            this.btn_agregarOSPaciente = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_atras = new System.Windows.Forms.Button();
+            this.btn_agregarOSPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ospacientes)).BeginInit();
             this.gb_paciente.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // gb_paciente
             // 
             this.gb_paciente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gb_paciente.Controls.Add(this.button1);
             this.gb_paciente.Controls.Add(this.btn_atras);
             this.gb_paciente.Controls.Add(this.btn_agregarOSPaciente);
             this.gb_paciente.Controls.Add(this.dgv_ospacientes);
@@ -62,17 +64,17 @@
             this.gb_paciente.TabIndex = 1;
             this.gb_paciente.TabStop = false;
             // 
-            // btn_agregarOSPaciente
+            // button1
             // 
-            this.btn_agregarOSPaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_agregarOSPaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregarOSPaciente.Location = new System.Drawing.Point(568, 266);
-            this.btn_agregarOSPaciente.Name = "btn_agregarOSPaciente";
-            this.btn_agregarOSPaciente.Size = new System.Drawing.Size(130, 30);
-            this.btn_agregarOSPaciente.TabIndex = 1;
-            this.btn_agregarOSPaciente.Text = "Nueva OS ";
-            this.btn_agregarOSPaciente.UseVisualStyleBackColor = false;
-            this.btn_agregarOSPaciente.Click += new System.EventHandler(this.btn_agregarOSPaciente_Click);
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(568, 313);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 30);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Modificar ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.modificar_Click);
             // 
             // btn_atras
             // 
@@ -86,18 +88,35 @@
             this.btn_atras.UseVisualStyleBackColor = false;
             this.btn_atras.Click += new System.EventHandler(this.btn_atras_Click);
             // 
+            // btn_agregarOSPaciente
+            // 
+            this.btn_agregarOSPaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_agregarOSPaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agregarOSPaciente.Location = new System.Drawing.Point(568, 266);
+            this.btn_agregarOSPaciente.Name = "btn_agregarOSPaciente";
+            this.btn_agregarOSPaciente.Size = new System.Drawing.Size(130, 30);
+            this.btn_agregarOSPaciente.TabIndex = 1;
+            this.btn_agregarOSPaciente.Text = "Nueva OS ";
+            this.btn_agregarOSPaciente.UseVisualStyleBackColor = false;
+            this.btn_agregarOSPaciente.Click += new System.EventHandler(this.btn_agregarOSPaciente_Click);
+            // 
             // OSPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.gb_paciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OSPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OSPaciente";
+            this.Load += new System.EventHandler(this.OSPaciente_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OSPaciente_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ospacientes)).EndInit();
             this.gb_paciente.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -110,5 +129,6 @@
         private System.Windows.Forms.GroupBox gb_paciente;
         private System.Windows.Forms.Button btn_agregarOSPaciente;
         private System.Windows.Forms.Button btn_atras;
+        private System.Windows.Forms.Button button1;
     }
 }

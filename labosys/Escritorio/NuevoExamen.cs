@@ -26,7 +26,7 @@ namespace Escritorio
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error: El formato de fecha no es válido", "Error", MessageBoxButtons.OK);
             }
         }
         private Entidades.Paciente paciente;
@@ -61,7 +61,7 @@ namespace Escritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error al seleccionar el paciente", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -90,7 +90,6 @@ namespace Escritorio
                     {
                         //if (ex.IdExamen != 0)
                         {
-                            this.Close();
                             new AnalisisExamen(ex).ShowDialog();
                         }
                        // else
@@ -100,12 +99,12 @@ namespace Escritorio
                     }
                 }else
                 {
-                    MessageBox.Show("La fecha ingresada no es valida", "Cuidado!", MessageBoxButtons.OK);
+                    MessageBox.Show("La fecha ingresada no es válida", "Cuidado!", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un problema"+ex.ToString(), "Cuidado!", MessageBoxButtons.OK);
+                MessageBox.Show("Error: \nEs probable que el formato de fecha no sea correcto", "Cuidado!", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -158,7 +157,28 @@ namespace Escritorio
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void cmb_pacientes_DragEnter(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("asd", "asds", MessageBoxButtons.OK);
+        }
+
+        private void cmb_pacientes_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.cmb_pacientes,true,false,true,true);
+            }
+        }
+
+        private void cmb_os_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.cmb_os, true, false, true, true);
+            }
         }
     }
 }

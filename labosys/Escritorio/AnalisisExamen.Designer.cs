@@ -54,7 +54,7 @@
             this.dgv_analisis.Name = "dgv_analisis";
             this.dgv_analisis.ReadOnly = true;
             this.dgv_analisis.Size = new System.Drawing.Size(534, 168);
-            this.dgv_analisis.TabIndex = 0;
+            this.dgv_analisis.TabIndex = 2;
             // 
             // btn_agregarAnalisis
             // 
@@ -66,6 +66,7 @@
             this.btn_agregarAnalisis.Text = "Agregar Analisis";
             this.btn_agregarAnalisis.UseVisualStyleBackColor = false;
             this.btn_agregarAnalisis.Click += new System.EventHandler(this.btn_agregarAnalisis_Click);
+            this.btn_agregarAnalisis.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btn_agregarAnalisis_KeyUp);
             // 
             // cmb_analisis
             // 
@@ -75,9 +76,10 @@
             this.cmb_analisis.FormattingEnabled = true;
             this.cmb_analisis.Location = new System.Drawing.Point(193, 25);
             this.cmb_analisis.Name = "cmb_analisis";
-            this.cmb_analisis.Size = new System.Drawing.Size(216, 25);
-            this.cmb_analisis.TabIndex = 2;
+            this.cmb_analisis.Size = new System.Drawing.Size(216, 23);
+            this.cmb_analisis.TabIndex = 0;
             this.cmb_analisis.SelectedValueChanged += new System.EventHandler(this.cmb_analisis_SelectedValueChanged);
+            this.cmb_analisis.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_analisis_KeyUp);
             // 
             // groupBox1
             // 
@@ -98,7 +100,7 @@
             this.lbl_nombreAnalisis.AutoSize = true;
             this.lbl_nombreAnalisis.Location = new System.Drawing.Point(193, 53);
             this.lbl_nombreAnalisis.Name = "lbl_nombreAnalisis";
-            this.lbl_nombreAnalisis.Size = new System.Drawing.Size(43, 17);
+            this.lbl_nombreAnalisis.Size = new System.Drawing.Size(42, 15);
             this.lbl_nombreAnalisis.TabIndex = 3;
             this.lbl_nombreAnalisis.Text = "label1";
             // 
@@ -154,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.button1);
@@ -164,9 +167,12 @@
             this.Controls.Add(this.dgv_analisis);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AnalisisExamen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Analisis al Examen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnalisisExamen_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_analisis)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

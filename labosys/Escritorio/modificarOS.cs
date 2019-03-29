@@ -24,7 +24,8 @@ namespace Escritorio
         }
 
         private void btn_ModificarOS_Click(object sender, EventArgs e)
-        { bool camposValidos = true;
+        {
+            bool camposValidos = true;
             if (!Validador.validarString(txt_nombre.Text))
             {
                 errorProvider1.SetError(txt_nombre, "El campo no puede estar vacio");
@@ -34,15 +35,17 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_nombre, "");
             }
-            if (!Validador.validarDecimal(txt_porcentaje.Text))
+
+            if (!Validador.validarPorcentaje(txt_porcentaje.Text))
             {
-                errorProvider1.SetError(txt_porcentaje, "El campo debe contener solo digitos y/o ,");
+                errorProvider1.SetError(txt_porcentaje, "El campo debe contener un valor entre 0 y 100");
                 camposValidos = false;
             }
             else
             {
                 errorProvider1.SetError(txt_porcentaje, "");
             }
+
             if (!Validador.validarDecimal(txt_nbu.Text))
             {
                 errorProvider1.SetError(txt_nbu, "El campo debe contener solo digitos y/o ,");
@@ -52,6 +55,7 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_nbu, "");
             }
+
             if (!Validador.validarDecimal(txt_actoBioquimico.Text))
             {
                 errorProvider1.SetError(txt_actoBioquimico, "El campo debe contener solo digitos y/o ,");
@@ -61,6 +65,7 @@ namespace Escritorio
             {
                 errorProvider1.SetError(txt_actoBioquimico, "");
             }
+
             if (camposValidos)
             {
                 try
@@ -70,18 +75,18 @@ namespace Escritorio
                     bool exito = Negocio.ABMObraSocial.modificarOS(obraSocial);
                     if (exito)
                     {
-                        MessageBox.Show("Obra Social modificada con exito", "Exito", MessageBoxButtons.OK);
+                        MessageBox.Show("Obra Social modificada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("La Obra Social no se ha podido modificar, es probable que ya exista otra obra social con el nombre ingresado", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("La Obra Social no se ha podido modificar\nEs probable que ya exista otra Obra Social con el mismo nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
+                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -111,7 +116,22 @@ namespace Escritorio
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+        }
+
+        private void txt_porcentaje_KeyUp(object sender, KeyEventArgs e)
+        {
+            string tex = this.txt_porcentaje.Text;
+            this.txt_porcentaje.Text = tex.Replace(".", ",");
+            int largo = txt_porcentaje.Text.Length;
+            this.txt_porcentaje.Select();
+            this.txt_porcentaje.Select(largo, 0);
+        }
+
+        private void txt_porcentaje_Leave(object sender, EventArgs e)
+        {
+            string tex = this.txt_porcentaje.Text;
+            this.txt_porcentaje.Text = tex.Replace(".", ",");
         }
     }
 }

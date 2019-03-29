@@ -14,6 +14,7 @@ namespace Escritorio
     {
         
         BindingSource bs;
+        bool cerrar;
         private Entidades.Examen examen;
         List<Entidades.Analisis> analisis= new List<Entidades.Analisis>();
         public AnalisisExamen(Entidades.Examen ex)
@@ -21,6 +22,7 @@ namespace Escritorio
             InitializeComponent();
             try
             {
+                cerrar = false;
                 examen = ex;
                 bs = new BindingSource(analisis, "");
                 dgv_analisis.DataSource = bs;
@@ -30,6 +32,7 @@ namespace Escritorio
                 this.ControlBox = false;
                 this.btn_eliminarAnalisis.Enabled = false;
                 this.btn_eliminarAnalisis.Visible = false;
+                this.btn_guardarCambios.Enabled = false;
             }
             catch (Exception e)
             {
@@ -43,6 +46,7 @@ namespace Escritorio
             {
                 this.btn_eliminarAnalisis.Visible = true;
                 this.btn_eliminarAnalisis.Enabled = true;
+                this.btn_guardarCambios.Enabled = true;
             }
             if (cmb_analisis.SelectedItem != null)
             {
@@ -54,7 +58,7 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show("El analisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
+                    MessageBox.Show("El análisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
                 }
                 
             }
@@ -94,10 +98,10 @@ namespace Escritorio
                 }
                 float costoCubierto = float.Parse(os.Porcentaje)/100 * costoTotal;
                 float costoAPagar = costoTotal - costoCubierto;
-                 DialogResult resultado =MessageBox.Show("El monto total es: " + costoTotal +
-                    "\n El monto cubierto por la OS es:" + costoCubierto +
-                    "\n El monto que el paciente debe abonar es: " + costoAPagar +
-                    "\n\n Desea confirmar la operacion?", "Confirmar Operacion", MessageBoxButtons.YesNo);
+                 DialogResult resultado =MessageBox.Show(" Monto total: $" + costoTotal +                   
+                    "\n Porcentaje cubierto: " + os.Porcentaje + "%"+
+                     "\n\n Monto a abonar es: $" + costoAPagar +
+                    "\n\n ¿Desea confirmar la operación?", "Confirmar Operación", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
                 if (resultado == DialogResult.Yes)
                 {
                     Entidades.Examen exa = new Entidades.Examen();
@@ -114,11 +118,12 @@ namespace Escritorio
                     bool exito = Negocio.ABMExamen.agregarCosto(costoExamen, exa);
                     if (exito)
                     {
-                        MessageBox.Show("Examen guardado con exito", "Exito", MessageBoxButtons.OK);
+                        MessageBox.Show("Examen guardado con éxito", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        cerrar = true;
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido guardar el examen", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("No se ha podido guardar el exámen", "Fracaso", MessageBoxButtons.OK,MessageBoxIcon.Stop);
 
                     }
                     this.Close();
@@ -135,16 +140,23 @@ namespace Escritorio
         {
             try
             {
+                
                 DataGridViewRow row = this.dgv_analisis.CurrentRow;
                 DataGridViewCellCollection celdas = row.Cells;
                 Entidades.Analisis ana = new Entidades.Analisis();
                 ana.Id = (int)celdas["id"].Value;
                 analisis.RemoveAll(x => x.Id == ana.Id);
                 actualizarBinding();
+                if (analisis.Count == 0)
+                {
+                    this.btn_eliminarAnalisis.Visible = false;
+                    this.btn_eliminarAnalisis.Enabled = false;
+                    this.btn_guardarCambios.Enabled = false;
+                }
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("No ha seleccionado ningun analisis", "Cuidado", MessageBoxButtons.OK);
+                MessageBox.Show("No ha seleccionado ningun análisis", "Cuidado", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
@@ -185,7 +197,7 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show("El analisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
+                    MessageBox.Show("El análisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
                 }
 
             }
@@ -200,5 +212,32 @@ namespace Escritorio
             this.cmb_analisis.ValueMember = "id";
         }
 
+        private void cmb_analisis_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.cmb_analisis, true, false, true, true);
+            }
+        }
+
+        private void btn_agregarAnalisis_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.btn_agregarAnalisis, false, false, true, true);
+            }
+        }
+
+        private void AnalisisExamen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!cerrar)
+            {
+                DialogResult resultado = MessageBox.Show("¿Esta seguro que desea salir?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
