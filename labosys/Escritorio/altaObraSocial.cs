@@ -132,7 +132,7 @@ namespace Escritorio
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Dispose();
+                this.Close();
             }
         }
     }

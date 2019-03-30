@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txt_inicioPaciente = new System.Windows.Forms.MaskedTextBox();
             this.lbl_nombrePaciente = new System.Windows.Forms.Label();
             this.cmb_Paciente = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txt_inicioOS = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_os = new System.Windows.Forms.ComboBox();
@@ -55,8 +57,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,7 +74,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(27, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(729, 98);
+            this.groupBox1.Size = new System.Drawing.Size(729, 104);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Todos";
@@ -91,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 78);
+            this.label3.Location = new System.Drawing.Point(6, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(465, 17);
             this.label3.TabIndex = 5;
@@ -153,10 +153,20 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(27, 171);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(729, 94);
+            this.groupBox2.Size = new System.Drawing.Size(729, 105);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Por Paciente";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(357, 32);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 17);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Paciente";
             // 
             // txt_inicioPaciente
             // 
@@ -170,7 +180,8 @@
             // lbl_nombrePaciente
             // 
             this.lbl_nombrePaciente.AutoSize = true;
-            this.lbl_nombrePaciente.Location = new System.Drawing.Point(402, 57);
+            this.lbl_nombrePaciente.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombrePaciente.Location = new System.Drawing.Point(417, 57);
             this.lbl_nombrePaciente.Name = "lbl_nombrePaciente";
             this.lbl_nombrePaciente.Size = new System.Drawing.Size(0, 17);
             this.lbl_nombrePaciente.TabIndex = 14;
@@ -190,7 +201,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 74);
+            this.label4.Location = new System.Drawing.Point(6, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(465, 17);
             this.label4.TabIndex = 11;
@@ -257,9 +268,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Por Obra Social";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(335, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 17);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Obra Social";
+            // 
             // txt_inicioOS
             // 
-            this.txt_inicioOS.Location = new System.Drawing.Point(74, 37);
+            this.txt_inicioOS.Location = new System.Drawing.Point(74, 28);
             this.txt_inicioOS.Mask = "00/00/0000";
             this.txt_inicioOS.Name = "txt_inicioOS";
             this.txt_inicioOS.Size = new System.Drawing.Size(74, 23);
@@ -269,7 +290,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(402, 65);
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(417, 56);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 17);
             this.label7.TabIndex = 22;
@@ -280,7 +302,7 @@
             this.cmb_os.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_os.CausesValidation = false;
             this.cmb_os.FormattingEnabled = true;
-            this.cmb_os.Location = new System.Drawing.Point(419, 37);
+            this.cmb_os.Location = new System.Drawing.Point(419, 28);
             this.cmb_os.Name = "cmb_os";
             this.cmb_os.Size = new System.Drawing.Size(141, 25);
             this.cmb_os.TabIndex = 21;
@@ -298,7 +320,7 @@
             // 
             this.btn_informeOs.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_informeOs.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_informeOs.Location = new System.Drawing.Point(593, 33);
+            this.btn_informeOs.Location = new System.Drawing.Point(593, 24);
             this.btn_informeOs.Name = "btn_informeOs";
             this.btn_informeOs.Size = new System.Drawing.Size(130, 30);
             this.btn_informeOs.TabIndex = 18;
@@ -308,7 +330,7 @@
             // 
             // txt_finOS
             // 
-            this.txt_finOS.Location = new System.Drawing.Point(231, 37);
+            this.txt_finOS.Location = new System.Drawing.Point(231, 28);
             this.txt_finOS.Mask = "00/00/0000";
             this.txt_finOS.Name = "txt_finOS";
             this.txt_finOS.Size = new System.Drawing.Size(75, 23);
@@ -319,7 +341,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(198, 40);
+            this.label9.Location = new System.Drawing.Point(198, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 17);
             this.label9.TabIndex = 16;
@@ -329,7 +351,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(26, 40);
+            this.label10.Location = new System.Drawing.Point(26, 31);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 15;
@@ -346,26 +368,6 @@
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(357, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 17);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Paciente";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(335, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 17);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Obra Social";
             // 
             // ReportesEleccion
             // 

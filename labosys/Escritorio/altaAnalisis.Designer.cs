@@ -95,6 +95,7 @@
             this.txt_nbu.Name = "txt_nbu";
             this.txt_nbu.Size = new System.Drawing.Size(130, 21);
             this.txt_nbu.TabIndex = 11;
+            this.txt_nbu.TextChanged += new System.EventHandler(this.txt_nbu_TextChanged);
             this.txt_nbu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_nbu_KeyUp);
             // 
             // lbl_cantNBU
@@ -113,6 +114,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(130, 21);
             this.txt_nombre.TabIndex = 3;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             // 
             // lbl_nombre
             // 
@@ -130,6 +132,7 @@
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(130, 21);
             this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
             this.txt_codigo.Leave += new System.EventHandler(this.txt_codigo_Leave);
             // 
             // lbl_codigo
@@ -162,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.btn_atras);
@@ -170,9 +174,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "altaAnalisis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Analisis";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.altaAnalisis_FormClosing);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.altaAnalisis_KeyUp);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

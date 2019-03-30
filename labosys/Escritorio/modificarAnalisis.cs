@@ -12,6 +12,7 @@ namespace Escritorio
 {
     public partial class modificarAnalisis : Form
     {
+        bool cambio = true;
         int id;
         public modificarAnalisis(Entidades.Analisis analisis)
         {
@@ -65,19 +66,19 @@ namespace Escritorio
                     bool exito = Negocio.ABMAnalisis.modificarAnalisis(analisis);
                     if (exito)
                     {
-                        MessageBox.Show("El analisis se modifico exitosamente", "Exito!", MessageBoxButtons.OK);
-
+                        MessageBox.Show("El analisis se modifico exitosamente", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        cambio = false;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("El analisis no se pudo modificar, es probable que ya exista otro analisis con el codigo ingresado", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El analisis no se pudo modificar, \nes probable que ya exista otro analisis con el codigo ingresado", "Fracaso", MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception k)
             {
-                MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK);
+                MessageBox.Show("Ha ocurrido un error", "Fracaso", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -109,6 +110,18 @@ namespace Escritorio
         private void btn_atras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void modificarAnalisis_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cambio)
+            {
+                DialogResult resultado = MessageBox.Show("¿Descartar cambios?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

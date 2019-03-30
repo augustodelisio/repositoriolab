@@ -29,15 +29,16 @@ namespace BD
                 SqlCommand cmd = new SqlCommand("select ex.id ,ex.fecha, ex.costo , os.nombre , pa.nombre, pa.apellido,po.afiliado,ex.actoBioquimico from dbo.Examenes ex inner join dbo.ObrasSociales os on ex.idOS = os.id inner join dbo.Pacientes pa on ex.idPaciente = pa.id inner join dbo.PacienteOS po on (po.idOS = ex.idOS and po.IdPaciente = pa.id) order by ex.fecha", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.reporte> reportes = new List<Entidades.reporte>();
+                
                 while (reader.Read())
                 {
                     Entidades.reporte rep = new Entidades.reporte();
                     //rep.CostoAnalisis = reader.GetString(0);
                     //rep.CodigoAnalisis = reader.GetString(1);
-                    rep.Id = reader.GetInt32(0);
+                    
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString().Trim();
-                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.CostoTotal = reader.GetString(2).Replace(".",",").Trim();                  
                     rep.NombreOS = reader.GetString(3).Trim();
                     rep.Nombre = reader.GetString(4).Trim();
                     rep.Apellido = reader.GetString(5).Trim();
@@ -54,6 +55,7 @@ namespace BD
                 return null;
             }
         }
+
 
         public List<Entidades.subreport> getAllSubReports(int id)
         {
@@ -98,7 +100,7 @@ namespace BD
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString().Trim();
-                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.CostoTotal = (reader.GetString(2).Trim());
                     rep.NombreOS = reader.GetString(3).Trim();
                     rep.Nombre = reader.GetString(4).Trim();
                     rep.Apellido = reader.GetString(5).Trim();
@@ -131,7 +133,7 @@ namespace BD
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.CostoTotal = (reader.GetString(2).Trim());
                     rep.NombreOS = reader.GetString(3).Trim();
                     rep.Nombre = reader.GetString(4).Trim();
                     rep.Apellido = reader.GetString(5).Trim();
@@ -165,7 +167,7 @@ namespace BD
                     rep.Id = reader.GetInt32(0);
                     DateTime Fecha = reader.GetDateTime(1);
                     rep.Fecha = Fecha.ToShortDateString();
-                    rep.CostoTotal = reader.GetString(2).Trim();
+                    rep.CostoTotal = (reader.GetString(2).Trim());
                     rep.NombreOS = reader.GetString(3).Trim();
                     rep.Nombre = reader.GetString(4).Trim();
                     rep.Apellido = reader.GetString(5).Trim();

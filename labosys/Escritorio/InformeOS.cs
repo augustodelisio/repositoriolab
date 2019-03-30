@@ -50,8 +50,17 @@ namespace Escritorio
         {
             try
             {
-                this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorOS(desde, hasta, obraSocial);
+                float costo = 0;
+                List<Entidades.reporte> reportes= Negocio.ABMReporte.getAllReportsPorOS(desde, hasta, obraSocial);
+                this.reporteBindingSource.DataSource = reportes;
+                foreach (Entidades.reporte re in reportes)
+                {
+                    costo += float.Parse(re.CostoTotal);
+                }
+                ReportParameter total = new ReportParameter("Total", costo.ToString());
+                this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { total });
                 this.reportViewer1.Refresh();
+
             }
             catch (Exception ex)
             {

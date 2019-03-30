@@ -72,7 +72,7 @@ namespace Escritorio
             }
             catch (Exception)
             {
-                MessageBox.Show("Ha ocurrido un error, contacte con el proveedor del software", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error, contacte con su proveedor del software", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Escritorio
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Dispose();
+                this.Close();
             }
         }
     }

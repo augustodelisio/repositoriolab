@@ -19,6 +19,11 @@ namespace Escritorio
             InitializeComponent();
             this.reportViewer1.LocalReport.DisplayName =  DateTime.Now.Date.ToString("dd-MM-yyyy");
 
+            
+            
+
+            this.reportViewer1.RefreshReport();
+
             try
             {
                 reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(LocalReport_SubreportProcessing);
@@ -41,14 +46,24 @@ namespace Escritorio
         private void Informe_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
+            
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             try
             {
-                this.reporteBindingSource.DataSource = Negocio.ABMReporte.getAllReportsPorFecha(desde, hasta);
+                float costo = 0;
+                List<Entidades.reporte> reportes = Negocio.ABMReporte.getAllReportsPorFecha(desde, hasta);
+                this.reporteBindingSource.DataSource = reportes;
+                foreach (Entidades.reporte re in reportes)
+                {
+                    costo += float.Parse(re.CostoTotal);
+                }
+                ReportParameter total = new ReportParameter("Total", costo.ToString());
+                this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { total });
                 this.reportViewer1.Refresh();
+                
             }
             catch (Exception ex)
             {

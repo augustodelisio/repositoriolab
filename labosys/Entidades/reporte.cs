@@ -8,10 +8,17 @@ namespace Entidades
 {
     public class reporte
     {
-        string costoAnalisis, costoTotal, codigoAnalisis, nombreOS, nombre, apellido, afiliado, actoBioquimico;
+        string costoAnalisis,  codigoAnalisis, nombreOS, nombre, apellido, afiliado, actoBioquimico;
         int id;
         string fecha;
-
+        string costoTotal;
+        float costo;
+   
+        public float Costo
+        {
+            get;
+            set;
+        }
         public string CostoAnalisis
         {
             get;

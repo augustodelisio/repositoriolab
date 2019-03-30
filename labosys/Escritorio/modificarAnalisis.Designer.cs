@@ -103,7 +103,7 @@
             this.lbl_cantNBU.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cantNBU.Location = new System.Drawing.Point(34, 184);
             this.lbl_cantNBU.Name = "lbl_cantNBU";
-            this.lbl_cantNBU.Size = new System.Drawing.Size(93, 15);
+            this.lbl_cantNBU.Size = new System.Drawing.Size(94, 17);
             this.lbl_cantNBU.TabIndex = 8;
             this.lbl_cantNBU.Text = "Cantidad NBU";
             // 
@@ -120,7 +120,7 @@
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.Location = new System.Drawing.Point(68, 113);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(57, 15);
+            this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
             this.lbl_nombre.TabIndex = 2;
             this.lbl_nombre.Text = "Nombre";
             // 
@@ -138,7 +138,7 @@
             this.lbl_codigo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.Location = new System.Drawing.Point(74, 43);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(51, 15);
+            this.lbl_codigo.Size = new System.Drawing.Size(52, 17);
             this.lbl_codigo.TabIndex = 0;
             this.lbl_codigo.Text = "Codigo";
             // 
@@ -162,6 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.btn_atras);
@@ -169,9 +170,12 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "modificarAnalisis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Analisis";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificarAnalisis_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -79,7 +79,7 @@ namespace Escritorio
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close();
+                this.Dispose();
             }
         }
     }

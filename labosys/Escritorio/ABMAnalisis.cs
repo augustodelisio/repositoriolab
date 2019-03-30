@@ -31,8 +31,9 @@ namespace Escritorio
             }
             catch
             {
-                MessageBox.Show("Error" + e, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButtons.OK);
             }
+            this.textBox1.Text = "";
         }
 
         private void btn_modificarAnalisis_Click(object sender, EventArgs e)
@@ -52,8 +53,9 @@ namespace Escritorio
             }
             catch (NullReferenceException ex)
             {
+                MessageBox.Show("No ha seleccionado ningun analisis", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            this.textBox1.Text = "";
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace Escritorio
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

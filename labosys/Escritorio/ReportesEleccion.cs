@@ -33,6 +33,14 @@ namespace Escritorio
 
         private void ReportesEleccion_Load(object sender, EventArgs e)
         {
+            if (cmb_Paciente.SelectedItem == null)
+            {
+                this.btn_informePaciente.Enabled = false;
+            }
+            if (cmb_os.SelectedItem == null)
+            {
+                this.btn_informeOs.Enabled = false;
+            }
             this.txt_finTodos.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.txt_finPaciente.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.txt_finOS.Text = DateTime.Now.ToString("dd/MM/yyyy");

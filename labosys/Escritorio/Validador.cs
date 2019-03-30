@@ -59,7 +59,7 @@ namespace Escritorio
             {
                 MessageBox.Show("No funciona el VALIDADOR DE PORCENTAJE", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return Regex.IsMatch(porc, @"^(?:(\d{1,2}\,\d?|1?0?0?))?$");
+            return Regex.IsMatch(porc, @"^(?:(\d{1,2}(\,\d*)?|1?0?0?))?$");
 
         }
     }

@@ -21,6 +21,7 @@ namespace Escritorio
 
         }
 
+        bool cambio = false;
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             bool valido = true;
@@ -64,13 +65,14 @@ namespace Escritorio
                     bool exito = Negocio.ABMAnalisis.agregarAnalisis(analisis);
                     if (exito)
                     {
-                        MessageBox.Show("El analisis se agrego exitosamente", "Exito!", MessageBoxButtons.OK);
 
+                        MessageBox.Show("El analisis se agrego exitosamente", "Exito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        cambio = false;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("El analisis no se pudo dar de alta, es probable que ya exista otro analisis con el mismo codigo", "Fracaso", MessageBoxButtons.OK);
+                        MessageBox.Show("El analisis no se pudo dar de alta, \nes probable que ya exista otro analisis con el mismo codigo", "Fracaso", MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
                 }
@@ -108,6 +110,43 @@ namespace Escritorio
         private void btn_atras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_codigo_TextChanged(object sender, EventArgs e)
+        {
+            cambio = true;
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+            cambio = true;
+
+        }
+
+        private void txt_nbu_TextChanged(object sender, EventArgs e)
+        {
+            cambio = true;
+
+        }
+
+        private void altaAnalisis_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cambio)
+            {
+                DialogResult resultado = MessageBox.Show("¿Descartar cambios?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void altaAnalisis_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
     
