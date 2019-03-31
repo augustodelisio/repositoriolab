@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.GroupBox gbx_filtrarOS;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMObraSocial));
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.dgv_obrasSociales = new System.Windows.Forms.DataGridView();
@@ -67,7 +68,16 @@
             this.dgv_obrasSociales.AllowUserToAddRows = false;
             this.dgv_obrasSociales.AllowUserToDeleteRows = false;
             this.dgv_obrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_obrasSociales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_obrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_obrasSociales.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_obrasSociales.Location = new System.Drawing.Point(12, 12);
             this.dgv_obrasSociales.MultiSelect = false;
             this.dgv_obrasSociales.Name = "dgv_obrasSociales";
@@ -143,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(gbx_filtrarOS);
             this.Controls.Add(this.btn_deshabilitarOS);

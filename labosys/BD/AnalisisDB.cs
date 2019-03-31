@@ -69,7 +69,7 @@ namespace BD
             try
             {
                 Conexion.getInstance().Connect();
-                SqlCommand cmd = new SqlCommand("select * from Analisis", Conexion.getInstance().Conection);
+                SqlCommand cmd = new SqlCommand("select * from Analisis order by codigo", Conexion.getInstance().Conection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Entidades.Analisis> analisis = new List<Entidades.Analisis>();
                 while (reader.Read())

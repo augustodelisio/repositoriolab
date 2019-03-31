@@ -19,6 +19,7 @@ namespace Escritorio
             InitializeComponent();
             bs = new BindingSource(Negocio.ABMAnalisis.getAllAnalisis(), "");
             this.dgv_analisis.DataSource = bs;
+            this.dgv_analisis.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
         }
 

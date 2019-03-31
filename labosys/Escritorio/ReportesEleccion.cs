@@ -71,15 +71,15 @@ namespace Escritorio
             if (!txt_inicioPaciente.MaskCompleted)
             {
                 string desde = "20000101";
-                DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
+                DateTime hastaDT = DateTime.Parse(this.txt_finPaciente.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
                 new InformePaciente(desde, hasta, pa).ShowDialog();
             }
             else
             {
-                DateTime desdeDt = DateTime.Parse(this.txt_inicioTodos.Text);
+                DateTime desdeDt = DateTime.Parse(this.txt_inicioPaciente.Text);
                 string desde = desdeDt.ToString("yyyyMMdd");
-                DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
+                DateTime hastaDT = DateTime.Parse(this.txt_finPaciente.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
                 new InformePaciente(desde, hasta, pa).ShowDialog();
             }
@@ -109,15 +109,15 @@ namespace Escritorio
             if (!txt_inicioOS.MaskCompleted)
             {
                 string desde = "20000101";
-                DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
+                DateTime hastaDT = DateTime.Parse(this.txt_finOS.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
                 new InformeOS(desde, hasta, os).ShowDialog();
             }
             else
             {
-                DateTime desdeDt = DateTime.Parse(this.txt_inicioTodos.Text);
+                DateTime desdeDt = DateTime.Parse(this.txt_inicioOS.Text);
                 string desde = desdeDt.ToString("yyyyMMdd");
-                DateTime hastaDT = DateTime.Parse(this.txt_finTodos.Text);
+                DateTime hastaDT = DateTime.Parse(this.txt_finOS.Text);
                 string hasta = hastaDT.ToString("yyyyMMdd");
                 new InformeOS(desde, hasta, os).ShowDialog();
             }

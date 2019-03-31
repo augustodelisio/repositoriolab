@@ -50,7 +50,7 @@
             this.lbl_Fecha.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fecha.Location = new System.Drawing.Point(116, 58);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(42, 15);
+            this.lbl_Fecha.Size = new System.Drawing.Size(43, 17);
             this.lbl_Fecha.TabIndex = 1;
             this.lbl_Fecha.Text = "Fecha";
             // 
@@ -62,7 +62,7 @@
             this.cmb_pacientes.FormattingEnabled = true;
             this.cmb_pacientes.Location = new System.Drawing.Point(45, 19);
             this.cmb_pacientes.Name = "cmb_pacientes";
-            this.cmb_pacientes.Size = new System.Drawing.Size(220, 23);
+            this.cmb_pacientes.Size = new System.Drawing.Size(220, 25);
             this.cmb_pacientes.TabIndex = 4;
             this.cmb_pacientes.SelectedValueChanged += new System.EventHandler(this.cmb_pacientes_SelectedValueChanged);
             this.cmb_pacientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_pacientes_KeyUp);
@@ -85,7 +85,7 @@
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Location = new System.Drawing.Point(109, 63);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(42, 15);
+            this.lbl_nombre.Size = new System.Drawing.Size(43, 17);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "label1";
             // 
@@ -107,7 +107,7 @@
             this.cmb_os.FormattingEnabled = true;
             this.cmb_os.Location = new System.Drawing.Point(45, 42);
             this.cmb_os.Name = "cmb_os";
-            this.cmb_os.Size = new System.Drawing.Size(220, 23);
+            this.cmb_os.Size = new System.Drawing.Size(220, 25);
             this.cmb_os.TabIndex = 5;
             this.cmb_os.Tag = "botonOS";
             this.cmb_os.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmb_os_KeyUp);
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.txt_fecha);

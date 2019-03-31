@@ -34,9 +34,9 @@
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
-            this.lbl_apellido = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
+            this.lbl_apellido = new System.Windows.Forms.Label();
             this.btn_modificarpaciente = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btn_atras = new System.Windows.Forms.Button();
@@ -51,9 +51,9 @@
             this.groupBox1.Controls.Add(this.txt_dni);
             this.groupBox1.Controls.Add(this.lbl_dni);
             this.groupBox1.Controls.Add(this.txt_apellido);
-            this.groupBox1.Controls.Add(this.lbl_apellido);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lbl_nombre);
+            this.groupBox1.Controls.Add(this.lbl_apellido);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(72, 42);
             this.groupBox1.Name = "groupBox1";
@@ -75,30 +75,20 @@
             this.lbl_dni.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dni.Location = new System.Drawing.Point(74, 156);
             this.lbl_dni.Name = "lbl_dni";
-            this.lbl_dni.Size = new System.Drawing.Size(29, 15);
+            this.lbl_dni.Size = new System.Drawing.Size(30, 17);
             this.lbl_dni.TabIndex = 4;
             this.lbl_dni.Text = "Dni";
             // 
             // txt_apellido
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(140, 94);
+            this.txt_apellido.Location = new System.Drawing.Point(139, 43);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(147, 23);
             this.txt_apellido.TabIndex = 3;
             // 
-            // lbl_apellido
-            // 
-            this.lbl_apellido.AutoSize = true;
-            this.lbl_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_apellido.Location = new System.Drawing.Point(45, 97);
-            this.lbl_apellido.Name = "lbl_apellido";
-            this.lbl_apellido.Size = new System.Drawing.Size(59, 15);
-            this.lbl_apellido.TabIndex = 2;
-            this.lbl_apellido.Text = "Apellido";
-            // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(140, 36);
+            this.txt_nombre.Location = new System.Drawing.Point(141, 100);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(147, 23);
             this.txt_nombre.TabIndex = 1;
@@ -107,11 +97,21 @@
             // 
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(45, 39);
+            this.lbl_nombre.Location = new System.Drawing.Point(46, 103);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(57, 15);
+            this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
+            // 
+            // lbl_apellido
+            // 
+            this.lbl_apellido.AutoSize = true;
+            this.lbl_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_apellido.Location = new System.Drawing.Point(44, 46);
+            this.lbl_apellido.Name = "lbl_apellido";
+            this.lbl_apellido.Size = new System.Drawing.Size(60, 17);
+            this.lbl_apellido.TabIndex = 2;
+            this.lbl_apellido.Text = "Apellido";
             // 
             // btn_modificarpaciente
             // 
@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.groupBox1);

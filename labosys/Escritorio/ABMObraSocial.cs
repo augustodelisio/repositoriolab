@@ -18,6 +18,7 @@ namespace Escritorio
             InitializeComponent();
             bs = new BindingSource(Negocio.ABMObraSocial.getAllObrasSociales(), "");
             this.dgv_obrasSociales.DataSource = bs;
+            this.dgv_obrasSociales.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         private void Btn_altaobrasocial_Click(object sender, EventArgs e)

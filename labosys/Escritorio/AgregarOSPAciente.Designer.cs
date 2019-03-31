@@ -63,7 +63,7 @@
             this.cmb_OS.FormattingEnabled = true;
             this.cmb_OS.Location = new System.Drawing.Point(166, 39);
             this.cmb_OS.Name = "cmb_OS";
-            this.cmb_OS.Size = new System.Drawing.Size(172, 23);
+            this.cmb_OS.Size = new System.Drawing.Size(172, 25);
             this.cmb_OS.TabIndex = 4;
             // 
             // label2
@@ -72,7 +72,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 15);
+            this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Numero de Afiliado";
             // 
@@ -90,7 +90,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(83, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 15);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Obra Social";
             // 
@@ -127,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(584, 261);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_agregarOSaPaciente);

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escritorio", "Escritorio\Es
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD", "BD\BD.csproj", "{C17F94F5-0EB4-4AD2-B11A-64FEBCAD73C6}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{410670A9-F262-45CE-93EC-3DBFAD706939}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Labosys", "Labosys\Labosys.vdproj", "{7F793F3C-D96B-4D34-ABA6-13638B23200A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,8 +35,8 @@ Global
 		{C17F94F5-0EB4-4AD2-B11A-64FEBCAD73C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C17F94F5-0EB4-4AD2-B11A-64FEBCAD73C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C17F94F5-0EB4-4AD2-B11A-64FEBCAD73C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{410670A9-F262-45CE-93EC-3DBFAD706939}.Debug|Any CPU.ActiveCfg = Debug
-		{410670A9-F262-45CE-93EC-3DBFAD706939}.Release|Any CPU.ActiveCfg = Release
+		{7F793F3C-D96B-4D34-ABA6-13638B23200A}.Debug|Any CPU.ActiveCfg = Debug
+		{7F793F3C-D96B-4D34-ABA6-13638B23200A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

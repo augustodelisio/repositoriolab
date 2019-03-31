@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OSPaciente));
             this.dgv_ospacientes = new System.Windows.Forms.DataGridView();
             this.gb_paciente = new System.Windows.Forms.GroupBox();
@@ -44,6 +45,14 @@
             this.dgv_ospacientes.AllowUserToDeleteRows = false;
             this.dgv_ospacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ospacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ospacientes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ospacientes.Location = new System.Drawing.Point(33, 31);
             this.dgv_ospacientes.MultiSelect = false;
             this.dgv_ospacientes.Name = "dgv_ospacientes";
@@ -53,7 +62,7 @@
             // 
             // gb_paciente
             // 
-            this.gb_paciente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gb_paciente.BackColor = System.Drawing.Color.LightGray;
             this.gb_paciente.Controls.Add(this.button1);
             this.gb_paciente.Controls.Add(this.btn_atras);
             this.gb_paciente.Controls.Add(this.btn_agregarOSPaciente);
@@ -105,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.gb_paciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

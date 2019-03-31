@@ -13,9 +13,9 @@ namespace Escritorio
 
         public static bool validarDNI(string dni)
         {
-            if (dni.Length != 8)
+            if ((dni.Length < 8) || (dni.Length > 9))
                 return false;
-            Regex reg = new Regex(@"\d{8}");
+            Regex reg = new Regex(@"^(M|F|m|f)?\d{8}$");
             Match match = reg.Match(dni);
             return match.Success;
         }

@@ -48,7 +48,7 @@
             // 
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(45, 56);
+            this.lbl_nombre.Location = new System.Drawing.Point(45, 105);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(58, 17);
             this.lbl_nombre.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(140, 53);
+            this.txt_nombre.Location = new System.Drawing.Point(140, 102);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(144, 23);
             this.txt_nombre.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.lbl_apellido.AutoSize = true;
             this.lbl_apellido.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_apellido.Location = new System.Drawing.Point(45, 114);
+            this.lbl_apellido.Location = new System.Drawing.Point(45, 42);
             this.lbl_apellido.Name = "lbl_apellido";
             this.lbl_apellido.Size = new System.Drawing.Size(60, 17);
             this.lbl_apellido.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             // txt_apellido
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(140, 111);
+            this.txt_apellido.Location = new System.Drawing.Point(140, 39);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(144, 23);
             this.txt_apellido.TabIndex = 3;
@@ -147,7 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_agregar);

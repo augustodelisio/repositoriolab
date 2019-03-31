@@ -51,15 +51,8 @@ namespace Escritorio
             if (cmb_analisis.SelectedItem != null)
             {
                 Entidades.Analisis ana = (Entidades.Analisis)cmb_analisis.SelectedItem;
-                if (!analisis.Contains(ana))
-                {
-                    analisis.Add(ana);
-                    actualizarBinding();
-                }
-                else
-                {
-                    MessageBox.Show("El análisis ya se encuentra cargado", "Cuidado!", MessageBoxButtons.OK);
-                }
+                analisis.Add(ana);
+                actualizarBinding();
                 
             }
             this.ControlBox = true;
